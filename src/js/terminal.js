@@ -146,9 +146,9 @@ export function initTerminal() {
         const whoText = lang === 'en'
           ? `[ IDENTITY SUMMARY ]<br>
              Full Name: Alberto Trujillo Mingorance<br>
-             Primary Role: Junior DevOps & Systems Engineer | Cybersecurity & Cloud/IAM Specialist<br>
+             Primary Role: Junior Systems & Cloud Security Engineer | Cybersecurity & IAM<br>
              Academic Degrees: ASIR (Higher Degree) + SMR (Mid Degree) @ Institut Tecnològic de Barcelona (ITB)<br>
-             Current Employer: Attestto (Cloud/IAM & Digital Identity) & eToro (Popular Investor)<br>
+             Current Positions: Ex-SecOps & Systems at Attestto | Open to immediate opportunities<br>
              Disability Status: Official Certified Disability >33% (Employer Tax Incentives Eligible)<br>
              Availability: Immediate Availability for Remote / Hybrid / On-Site Positions`
           : lang === 'ca'
@@ -156,14 +156,14 @@ export function initTerminal() {
              Nom Complet: Alberto Trujillo Mingorance<br>
              Rol Principal: Enginyer Junior de DevOps i Sistemes | Ciberseguretat · Cloud/IAM<br>
              Titulacions Acadèmiques: ASIX (Grau Superior) + SMX (Grau Mitjà) @ Institut Tecnològic de Barcelona (ITB)<br>
-             Empresa Actual: Attestto (Cloud/IAM i Identitat Digital) & eToro (Popular Investor)<br>
+             Puesto Reciente: Ex-SecOps & Systems a Attestto | Obert a noves oportunitats<br>
              Estatus Discapacitat: Discapacitat Certificada Oficial >33% (Elegible per Bonificacions Ocupacionals)<br>
              Disponibilitat: Incorporació Immediata per a Llocs Remots / Híbrids / Presencials`
           : `[ RESUMEN DE IDENTIDAD ]<br>
              Nombre Completo: Alberto Trujillo Mingorance<br>
              Rol Principal: Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM<br>
              Titulaciones Académicas: ASIR (Grado Superior) + SMR (Grado Medio) @ Institut Tecnològic de Barcelona (ITB)<br>
-             Empresa Actual: Attestto (Cloud/IAM e Identidad Digital) y eToro (Popular Investor)<br>
+             Puesto Reciente: Ex-SecOps & Systems en Attestto | Abierto a nuevas oportunidades<br>
              Estatus Discapacidad: Discapacidad Oficial Certificada >33% (Elegible para Bonificaciones Contratación)<br>
              Disponibilidad: Incorporación Inmediata para Puestos Remotos / Híbridos / Presenciales`;
         appendOutput(`<div class="term-card">${whoText}</div>`);

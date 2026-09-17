@@ -1,7 +1,7 @@
 const translations = {
     es: {
         page_title: 'Alberto Trujillo | DevOps & Systems Engineer | Cybersecurity & Cloud/IAM',
-        hero_subtitle: 'Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM',
+        hero_subtitle: 'Ingeniero Junior de Sistemas y Seguridad Cloud | Cloud/IAM & Sysadmin',
         nav_availability: 'Disponibilidad',
         nav_experience: 'Experiencia',
         nav_stack: 'Stack Técnico',
@@ -10,8 +10,8 @@ const translations = {
         nav_blog: 'Blog',
         nav_contact: 'Contacto',
         hero_tag1: 'ASIR + SMR (Grado Sup. & Medio)',
-        hero_tag2: 'DevOps, Cloud/IAM & Hardening',
-        hero_tag3: 'Autodidacta & Ciberseguridad / Web3',
+        hero_tag2: 'Administración de Sistemas, Cloud/IAM y Seguridad',
+        hero_tag3: 'Autodidacta & Ciberseguridad',
         hero_description: 'Titulado en ASIR y SMR con perfil fuertemente autodidacta. Especializado en protección y administración de infraestructuras cloud e identidad (Google Workspace/IAM, Cloudflare, Fly.io), hardening, identidades descentralizadas y gestión cuantitativa de riesgos.',
         hero_download_cv: 'Descargar CV',
         hero_contact: 'Contactar',
@@ -28,9 +28,9 @@ const translations = {
         exp_title: 'Trayectoria Profesional',
         
         // Attestto
-        exp_attestto_role: 'Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM',
+        exp_attestto_role: 'Ingeniero Junior de SecOps y Sistemas | Cloud/IAM & Seguridad',
         exp_attestto_company: 'Attestto · Jornada parcial',
-        exp_attestto_period: 'jul. 2026 - actualidad · 2 meses',
+        exp_attestto_period: 'jul. 2026 - sep. 2026 · 3 meses',
         exp_attestto_location: 'Delaware, Estados Unidos · En remoto',
         exp_attestto_context: 'Gestión de Infraestructura Cloud/IAM, Hardening & Estándares de Identidad Digital (W3C DID/VC, vLEI, eIDAS)',
         exp_attestto_1: 'Administración de nube e identidad: <strong>Google Workspace/IAM, Cloudflare, GitHub y Fly.io</strong>.',
@@ -39,16 +39,7 @@ const translations = {
         exp_attestto_4: 'Desarrollo de infraestructura de identidad digital y confianza basada en estándares abiertos: credenciales verificables (<strong>W3C DID/VC</strong>), identidad organizacional (<strong>GLEIF / vLEI</strong>) e interoperabilidad con firmas digitales de la UE (<strong>eIDAS</strong>).',
         exp_attestto_5: 'Mantenimiento de infraestructura segura, confiable y bien documentada, además de soporte a la comunidad hispanohablante y localización (<strong>EN↔ES</strong>).',
 
-        // eToro / Quantitative Risk Management
-        exp_etoro_role: 'Analista Cuantitativo & Gestión de Riesgos (Tech Assets)',
-        exp_etoro_company: 'Fintech & Gestión Cuantitativa de Activos',
-        exp_etoro_period: 'jun. 2026 - actualidad · 3 meses',
-        exp_etoro_location: 'Limasol, Chipre · En remoto',
-        exp_etoro_context: 'Modelado Estadístico, Control de Volatilidad y Gestión Estratégica de Riesgos Tecnológicos',
-        exp_etoro_1: '<strong>Estrategia basada en datos:</strong> Análisis y selección cuantitativa de empresas tecnológicas globales y activos de alto rendimiento.',
-        exp_etoro_2: '<strong>Control estricto de riesgos:</strong> Aplicación continua de modelos de mitigación de volatilidad y control de drawdown.',
-        exp_etoro_3: '<strong>Filosofía analítica transferible:</strong> Disciplina estadística y lógica aplicable al control de fallos en infraestructuras y sistemas críticos de IT.',
-        exp_etoro_4: '<strong>Gestión de consistencia:</strong> Reconocimiento oficial en programa de gestión tras superar métricas estrictas de estabilidad y rendimiento.',
+        
 
         // Minsait
         exp_minsait_role: 'Técnico de Soporte de Sistemas',
@@ -73,8 +64,8 @@ const translations = {
         exp_iis_6: '<strong>Mantenimiento preventivo:</strong> Limpieza, revisión y puesta a punto de equipos para garantizar su disponibilidad diaria.',
         
         stack_title: 'Arsenal Tecnológico',
-        stack_cloud_title: 'Cloud, IAM & DevOps',
-        stack_cloud_1: 'Administración de nube e identidades: <strong>Google Workspace / IAM</strong>.',
+        stack_cloud_title: 'Cloud, Systems & IAM',
+        stack_cloud_1: 'Administración de identidades (IAM): <strong>Microsoft Entra ID, Active Directory y Google Workspace</strong>.',
         stack_cloud_2: 'Seguridad perimetral y proxies/DNS con <strong>Cloudflare</strong>.',
         stack_cloud_3: 'Despliegue serverless de contenedores en <strong>Fly.io</strong>.',
         stack_cloud_4: 'Estándares de Identidad Digital: <strong>W3C DID/VC, GLEIF / vLEI, eIDAS</strong>.',
@@ -88,11 +79,11 @@ const translations = {
         stack_os_2: 'Gestión de dominios Windows Server y Group Policy Objects (GPO).',
         stack_os_3: 'Servicios de Directorio: <strong>Active Directory, Samba AD, OpenLDAP</strong>.',
         stack_os_4: 'Hardening de sistemas y gestión de parches de seguridad.',
-        stack_net_title: 'Redes, Ciberseguridad & Riesgos',
+        stack_net_title: 'Redes & Ciberseguridad',
         stack_net_1: 'Configuración de VLANs, Trunking y Spanning Tree.',
         stack_net_2: 'Enrutamiento dinámico (<strong>OSPF, RIP</strong>) y estático.',
-        stack_net_3: 'Análisis cuantitativo de volatilidad y control de drawdown aplicado a IT.',
-        stack_net_4: 'Auditoría de smart contracts y trazabilidad blockchain.',
+        stack_net_3: 'Firewalls, Segmentación de Red y Zero-Trust.',
+        stack_net_4: 'Políticas de Identidad (IAM) y System Hardening.',
         stack_auto_title: 'Automatización & Código',
         stack_auto_1: 'Scripting potente: <strong>Bash</strong> (Linux) y <strong>PowerShell</strong> (Windows).',
         stack_auto_2: 'Desarrollo de herramientas de administración con <strong>Python</strong>.',
@@ -145,7 +136,7 @@ const translations = {
         form_message: 'Mensaje',
                footer_role: 'DevOps & Systems Engineer | Cybersecurity',
         footer_rights: 'Todos los derechos reservados.',
-        footer_brand_desc: 'Ingeniero Junior de DevOps, Sistemas y Ciberseguridad. Especializado en Cloud/IAM, Hardening de Infraestructuras e Identidad Digital Descentralizada.',
+        footer_brand_desc: 'Ingeniero Junior de Sistemas y Seguridad Cloud. Especializado en Administración de Sistemas, Cloud/IAM, Hardening de Infraestructura y Seguridad de Red.',
         footer_status: 'All Systems Operational · Cloudflare Secured',
         footer_nav_title: 'Navegación',
         footer_specs_title: 'Especialidades & Certificación',
@@ -154,7 +145,7 @@ const translations = {
         footer_spec_2: 'Google Workspace & Cloud IAM',
         footer_spec_3: 'W3C DID/VC & vLEI / GLEIF',
         footer_spec_4: 'Linux Security Hardening',
-        footer_spec_5: 'Análisis Cuantitativo de Riesgos',
+        footer_spec_5: 'Microsoft Entra ID & Active Directory',
         footer_privacy: 'Política de Privacidad',
         footer_terms: 'Términos y Condiciones',
         footer_disability: 'Certificado Discapacidad >33%',
@@ -179,7 +170,7 @@ const translations = {
     },
     ca: {
         page_title: 'Alberto Trujillo | Enginyer de DevOps, Sistemes i Seguretat',
-        hero_subtitle: 'Enginyer Junior de DevOps i Sistemes | Ciberseguretat · Cloud/IAM',
+        hero_subtitle: 'Enginyer Junior de Sistemes i Seguretat Cloud | Cloud/IAM & Sysadmin',
         nav_availability: 'Disponibilitat',
         nav_experience: 'Experiència',
         nav_stack: 'Stack Tècnic',
@@ -188,8 +179,8 @@ const translations = {
         nav_blog: 'Blog',
         nav_contact: 'Contacte',
         hero_tag1: 'ASIX + SMX (Grau Sup. & Mitjà)',
-        hero_tag2: 'DevOps, Cloud/IAM & Hardening',
-        hero_tag3: 'Autodidacta & Ciberseguretat / Web3',
+        hero_tag2: 'Administració de Sistemes, Cloud/IAM i Seguretat',
+        hero_tag3: 'Autodidacta & Ciberseguretat',
         hero_description: 'Titulat en ASIX i SMX amb perfil fortament autodidacta. Especialitzat en protecció i administració d\'infraestructures cloud i identitat (Google Workspace/IAM, Cloudflare, Fly.io), hardening, identitats descentralitzades i gestió quantitativa de riscos.',
         hero_download_cv: 'Descarregar CV',
         hero_contact: 'Contactar',
@@ -206,9 +197,9 @@ const translations = {
         exp_title: 'Trajectòria Professional',
         
         // Attestto
-        exp_attestto_role: 'Enginyer Junior de DevOps i Sistemes | Ciberseguretat · Cloud/IAM',
+        exp_attestto_role: 'Enginyer Junior de SecOps i Sistemes | Cloud/IAM & Seguretat',
         exp_attestto_company: 'Attestto · Jornada parcial',
-        exp_attestto_period: 'jul. 2026 - actualitat · 2 mesos',
+        exp_attestto_period: 'jul. 2026 - set. 2026 · 3 mesos',
         exp_attestto_location: 'Delaware, Estats Units · En remot',
         exp_attestto_context: 'Gestió d\'Infraestructura Cloud/IAM, Hardening & Estàndards d\'Identitat Digital (W3C DID/VC, vLEI, eIDAS)',
         exp_attestto_1: 'Administració de núvol i identitat: <strong>Google Workspace/IAM, Cloudflare, GitHub i Fly.io</strong>.',
@@ -217,16 +208,7 @@ const translations = {
         exp_attestto_4: 'Desenvolupament d\'infraestructura d\'identitat digital i confiança basada en estàndards oberts: credencials verificables (<strong>W3C DID/VC</strong>), identitat organitzacional (<strong>GLEIF / vLEI</strong>) i interoperabilitat amb signatures digitals de la UE (<strong>eIDAS</strong>).',
         exp_attestto_5: 'Manteniment d\'infraestructura segura, confiable i ben documentada, així com suport a la comunitat hispanoparlant i localització (<strong>EN↔ES</strong>).',
 
-        // eToro / Quantitative Risk Management
-        exp_etoro_role: 'Analista Quantitatiu & Gestió de Riscos (Tech Assets)',
-        exp_etoro_company: 'Fintech & Gestió Quantitativa d\'Actius',
-        exp_etoro_period: 'jun. 2026 - actualitat · 3 mesos',
-        exp_etoro_location: 'Limassol, Xipre · En remot',
-        exp_etoro_context: 'Modelat Estadístic, Control de Volatilitat i Gestió Estratègica de Riscos Tecnològics',
-        exp_etoro_1: '<strong>Estratègia basada en dades:</strong> Anàlisi i selecció quantitativa d\'empreses tecnològiques globals i actius d\'alt rendiment.',
-        exp_etoro_2: '<strong>Control estricte de riscos:</strong> Aplicació contínua de models de mitigació de volatilitat i control de drawdown.',
-        exp_etoro_3: '<strong>Filosofia analítica transferible:</strong> Disciplina estadística i lògica aplicable al control de fallades en infraestructures i sistemes crítics d\'IT.',
-        exp_etoro_4: '<strong>Gestió de consistència:</strong> Reconeixement oficial en programa de gestió després de superar mètriques strictly d\'estabilitat i rendiment.',
+        
 
         // Minsait
         exp_minsait_role: 'Tècnic de Suport de Sistemes',
@@ -251,8 +233,8 @@ const translations = {
         exp_iis_6: '<strong>Manteniment preventiu:</strong> Neteja, revisió i posada a punt d\'equips per garantir la seva disponibilitat diària.',
 
         stack_title: 'Arsenal Tecnològic',
-        stack_cloud_title: 'Cloud, IAM & DevOps',
-        stack_cloud_1: 'Administració de núvol i identitats: <strong>Google Workspace / IAM</strong>.',
+        stack_cloud_title: 'Cloud, Systems & IAM',
+        stack_cloud_1: 'Administració d\'identitats (IAM): <strong>Microsoft Entra ID, Active Directory i Google Workspace</strong>.',
         stack_cloud_2: 'Seguretat perimetral i proxies/DNS amb <strong>Cloudflare</strong>.',
         stack_cloud_3: 'Desplegament serverless de contenidors a <strong>Fly.io</strong>.',
         stack_cloud_4: 'Estàndards d\'Identitat Digital: <strong>W3C DID/VC, GLEIF / vLEI, eIDAS</strong>.',
@@ -266,11 +248,11 @@ const translations = {
         stack_os_2: 'Gestió de dominis Windows Server i Group Policy Objects (GPO).',
         stack_os_3: 'Serveis de Directori: <strong>Active Directory, Samba AD, OpenLDAP</strong>.',
         stack_os_4: 'Hardening de sistemes i gestió de pegats de seguretat.',
-        stack_net_title: 'Xarxes, Ciberseguretat & Riscos',
+        stack_net_title: 'Xarxes & Ciberseguretat',
         stack_net_1: 'Configuració de VLANs, Trunking i Spanning Tree.',
         stack_net_2: 'Enrutament dinàmic (<strong>OSPF, RIP</strong>) i estàtic.',
-        stack_net_3: 'Anàlisi quantitatiu de volatilitat i control de drawdown aplicat a IT.',
-        stack_net_4: 'Auditoria de smart contracts i traçabilitat blockchain.',
+        stack_net_3: 'Firewalls, Segmentació de Xarxa i Zero-Trust.',
+        stack_net_4: 'Polítiques d\'Identitat (IAM) i System Hardening.',
         stack_auto_title: 'Automatització & Codi',
         stack_auto_1: 'Scripting potent: <strong>Bash</strong> (Linux) i <strong>PowerShell</strong> (Windows).',
         stack_auto_2: 'Desenvolupament d\'eines d\'administració amb <strong>Python</strong>.',
@@ -335,7 +317,7 @@ const translations = {
         footer_spec_2: 'Google Workspace & Cloud IAM',
         footer_spec_3: 'W3C DID/VC & vLEI / GLEIF',
         footer_spec_4: 'Linux Security Hardening',
-        footer_spec_5: 'Anàlisi Quantitatiu de Riscos',
+        footer_spec_5: 'Microsoft Entra ID & Active Directory',
         footer_privacy: 'Política de Privacitat',
         footer_terms: 'Termes i Condicions',
         footer_disability: 'Certificat Discapacitat >33%',
@@ -360,7 +342,7 @@ const translations = {
     },
     en: {
         page_title: 'Alberto Trujillo | DevOps & Systems Engineer | Cybersecurity & Cloud/IAM',
-        hero_subtitle: 'Junior DevOps & Systems Engineer | Cybersecurity · Cloud/IAM',
+        hero_subtitle: 'Junior Systems & Cloud Security Engineer | Cloud/IAM & Sysadmin',
         nav_availability: 'Availability',
         nav_experience: 'Experience',
         nav_stack: 'Tech Stack',
@@ -369,9 +351,9 @@ const translations = {
         nav_blog: 'Blog',
         nav_contact: 'Contact',
         hero_tag1: 'ASIR + SMR (Higher & Mid Vocational Degrees)',
-        hero_tag2: 'DevOps, Cloud/IAM & Hardening',
-        hero_tag3: 'Self-Taught & Cybersecurity / Web3',
-        hero_description: 'Certified in ASIR & SMR with a strong self-taught drive. Specialized in protecting & managing cloud/identity infrastructure (Google Workspace/IAM, Cloudflare, Fly.io), hardening, decentralized digital identity, and quantitative risk management.',
+        hero_tag2: 'Systems Administration, Cloud/IAM & Security',
+        hero_tag3: 'Self-Taught & Cybersecurity',
+        hero_description: 'Certified in ASIR & SMR with a strong self-taught drive. Specialized in managing systems and cloud/identity infrastructure (Google Workspace/IAM, Microsoft Entra ID, Cloudflare, Linux/Windows Server), system hardening, perimeter network security, and infrastructure automation.',
         hero_download_cv: 'Download CV',
         hero_contact: 'Contact Me',
         availability_title: 'Availability and Key Facts',
@@ -387,7 +369,7 @@ const translations = {
         exp_title: 'Professional Experience',
         
         // Attestto
-        exp_attestto_role: 'Junior DevOps & Systems Engineer | Cybersecurity · Cloud/IAM',
+        exp_attestto_role: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
         exp_attestto_company: 'Attestto · Part-time',
         exp_attestto_period: 'Jul. 2026 - Present · 2 mos',
         exp_attestto_location: 'Delaware, United States · Remote',
@@ -398,16 +380,7 @@ const translations = {
         exp_attestto_4: 'Engineering digital identity and trust infrastructure based on open standards: verifiable credentials (<strong>W3C DID/VC</strong>), organizational identity (<strong>GLEIF / vLEI</strong>), and EU digital signatures (<strong>eIDAS</strong>).',
         exp_attestto_5: 'Maintaining secure, reliable, and well-documented infrastructure, along with technical support for Spanish-speaking community and localization (<strong>EN↔ES</strong>).',
 
-        // eToro / Quantitative Risk Management
-        exp_etoro_role: 'Quantitative Analyst & Risk Management (Tech Assets)',
-        exp_etoro_company: 'Fintech & Quantitative Asset Management',
-        exp_etoro_period: 'Jun. 2026 - Present · 3 mos',
-        exp_etoro_location: 'Limassol, Cyprus · Remote',
-        exp_etoro_context: 'Statistical Modeling, Volatility Mitigation & Strategic Tech Risk Management',
-        exp_etoro_1: '<strong>Data-Driven Strategy:</strong> Quantitative selection and allocation of global technology equities and high-performing assets.',
-        exp_etoro_2: '<strong>Strict Risk Control:</strong> Continuous enforcement of volatility tracking and drawdown mitigation models.',
-        exp_etoro_3: '<strong>Transferable Analytical Discipline:</strong> Statistical logic and control framework applied to fault tolerance in critical IT systems and infrastructure.',
-        exp_etoro_4: '<strong>Consistency Recognition:</strong> Official management program recognition after exceeding stability and risk metrics.',
+        
 
         // Minsait
         exp_minsait_role: 'Systems Support Technician',
@@ -432,8 +405,8 @@ const translations = {
         exp_iis_6: '<strong>Preventive maintenance:</strong> Cleaning, review, and tuning of equipment to ensure daily availability.',
 
         stack_title: 'Technology Arsenal',
-        stack_cloud_title: 'Cloud, IAM & DevOps',
-        stack_cloud_1: 'Cloud & identity administration: <strong>Google Workspace / IAM</strong>.',
+        stack_cloud_title: 'Cloud, Systems & IAM',
+        stack_cloud_1: 'Identity Administration (IAM): <strong>Microsoft Entra ID, Active Directory, and Google Workspace</strong>.',
         stack_cloud_2: 'Perimeter security, DNS management & proxying via <strong>Cloudflare</strong>.',
         stack_cloud_3: 'Serverless container deployment on <strong>Fly.io</strong>.',
         stack_cloud_4: 'Digital Identity Standards: <strong>W3C DID/VC, GLEIF / vLEI, eIDAS</strong>.',
@@ -447,11 +420,11 @@ const translations = {
         stack_os_2: 'Windows Server domain management and Group Policy Objects (GPO).',
         stack_os_3: 'Directory Services: <strong>Active Directory, Samba AD, OpenLDAP</strong>.',
         stack_os_4: 'System hardening and security patch management.',
-        stack_net_title: 'Networking, Cybersecurity & Risk',
+        stack_net_title: 'Networking & Cybersecurity',
         stack_net_1: 'VLAN configuration, Trunking, and Spanning Tree.',
         stack_net_2: 'Dynamic routing (<strong>OSPF, RIP</strong>) and static routing.',
-        stack_net_3: 'Quantitative volatility tracking & drawdown control applied to IT.',
-        stack_net_4: 'Smart contracts auditing and blockchain traceability.',
+        stack_net_3: 'Firewalls, Network Segmentation, and Zero-Trust Policies.',
+        stack_net_4: 'Identity Hardening and IAM Policies.',
         stack_auto_title: 'Automation & Code',
         stack_auto_1: 'Powerful scripting: <strong>Bash</strong> (Linux) and <strong>PowerShell</strong> (Windows).',
         stack_auto_2: 'Development of administration tools with <strong>Python</strong>.',
@@ -507,7 +480,7 @@ const translations = {
         form_error: 'Error sending message. Please try again.',
         footer_role: 'DevOps & Systems Engineer | Cybersecurity',
         footer_rights: 'All rights reserved.',
-        footer_brand_desc: 'Junior DevOps, Systems & Cybersecurity Engineer. Specialized in Cloud/IAM, Infrastructure Hardening, and Decentralized Digital Identity.',
+        footer_brand_desc: 'Junior Systems & Cloud Security Engineer. Specialized in Systems Administration, Cloud/IAM, Infrastructure Hardening, and Network Security.',
         footer_status: 'All Systems Operational · Cloudflare Secured',
         footer_nav_title: 'Navigation',
         footer_specs_title: 'Specializations & Certification',
@@ -516,7 +489,7 @@ const translations = {
         footer_spec_2: 'Google Workspace & Cloud IAM',
         footer_spec_3: 'W3C DID/VC & vLEI / GLEIF',
         footer_spec_4: 'Linux Security Hardening',
-        footer_spec_5: 'Quantitative Risk Analysis',
+        footer_spec_5: 'Microsoft Entra ID & Active Directory',
         footer_privacy: 'Privacy Policy',
         footer_terms: 'Terms & Conditions',
         footer_disability: 'Disability Certificate >33%',
@@ -622,15 +595,15 @@ export function applyTranslation(lang) {
     
     // Dynamically calculate and refresh experience dates to prevent any staleness
     translations.es.exp_attestto_period = calculateExperience(2026, 7, 'es', 'jul. 2026');
-    translations.es.exp_etoro_period = calculateExperience(2026, 6, 'es', 'jun. 2026');
+    
     translations.es.stat_exp_val = calculateTotalItYears('es');
 
     translations.ca.exp_attestto_period = calculateExperience(2026, 7, 'ca', 'jul. 2026');
-    translations.ca.exp_etoro_period = calculateExperience(2026, 6, 'ca', 'jun. 2026');
+    
     translations.ca.stat_exp_val = calculateTotalItYears('ca');
 
     translations.en.exp_attestto_period = calculateExperience(2026, 7, 'en', 'Jul. 2026');
-    translations.en.exp_etoro_period = calculateExperience(2026, 6, 'en', 'Jun. 2026');
+    
     translations.en.stat_exp_val = calculateTotalItYears('en');
 
     document.title = translations[targetLang]['page_title'];
