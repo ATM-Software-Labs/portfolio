@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alberto Trujillo Mingorance | Systems & Cloud Security Engineer | Cybersecurity & Cloud/IAM</title>
-    <meta name="description" content="Portfolio profesional de Alberto Trujillo Mingorance (Alberto Trujillo): Ingeniero Junior de Sistemas y Seguridad Cloud (Cloud/IAM, Ciberseguridad, Active Directory). Titulado en ASIR y SMR.">
+    <title>Alberto Trujillo | Systems & Cloud Administrator | Cybersecurity & IAM</title>
+    <meta name="description" content="Junior Systems & Cloud Administrator based in Barcelona. Specialized in Linux/Windows Server, Microsoft Entra ID, Cloudflare, Network Security, and Infrastructure Hardening. ASIR graduate.">
     <meta name="keywords" content="Alberto Trujillo, Alberto Trujillo Mingorance, Alberto Trujillo Systems, Alberto Trujillo Attestto, Systems Engineer, Systems Engineer, Security Engineer, ASIR, SMR, ITB, Cloud IAM, Google Workspace, Cloudflare, Fly.io, W3C DID/VC, vLEI, eIDAS, Hardening, Linux, Docker, Blockchain Forensics, Ciberseguridad">
     <meta name="author" content="Alberto Trujillo Mingorance">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -13,8 +13,8 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Alberto Trujillo Mingorance">
-    <meta property="og:title" content="Alberto Trujillo Mingorance | Systems & Cloud Security Engineer">
-    <meta property="og:description" content="Portfolio profesional de Alberto Trujillo Mingorance. Experiencia en Attestto (SecOps & Systems Engineer). Especializado en Cloud/IAM, Ciberseguridad e Identidad Digital.">
+    <meta property="og:title" content="Alberto Trujillo | Systems & Cloud Administrator | Cybersecurity & IAM">
+    <meta property="og:description" content="Junior Systems & Cloud Administrator based in Barcelona. Specialized in Linux/Windows Server, Microsoft Entra ID, Cloudflare, Network Security, and Infrastructure Hardening. ASIR graduate.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alberto.trujillomingorance.com/">
     <meta property="og:image" content="https://alberto.trujillomingorance.com/assets/images/Alberto.webp">
@@ -22,8 +22,8 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alberto Trujillo Mingorance | Systems & Cloud Security Engineer">
-    <meta name="twitter:description" content="Portfolio profesional de Alberto Trujillo Mingorance. Experiencia en Attestto. Especializado en Administración de Sistemas, Cloud/IAM, Hardening y Seguridad de Red.">
+    <meta name="twitter:title" content="Alberto Trujillo | Systems & Cloud Administrator | Cybersecurity & IAM">
+    <meta name="twitter:description" content="Junior Systems & Cloud Administrator based in Barcelona. Specialized in Linux/Windows Server, Microsoft Entra ID, Cloudflare, Network Security, and Infrastructure Hardening. ASIR graduate.">
     <meta name="twitter:image" content="https://alberto.trujillomingorance.com/assets/images/Alberto.webp">
 
     <!-- AI Search & Large Language Model (LLM) Direct Indexing Feeds -->
@@ -294,11 +294,18 @@
                     </a>
                     <div class="mobile-lang-container">
                         <span class="mobile-lang-label">Idioma / Language:</span>
-                        <div class="lang-switcher mobile-lang-switcher">
-                            <button type="button" class="lang-btn" data-lang="es">Español</button>
-                            <button type="button" class="lang-btn" data-lang="ca">Català</button>
-                            <button type="button" class="lang-btn" data-lang="en">English</button>
+                        
+                    <div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
+                        <button type="button" id="mobile-lang-trigger" class="lang-btn" style="background-color: rgba(24, 24, 27, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 0.5rem 1rem; color: white; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <span id="current-lang-text">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i>
+                        </button>
+                        <div id="mobile-lang-menu" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-width: 120px; z-index: 50; overflow: hidden; flex-direction: column;">
+                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Espanol</button>
+                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Catala</button>
+                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">English</button>
                         </div>
+                    </div>
+
                     </div>
                 </div>
             </nav>
@@ -306,11 +313,18 @@
             <!-- Header Controls & Actions -->
             <div class="header-actions-wrapper">
                 <div class="header-controls desktop-controls">
-                    <div class="lang-switcher">
-                        <button type="button" class="lang-btn" data-lang="es">ES</button>
-                        <button type="button" class="lang-btn" data-lang="ca">CA</button>
-                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    
+                    <div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
+                        <button type="button" id="lang-trigger" class="lang-btn" style="background-color: rgba(24, 24, 27, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 0.5rem 1rem; color: white; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <span id="current-lang-text">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i>
+                        </button>
+                        <div id="lang-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-width: 120px; z-index: 50; overflow: hidden; flex-direction: column;">
+                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Espanol</button>
+                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Catala</button>
+                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">English</button>
+                        </div>
                     </div>
+
                     <button class="header-theme-btn theme-toggle-btn" aria-label="Alternar modo oscuro" title="Modo Oscuro / Claro">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -340,8 +354,8 @@
                             <span data-i18n="avail_join_status">Incorporación Inmediata</span>
                         </div>
 
-                        <h1 class="hero-name scroll-reveal">Alberto Trujillo</h1>
-                        <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle">Ingeniero Junior de Sistemas y Seguridad Cloud | Ciberseguridad · Cloud/IAM</h2>
+                        <h1 class="hero-title scroll-reveal" data-i18n="hero_title">Alberto Trujillo</h1>
+                        <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle" style="font-size:1.5rem; line-height:1.4; color:#a1a1aa; margin-bottom:1.5rem;">Systems & Cloud Administrator | Cybersecurity · Microsoft Entra ID / IAM · IT Infrastructure</h2>
                         
                         <div class="hero-tags scroll-reveal">
                             <span class="glass-tag tag-purple"><i class="fas fa-graduation-cap"></i> <span data-i18n="hero_tag1">ASIR + SMR (Grado Sup. & Medio)</span></span>
@@ -349,9 +363,7 @@
                             <span class="glass-tag tag-indigo"><i class="fas fa-user-ninja"></i> <span data-i18n="hero_tag3">Autodidacta & Ciberseguridad</span></span>
                         </div>
 
-                        <p class="hero-description scroll-reveal" data-i18n="hero_description">
-                            Titulado en ASIR y SMR con perfil fuertemente autodidacta. Especializado en protección y administración de infraestructuras cloud e identidad (Google Workspace/IAM, Cloudflare, Fly.io), hardening, identidades descentralizadas y gestión cuantitativa de riesgos.
-                        </p>
+                        <p class="hero-description scroll-reveal" data-i18n="hero_description">Técnico Superior ASIR especializado en administración de infraestructuras críticas, gestión de identidades y accesos (Microsoft Entra ID, Active Directory), seguridad perimetral y hardening de sistemas. Incorporación inmediata.</p>
 
                         <div class="hero-ctas scroll-reveal">
                             <a href="/CV.pdf" download class="btn btn-primary btn-green" data-i18n="hero_download_cv"><i class="fas fa-download"></i> Descargar CV</a>
@@ -456,28 +468,14 @@
         <section id="disponibilidad" class="section-padding scroll-reveal">
             <div class="container">
                 <h2 class="section-title" data-i18n="availability_title">Disponibilidad y Datos Clave</h2>
-                <div class="grid-4 availability-grid">
-                    <div class="glass-card">
-                        <div class="card-icon blue-icon"><i class="fas fa-universal-access"></i></div>
-                        <h3 data-i18n="avail_disability_title">Discapacidad >33%</h3>
-                        <p data-i18n="avail_disability_text">Certificado oficial >33%, medidas de fomento del empleo.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon green-icon"><i class="fas fa-calendar-check"></i></div>
-                        <h3 data-i18n="avail_join_title">Incorporación Inmediata</h3>
-                        <p data-i18n="avail_join_text">Disponibilidad Inmediata para nuevos retos.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon purple-icon"><i class="fas fa-clock"></i></div>
-                        <h3 data-i18n="avail_schedule_title">Flexibilidad Horaria</h3>
-                        <p data-i18n="avail_schedule_text">Jornada partida, turnos rotativos, guardias.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon indigo-icon"><i class="fas fa-route"></i></div>
-                        <h3 data-i18n="avail_mobility_title">Movilidad Geográfica</h3>
-                        <p data-i18n="avail_mobility_text">Presencial, híbrido o teletrabajo.</p>
-                    </div>
+                
+                <div class="availability-bar" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; background: rgba(24, 24, 27, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 0.75rem;">
+                    <span style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #60a5fa;" data-i18n="avail_bar_1">Immediate Availability</span>
+                    <span style="padding: 0.5rem 1rem; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #c084fc;" data-i18n="avail_bar_2">Barcelona / Remote</span>
+                    <span style="padding: 0.5rem 1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #fb923c;" data-i18n="avail_bar_3">Disability Quota Eligible (>33%)</span>
                 </div>
+
+            </div>
             </div>
         </section>
 
@@ -676,21 +674,9 @@
                             <a href="https://ai.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
                         </div>
                         <p class="project-desc" data-i18n="proj_trujillo_desc">Estudio de Inteligencia Artificial full-stack y bot de Discord de alta velocidad desplegado sobre Cloudflare Workers Edge. Incorpora streaming en tiempo real con Meta Llama 3.3 70B, búsqueda web en vivo, síntesis de imágenes con Flux AI, memoria KV persistente, autenticación JWT/OTP y defensas de grado militar.</p>
+                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Cloudflare Workers</span><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Llama 3.3 70B</span><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">KV Storage</span></div>
                         
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_trujillo_tech">Cloudflare Workers Edge, Groq (Llama 3.3 70B), Flux AI, KV Storage, Discord API v10, SSE Streaming</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_trujillo_app">Estudio de IA generativa, bot de Discord con comandos slash, razonamiento profundo y generación de imágenes.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_trujillo_value">Arquitectura de coste cero con edge caching, rate limiting L1 en RAM y sistema de defensa perimetral de grado militar.</p>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <!-- Project 1: Solana Forensics -->
@@ -703,21 +689,9 @@
                             <a href="https://solanaforensic.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
                         </div>
                         <p class="project-desc" data-i18n="proj_solana_desc">Herramienta de seguimiento de transacciones en la blockchain de Solana y análisis forense. Permite rastrear el flujo de fondos y detectar patrones anómalos.</p>
+                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Python</span><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Blockchain RPC</span><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">OSINT</span></div>
                         
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_solana_tech">RPC Solana, Python</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_solana_app">Detección de anomalías</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_solana_value">Skills aplicadas a seguridad</p>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <!-- Project 2: FocusGuard -->
@@ -730,21 +704,9 @@
                             <a href="https://focusguard.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
                         </div>
                         <p class="project-desc" data-i18n="proj_focus_desc">Sistema de filtrado DNS y protección Zero-Trust en tiempo real para bloquear contenido no deseado y de distracción. Diseñado y desplegado sobre la infraestructura serverless de Cloudflare Workers.</p>
+                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Zero-Trust DNS</span><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Cloudflare Edge</span><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">D1 SQLite</span></div>
                         
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_focus_tech">Cloudflare Workers, D1 Database</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_focus_app">Filtrado DNS en tiempo real</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_focus_value">Arquitectura serverless y seguridad perimetral</p>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <!-- Project: Open-Sentinel -->
@@ -758,20 +720,7 @@
                         </div>
                         <p class="project-desc">Sistema open-source de telemetría de hardware, alertas de arranque multicanal (Discord, Telegram, WhatsApp) y consola forense remota con escáner de seguridad Zero-Trust.</p>
                         
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4>Tecnología</h4>
-                                <p>Python, Bash, PowerShell, GitHub Actions CI/CD</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Aplicación</h4>
-                                <p>Monitorización forense de endpoints y alertas de intrusión</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Valor Profesional</h4>
-                                <p>Observabilidad de endpoints, seguridad Zero-Trust y automatización</p>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <!-- Project 3: Automation Suite -->
@@ -961,5 +910,40 @@
 
     <!-- Toast Notification Container -->
     <div id="toast-container" class="toast-container"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  function setupDropdown(triggerId, menuId) {
+    const trigger = document.getElementById(triggerId);
+    const menu = document.getElementById(menuId);
+    if (!trigger || !menu) return;
+    
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = menu.style.display === 'flex';
+      menu.style.display = isVisible ? 'none' : 'flex';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    menu.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trigger.querySelector('span').textContent = btn.getAttribute('data-lang').toUpperCase();
+        menu.style.display = 'none';
+      });
+      // hover effect
+      btn.addEventListener('mouseenter', () => btn.style.backgroundColor = 'rgba(255,255,255,0.1)');
+      btn.addEventListener('mouseleave', () => btn.style.backgroundColor = 'transparent');
+    });
+  }
+  setupDropdown('lang-trigger', 'lang-menu');
+  setupDropdown('mobile-lang-trigger', 'mobile-lang-menu');
+});
+</script>
+
 </body>
 </html>
