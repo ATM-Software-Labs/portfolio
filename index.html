@@ -264,7 +264,7 @@
     background-color: rgba(24, 24, 27, 0.4);
     border: 1px solid #27272a;
     border-radius: 0.75rem;
-    padding: 1rem;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     transition: all 0.2s ease;
@@ -308,10 +308,10 @@
     flex-wrap: wrap;
 }
 .min-badge {
-    font-size: 10px;
+    font-size: 11px;
     background-color: #27272a;
     color: #d4d4d8;
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: 0.375rem;
 }
 </style>
@@ -352,16 +352,21 @@
                     <div class="mobile-lang-container">
                         <span class="mobile-lang-label">Idioma / Language:</span>
                         
-                    <div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
-                        <button type="button" id="mobile-lang-trigger" class="lang-btn" style="background-color: rgba(24, 24, 27, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 0.5rem 1rem; color: white; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                            <span id="current-lang-text">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i>
-                        </button>
-                        <div id="mobile-lang-menu" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-width: 120px; z-index: 50; overflow: hidden; flex-direction: column;">
-                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Espanol</button>
-                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Catala</button>
-                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">English</button>
-                        </div>
-                    </div>
+                    
+
+<div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
+    <button type="button" id="mobile-lang-trigger" class="lang-btn" style="background-color: rgba(24,24,27,0.9); border: 1px solid rgba(63,63,70,0.6); border-radius: 0.5rem; padding: 0.375rem 0.75rem; color: #e4e4e7; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: background 0.2s;">
+        <span id="mobile-current-lang-text" style="display:flex; align-items:center; gap:6px;"><svg width="16" height="12" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg> ES</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7;"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="mobile-lang-menu" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); min-width: 140px; z-index: 50; padding: 0.375rem; flex-direction: column; gap: 0.25rem;">
+        <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg> Español</button>
+        <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 9 6"><rect width="9" height="6" fill="#fedd00"/><path d="M0 1h9v1H0zm0 2h9v1H0z" fill="#da121a"/></svg> Català</button>
+        <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> English</button>
+    </div>
+</div>
+
+
 
                     </div>
                 </div>
@@ -526,11 +531,16 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="availability_title">Disponibilidad y Datos Clave</h2>
                 
-                <div class="availability-bar" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; background: rgba(24, 24, 27, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 0.75rem;">
-                    <span style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #60a5fa;" data-i18n="avail_bar_1">Immediate Availability</span>
-                    <span style="padding: 0.5rem 1rem; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #c084fc;" data-i18n="avail_bar_2">Barcelona / Remote</span>
-                    <span style="padding: 0.5rem 1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 9999px; font-size: 0.875rem; color: #fb923c;" data-i18n="avail_bar_3">Disability Quota Eligible (>33%)</span>
+                
+                <div class="availability-bar" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; padding: 1rem; margin-top: 1rem;">
+                    <span style="display:flex; align-items:center; gap:8px; padding: 0.375rem 0.875rem; background: rgba(24,24,27,0.6); border: 1px solid rgba(39,39,42,0.8); border-radius: 9999px; font-size: 0.75rem; color: #d4d4d8;">
+                        <span style="width:8px; height:8px; background-color:#10b981; border-radius:50%; display:inline-block;"></span>
+                        <span data-i18n="avail_bar_1">Disponibilidad Inmediata</span>
+                    </span>
+                    <span style="display:flex; align-items:center; gap:8px; padding: 0.375rem 0.875rem; background: rgba(24,24,27,0.6); border: 1px solid rgba(39,39,42,0.8); border-radius: 9999px; font-size: 0.75rem; color: #d4d4d8;" data-i18n="avail_bar_2">Barcelona / Remoto</span>
+                    <span style="display:flex; align-items:center; gap:8px; padding: 0.375rem 0.875rem; background: rgba(24,24,27,0.6); border: 1px solid rgba(39,39,42,0.8); border-radius: 9999px; font-size: 0.75rem; color: #d4d4d8;" data-i18n="avail_bar_3">Cuota de Discapacidad >33% Acreditada</span>
                 </div>
+
 
             </div>
             </div>
@@ -766,7 +776,7 @@
         <section id="certificaciones" class="section-padding scroll-reveal">
             <div class="container">
                 <h2 class="section-title" data-i18n="certs_title">Credenciales & Licencias</h2>
-                <div class="grid-1">
+                <div class="grid-1" style="max-width: 800px; margin: 0 auto;">
                     <div class="glass-card project-card featured-project border-top-blue">
                         <div class="project-header">
                             <div>
@@ -950,7 +960,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menu.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
-        trigger.querySelector('span').textContent = btn.getAttribute('data-lang').toUpperCase();
+        trigger.querySelector('span').innerHTML = btn.innerHTML.split(' ')[0] + ' ' + btn.getAttribute('data-lang').toUpperCase();
         menu.style.display = 'none';
       });
       // hover effect
