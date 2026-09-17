@@ -147,7 +147,7 @@ export function initTerminal() {
           ? `[ IDENTITY SUMMARY ]<br>
              Full Name: Alberto Trujillo Mingorance<br>
              Primary Role: Junior Systems & Cloud Security Engineer | Cybersecurity & IAM<br>
-             Academic Degrees: ASIXc (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
+             Academic Degrees: ASIR (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
              Current Status: Ex-SecOps & Systems at Attestto | Certified Disability >33% | Immediate Availability<br>
              
              `
@@ -162,7 +162,7 @@ export function initTerminal() {
           : `[ RESUMEN DE IDENTIDAD ]<br>
              Nombre Completo: Alberto Trujillo Mingorance<br>
              Rol Principal: Systems & Cloud Administrator | Ciberseguridad e IAM<br>
-             Titulaciones Académicas: ASIXc (Grado Superior, Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
+             Titulaciones Académicas: ASIR (Grado Superior, Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
              Estatus Actual: Ex-SecOps & Systems en Attestto | Discapacidad Certificada >33% | Incorporacion Inmediata<br>
              
              `;
@@ -179,7 +179,7 @@ export function initTerminal() {
             <pre style="font-family: monospace; font-size: 0.8rem; line-height: 1.45; color: var(--text-main); margin: 0;">
 OS Platform:         Linux Debian GNU/Linux 12 (Bookworm) / Hardened Kernel
 Runtime Environment: Cloudflare Workers, Pages & Fly.io Containers
-Academic Degrees: ASIXc (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
+Academic Degrees: ASIR (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
 IAM Governance:      Google Workspace IAM, Cloudflare RBAC, Scoped Least-Privilege
 Security Benchmarks: CIS Server Standards, HSTS Preload, W3C DID/VC Digital Identity
 Tech Stack:          Linux Administration, Docker, Ansible, Bash, PowerShell, Active Directory
