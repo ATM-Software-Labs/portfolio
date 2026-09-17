@@ -147,22 +147,22 @@ export function initTerminal() {
           ? `[ IDENTITY SUMMARY ]<br>
              Full Name: Alberto Trujillo Mingorance<br>
              Primary Role: Junior Systems & Cloud Security Engineer | Cybersecurity & IAM<br>
-             Academic Degrees: ASIR (Higher Degree) + SMR (Mid Degree) @ Institut Tecnològic de Barcelona (ITB)<br>
+             Academic Degrees: ASIXc (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
              Current Status: Ex-SecOps & Systems at Attestto | Certified Disability >33% | Immediate Availability<br>
              
              `
           : lang === 'ca'
           ? `[ RESUM D'IDENTITAT ]<br>
              Nom Complet: Alberto Trujillo Mingorance<br>
-             Rol Principal: Enginyer Junior de DevOps i Sistemes | Ciberseguretat · Cloud/IAM<br>
-             Titulacions Acadèmiques: ASIX (Grau Superior) + SMX (Grau Mitjà) @ Institut Tecnològic de Barcelona (ITB)<br>
+             Rol Principal: Systems & Cloud Administrator | Ciberseguretat i IAM<br>
+             Titulacions Acadèmiques: ASIXc (Grau Superior, Perfil Ciberseguretat) + SMX @ Institut Tecnològic de Barcelona<br>
              Estatus Actual: Ex-SecOps & Systems a Attestto | Discapacitat Certificada >33% | Incorporacio Immediata<br>
              
              `
           : `[ RESUMEN DE IDENTIDAD ]<br>
              Nombre Completo: Alberto Trujillo Mingorance<br>
-             Rol Principal: Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM<br>
-             Titulaciones Académicas: ASIR (Grado Superior) + SMR (Grado Medio) @ Institut Tecnològic de Barcelona (ITB)<br>
+             Rol Principal: Systems & Cloud Administrator | Ciberseguridad e IAM<br>
+             Titulaciones Académicas: ASIXc (Grado Superior, Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
              Estatus Actual: Ex-SecOps & Systems en Attestto | Discapacidad Certificada >33% | Incorporacion Inmediata<br>
              
              `;
@@ -179,7 +179,7 @@ export function initTerminal() {
             <pre style="font-family: monospace; font-size: 0.8rem; line-height: 1.45; color: var(--text-main); margin: 0;">
 OS Platform:         Linux Debian GNU/Linux 12 (Bookworm) / Hardened Kernel
 Runtime Environment: Cloudflare Workers, Pages & Fly.io Containers
-Academic Degrees:    ASIR (Higher) + SMR (Mid) @ Institut Tecnològic de Barcelona (ITB)
+Academic Degrees: ASIXc (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
 IAM Governance:      Google Workspace IAM, Cloudflare RBAC, Scoped Least-Privilege
 Security Benchmarks: CIS Server Standards, HSTS Preload, W3C DID/VC Digital Identity
 Tech Stack:          Linux Administration, Docker, Ansible, Bash, PowerShell, Active Directory
@@ -354,30 +354,13 @@ Estatus Laboral:     Incorporación Inmediata para Puestos Presenciales / Híbri
         break;
 
       case 'certs':
-        const certHeader = lang === 'ca' ? 'TITULACIONS I FORMACIÓ ACADÈMICA' : lang === 'en' ? 'ACADEMIC DEGREES & ACCREDITATIONS' : 'TITULACIONES Y FORMACIÓN ACADÉMICA';
-        const certText = lang === 'en' ? `
+        const certTextNew = `
           <div class="term-card">
-            <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 8px;">[ ACADEMIC CREDENTIALS: ${certHeader} ]</div>
-            - ASIR: Higher Degree in Network Computer Systems Administration @ Institut Tecnològic de Barcelona (ITB)<br>
-            - SMR: Mid Degree in Microcomputer Systems and Networks @ Institut Tecnològic de Barcelona (ITB)<br>
-            - Continuous Self-Taught Training: Systems Hardening, Cloud IAM & Web3 Engineering<br>
-            - Official Disability Certification: >33% Certified Disability (Law 43/2006 Tax Deduction Eligible)
-          </div>` : lang === 'ca' ? `
-          <div class="term-card">
-            <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 8px;">[ TITULACIONS ACADÈMIQUES: ${certHeader} ]</div>
-            - ASIX: Grau Superior en Administració de Sistemes Informàtics en Xarxa @ Institut Tecnològic de Barcelona (ITB)<br>
-            - SMX: Grau Mitjà en Sistemes Microinformàtics i Xarxes @ Institut Tecnològic de Barcelona (ITB)<br>
-            - Formació Autodidacta Contínua: Hardening Linux, Cloud IAM i Enginyeria Web3<br>
-            - Certificació Oficial de Discapacitat: >33% Discapacitat Certificada (Llei 43/2006 Elegible)
-          </div>` : `
-          <div class="term-card">
-            <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 8px;">[ TITULACIONES ACADÉMICAS: ${certHeader} ]</div>
-            - ASIR: Grado Superior en Administración de Sistemas Informáticos en Red @ Institut Tecnològic de Barcelona (ITB)<br>
-            - SMR: Grado Medio en Sistemas Microinformáticos y Redes @ Institut Tecnològic de Barcelona (ITB)<br>
-            - Formación Autodidacta Continua: Hardening Linux, Cloud IAM e Ingeniería Web3<br>
-            - Certificación Oficial de Discapacidad: >33% Discapacidad Oficial Certificada (Ley 43/2006 Elegible)
+            <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 8px;">[ ACTIVE CREDENTIALS ]</div>
+            - [ACTIVE] Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
+            &nbsp;&nbsp;Credential ID: F89C9FFB072C4C9A (Verified)
           </div>`;
-        appendOutput(certText);
+        appendOutput(certTextNew);
         break;
 
       case 'status':
