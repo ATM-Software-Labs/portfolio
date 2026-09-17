@@ -1,11 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('dynamic-projects-container');
     if (!container) return;
 
     const liveLinks = {
         'trujillo-ai-studio': 'https://ai.trujillomingorance.com',
-        'trujillo-ai': 'https://ai.trujillomingorance.com', // just in case
         'focusguard-saas': 'https://focusguard.trujillomingorance.com',
         'atm-tools': 'https://tools.trujillomingorance.com',
         'rewrite-ai': 'https://rewrite.trujillomingorance.com',
@@ -21,53 +19,82 @@ document.addEventListener('DOMContentLoaded', () => {
         'open-sentinel': 'Ciberseguridad'
     };
 
+    const nameOverrides = {
+        'atm-tools': 'ATM Tools',
+        'open-sentinel': 'Open-Sentinel',
+        'rewrite-ai': 'Rewrite AI',
+        'trujillo-ai-studio': 'Trujillo AI Studio',
+        'trujillo-guides': 'Trujillo Guides',
+        'focusguard-saas': 'FocusGuard SaaS'
+    };
+
+    // Dictionary for localized descriptions
+    const descOverrides = {
+        'es': {
+            'atm-tools': 'Suite de herramientas cliente orientada a la accesibilidad y privacidad sin backend.',
+            'open-sentinel': 'Telemetría local, alertas multicanal de arranque y control forense sin nube de terceros.',
+            'rewrite-ai': 'Motor de reescritura indetectable y corrección de estilo en Cloudflare Edge.',
+            'trujillo-ai-studio': 'Estudio de IA multimodal de ultra-alta velocidad sobre Groq LPU.',
+            'trujillo-guides': 'Runbooks de infraestructura, ingeniería de producción y guías de administración.',
+            'focusguard-saas': 'Filtrado DNS Zero-Trust perimetral contra malware, telemetría y rastreadores.'
+        },
+        'ca': {
+            'atm-tools': 'Suite d\'eines client orientada a l\'accessibilitat i privacitat sense backend.',
+            'open-sentinel': 'Telemetria local, alertes multicanal d\'arrencada i control forense sense núvol de tercers.',
+            'rewrite-ai': 'Motor de reescriptura indetectable i correcció d\'estil a Cloudflare Edge.',
+            'trujillo-ai-studio': 'Estudi d\'IA multimodal d\'ultra-alta velocitat sobre Groq LPU.',
+            'trujillo-guides': 'Runbooks d\'infraestructura, enginyeria de producció i guies d\'administració.',
+            'focusguard-saas': 'Filtrat DNS Zero-Trust perimetral contra malware, telemetria i rastrejadors.'
+        },
+        'en': {
+            'atm-tools': 'Client-side tool suite focused on accessibility and privacy without backend.',
+            'open-sentinel': 'Local telemetry, multi-channel boot alerts, and forensic control without third-party clouds.',
+            'rewrite-ai': 'Undetectable rewriting engine and style correction on Cloudflare Edge.',
+            'trujillo-ai-studio': 'Ultra-high-speed multimodal AI studio on Groq LPU.',
+            'trujillo-guides': 'Infrastructure runbooks, production engineering, and administration guides.',
+            'focusguard-saas': 'Zero-Trust perimeter DNS filtering against malware, telemetry, and trackers.'
+        }
+    };
+
     const excludeRepos = ['domain-root', 'portfolio', 'atm-labs-hub', 'savings'];
 
     const staticFallback = [
-        {
-            name: "trujillo-ai-studio",
-            description: "Asistente multimodal en Groq LPU con streaming en el Edge, visión y razonamiento de código.",
-            topics: ["Cloudflare Workers", "Groq", "Meta Llama 3.3"],
-            html_url: "https://github.com/ATM-Software-Labs/trujillo-ai-studio"
-        },
-        {
-            name: "rewrite-ai",
-            description: "Motor de reescritura y análisis textual en el Edge con proxies optimizados.",
-            topics: ["Cloudflare Pages", "Workers AI", "Groq"],
-            html_url: "https://github.com/ATM-Software-Labs/rewrite-ai"
-        },
-        {
-            name: "trujillo-guides",
-            description: "Runbooks de infraestructura, ingeniería de producción y guías de sistemas.",
-            topics: ["Technical Docs", "Cloud", "Linux"],
-            html_url: "https://github.com/ATM-Software-Labs/trujillo-guides"
-        },
-        {
-            name: "focusguard-saas",
-            description: "Proxy DNS Zero-Trust con filtrado perimetral contra malware y telemetría no deseada.",
-            topics: ["Zero-Trust", "DNS", "Cloudflare D1"],
-            html_url: "https://github.com/ATM-Software-Labs/focusguard-saas"
-        },
-        {
-            name: "atm-tools",
-            description: "Suite de utilidades técnicas client-side enfocada en privacidad y cero backend.",
-            topics: ["TypeScript", "Client-Side", "Edge"],
-            html_url: "https://github.com/ATM-Software-Labs/atm-tools"
-        },
-        {
-            name: "open-sentinel",
-            description: "Monitorización forense de endpoints, telemetría y alertas multicanal de arranque.",
-            topics: ["Python", "Bash", "Hardening"],
-            html_url: "https://github.com/ATM-Software-Labs/open-sentinel"
-        }
+        { name: "trujillo-ai-studio", topics: ["Cloudflare Workers", "Groq", "Meta Llama 3.3"], html_url: "https://github.com/ATM-Software-Labs/trujillo-ai-studio" },
+        { name: "rewrite-ai", topics: ["Cloudflare Pages", "Workers AI", "Groq"], html_url: "https://github.com/ATM-Software-Labs/rewrite-ai" },
+        { name: "trujillo-guides", topics: ["Technical Docs", "Cloud", "Linux"], html_url: "https://github.com/ATM-Software-Labs/trujillo-guides" },
+        { name: "focusguard-saas", topics: ["Zero-Trust", "DNS", "Cloudflare D1"], html_url: "https://github.com/ATM-Software-Labs/focusguard-saas" },
+        { name: "atm-tools", topics: ["TypeScript", "Client-Side", "Edge"], html_url: "https://github.com/ATM-Software-Labs/atm-tools" },
+        { name: "open-sentinel", topics: ["Python", "Bash", "Hardening"], html_url: "https://github.com/ATM-Software-Labs/open-sentinel" }
     ];
+
+    function getCurrentLang() {
+        return document.documentElement.lang || 'es';
+    }
 
     function renderCards(repos) {
         let html = '';
-        repos.forEach(repo => {
-            const nameLower = repo.name.toLowerCase();
-            if (excludeRepos.includes(nameLower)) return;
+        const currentLang = getCurrentLang();
+        
+        // Ensure only the 6 required repos are shown
+        const targetRepos = ['trujillo-ai-studio', 'rewrite-ai', 'trujillo-guides', 'focusguard-saas', 'atm-tools', 'open-sentinel'];
+        
+        // Filter out non-target
+        const filteredRepos = repos.filter(r => targetRepos.includes(r.name.toLowerCase()));
+        
+        // If API missed some, fill from fallback
+        const finalRepos = [];
+        targetRepos.forEach(target => {
+            const found = filteredRepos.find(r => r.name.toLowerCase() === target);
+            if (found) {
+                finalRepos.push(found);
+            } else {
+                const fallbackObj = staticFallback.find(r => r.name.toLowerCase() === target);
+                if (fallbackObj) finalRepos.push(fallbackObj);
+            }
+        });
 
+        finalRepos.forEach(repo => {
+            const nameLower = repo.name.toLowerCase();
             const category = categoriesMap[nameLower] || 'Herramientas';
             const liveUrl = liveLinks[nameLower];
             
@@ -82,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 topicsHtml = `<span class="min-badge">${repo.language}</span>`;
             }
 
-            const cleanName = repo.name.replace(/-/g, ' ').replace(/(^w|sw)/g, m => m.toUpperCase());
+            const cleanName = nameOverrides[nameLower] || repo.name;
+            const descDict = descOverrides[currentLang] || descOverrides['es'];
+            const finalDesc = descDict[nameLower] || repo.description;
 
             html += `
             <div class="min-card" data-category="${category}">
@@ -90,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="min-card-title">${cleanName}</h3>
                     <div style="display:flex; gap:0.5rem;">${linksHtml}</div>
                 </div>
-                <p class="min-card-desc">${repo.description || 'Sin descripción disponible.'}</p>
+                <p class="min-card-desc">${finalDesc}</p>
                 <div class="min-card-footer">
                     ${topicsHtml}
                 </div>
@@ -99,29 +128,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         container.innerHTML = html;
-        bindFilters();
     }
 
-    function bindFilters() {
-        const filterBtns = document.querySelectorAll('.min-filter-btn');
+    function initProjects() {
+        const cached = localStorage.getItem('atm_github_repos');
+        const cacheTime = localStorage.getItem('atm_github_repos_time');
+        const now = new Date().getTime();
+
+        if (cached && cacheTime && (now - parseInt(cacheTime)) < 86400000) {
+            renderCards(JSON.parse(cached));
+            return;
+        }
+
+        fetch('https://api.github.com/orgs/ATM-Software-Labs/repos?type=public&sort=updated&per_page=100')
+            .then(res => {
+                if (!res.ok) throw new Error('API Rate Limit');
+                return res.json();
+            })
+            .then(data => {
+                localStorage.setItem('atm_github_repos', JSON.stringify(data));
+                localStorage.setItem('atm_github_repos_time', now.toString());
+                renderCards(data);
+            })
+            .catch(err => {
+                console.warn('Usando fallback estático:', err);
+                renderCards(staticFallback);
+            });
+    }
+
+    initProjects();
+
+    // Re-render when language changes
+    window.addEventListener('languageChanged', () => {
+        const cached = localStorage.getItem('atm_github_repos');
+        if (cached) {
+            renderCards(JSON.parse(cached));
+        } else {
+            renderCards(staticFallback);
+        }
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active');
-                    // Reset to unselected styles (respecting theme if needed, but keeping it flat)
-                    b.style.background = 'transparent';
-                    b.style.color = 'var(--text-muted)';
-                    b.style.borderColor = 'var(--border-color)';
-                });
+                filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                btn.style.background = 'var(--btn-bg)';
-                btn.style.color = 'var(--text-main)';
-                btn.style.borderColor = 'var(--border-color)';
-                
                 const filter = btn.getAttribute('data-filter');
-                const cards = container.querySelectorAll('.min-card');
+                const cards = document.querySelectorAll('.min-card');
+                
                 cards.forEach(card => {
-                    if (filter === 'Todos' || card.getAttribute('data-category') === filter) {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'flex';
                     } else {
                         card.style.display = 'none';
@@ -130,40 +187,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // Skeleton loader
-    const skeletonHtml = Array(6).fill().map(() => `
-        <div class="skeleton-card" style="border-radius: 0.75rem; height: 144px;"></div>
-    `).join('');
-    container.innerHTML = skeletonHtml;
-
-    const abortController = new AbortController();
-    const timeout = setTimeout(() => abortController.abort(), 8000);
-
-    fetch('https://api.github.com/orgs/ATM-Software-Labs/repos?per_page=100&sort=updated', {
-        headers: { 'Accept': 'application/vnd.github.v3+json' },
-        signal: abortController.signal
-    })
-    .then(res => {
-        clearTimeout(timeout);
-        if (!res.ok) throw new Error('API limits or error');
-        return res.json();
-    })
-    .then(repos => {
-        localStorage.setItem('atm_repos_cache', JSON.stringify(repos));
-        renderCards(repos);
-    })
-    .catch(error => {
-        console.warn('GitHub API Fetch failed, using cache or fallback.', error);
-        const cached = localStorage.getItem('atm_repos_cache');
-        if (cached) {
-            try {
-                renderCards(JSON.parse(cached));
-            } catch(e) {
-                renderCards(staticFallback);
-            }
-        } else {
-            renderCards(staticFallback);
-        }
-    });
 });
