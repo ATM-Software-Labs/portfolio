@@ -258,6 +258,63 @@
     
     <!-- JS (Vite will process this) -->
     <script type="module" src="/src/js/main.js"></script>
+
+<style>
+.min-card {
+    background-color: rgba(24, 24, 27, 0.4);
+    border: 1px solid #27272a;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+.min-card:hover {
+    background-color: rgba(24, 24, 27, 0.8);
+    border-color: #3f3f46;
+}
+.min-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.min-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f4f4f5;
+    margin: 0;
+    text-transform: capitalize;
+}
+.min-card-link {
+    color: #a1a1aa;
+    transition: color 0.2s;
+}
+.min-card-link:hover { color: #f4f4f5; }
+.min-card-desc {
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.min-card-footer {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.min-badge {
+    font-size: 10px;
+    background-color: #27272a;
+    color: #d4d4d8;
+    padding: 2px 6px;
+    border-radius: 0.375rem;
+}
+</style>
 </head>
 <body class="dark">
     <!-- Back to Top Floating Button -->
@@ -650,94 +707,29 @@
         </section>
 
         <!-- Proyectos Section -->
+        
+        <!-- Proyectos Section (Dynamic GitHub ATM-Software-Labs) -->
         <section id="proyectos" class="section-padding bg-alt scroll-reveal">
             <div class="container">
-                <h2 class="section-title" data-i18n="projects_title">Proyectos</h2>
-
-                <!-- Project Category Filters -->
-                <div class="filter-container">
-                    <button type="button" class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">Todos los Proyectos</button>
-                    <button type="button" class="filter-btn" data-filter="devops" data-i18n="proj_filter_devops">Cloud & DevOps</button>
-                    <button type="button" class="filter-btn" data-filter="security" data-i18n="proj_filter_security">Ciberseguridad</button>
-                    <button type="button" class="filter-btn" data-filter="automation" data-i18n="proj_filter_automation">Automatización</button>
+                <h2 class="section-title" data-i18n="projects_title">Lab & Projects</h2>
+                
+                <!-- Minimalist Category Filters -->
+                <div class="min-filters" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-bottom:2rem;">
+                    <button type="button" class="min-filter-btn active" data-filter="Todos" style="background:#27272a; border:1px solid #3f3f46; color:#f4f4f5; padding:0.5rem 1rem; border-radius:999px; font-size:0.875rem; cursor:pointer; transition:all 0.2s;">Todos</button>
+                    <button type="button" class="min-filter-btn" data-filter="Sistemas & Edge" style="background:transparent; border:1px solid #27272a; color:#a1a1aa; padding:0.5rem 1rem; border-radius:999px; font-size:0.875rem; cursor:pointer; transition:all 0.2s;">Sistemas & Edge</button>
+                    <button type="button" class="min-filter-btn" data-filter="Ciberseguridad" style="background:transparent; border:1px solid #27272a; color:#a1a1aa; padding:0.5rem 1rem; border-radius:999px; font-size:0.875rem; cursor:pointer; transition:all 0.2s;">Ciberseguridad</button>
+                    <button type="button" class="min-filter-btn" data-filter="Herramientas" style="background:transparent; border:1px solid #27272a; color:#a1a1aa; padding:0.5rem 1rem; border-radius:999px; font-size:0.875rem; cursor:pointer; transition:all 0.2s;">Herramientas</button>
                 </div>
 
-                <div class="projects-container">
-                    
-                    <!-- Project: Trujillo AI Studio & Discord Bot -->
-                    <div class="glass-card project-card featured-project border-top-blue" data-category="devops automation security">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge blue-badge" data-i18n="proj_trujillo_badge">IA & ARQUITECTURA SERVERLESS</span>
-                                <h3 data-i18n="proj_trujillo_title">Trujillo AI — Serverless AI Studio & Discord Bot</h3>
-                            </div>
-                            <a href="https://ai.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_trujillo_desc">Estudio de Inteligencia Artificial full-stack y bot de Discord de alta velocidad desplegado sobre Cloudflare Workers Edge. Incorpora streaming en tiempo real con Meta Llama 3.3 70B, búsqueda web en vivo, síntesis de imágenes con Flux AI, memoria KV persistente, autenticación JWT/OTP y defensas de grado militar.</p>
-                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Cloudflare Workers</span><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Llama 3.3 70B</span><span style="background:rgba(59,130,246,0.1); color:#60a5fa; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">KV Storage</span></div>
-                        
-                        
+                <!-- Dynamic Grid -->
+                <div id="dynamic-projects-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1rem; margin-top:1rem;">
+                    <div style="text-align:center; grid-column:1/-1; padding:2rem; color:#a1a1aa;">
+                        <i class="fas fa-circle-notch fa-spin" style="font-size:1.5rem;"></i><br><br>Cargando repositorios desde ATM Software Labs...
                     </div>
-
-                    <!-- Project 1: Solana Forensics -->
-                    <div class="glass-card project-card featured-project border-top-indigo" data-category="security devops">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge indigo-badge" data-i18n="proj_solana_badge">AUDITORÍA BLOCKCHAIN</span>
-                                <h3>Solana Forensics - Blockchain Intelligence & Audit Tool</h3>
-                            </div>
-                            <a href="https://solanaforensic.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_solana_desc">Herramienta de seguimiento de transacciones en la blockchain de Solana y análisis forense. Permite rastrear el flujo de fondos y detectar patrones anómalos.</p>
-                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Python</span><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Blockchain RPC</span><span style="background:rgba(99,102,241,0.1); color:#818cf8; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">OSINT</span></div>
-                        
-                        
-                    </div>
-
-                    <!-- Project 2: FocusGuard -->
-                    <div class="glass-card project-card featured-project border-top-green" data-category="devops security">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge green-badge" data-i18n="proj_focus_badge">SEGURIDAD & REDES</span>
-                                <h3 data-i18n="proj_focus_title">FocusGuard - Zero-Trust Parental Shield</h3>
-                            </div>
-                            <a href="https://focusguard.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_focus_desc">Sistema de filtrado DNS y protección Zero-Trust en tiempo real para bloquear contenido no deseado y de distracción. Diseñado y desplegado sobre la infraestructura serverless de Cloudflare Workers.</p>
-                        <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Zero-Trust DNS</span><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">Cloudflare Edge</span><span style="background:rgba(34,197,94,0.1); color:#4ade80; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.75rem;">D1 SQLite</span></div>
-                        
-                        
-                    </div>
-
-                    <!-- Project: Open-Sentinel -->
-                    <div class="glass-card project-card featured-project border-top-blue" data-category="security devops automation">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge blue-badge">TELEMETRÍA & FORENSICS</span>
-                                <h3>Open-Sentinel - PC Telemetry & Boot Alerts</h3>
-                            </div>
-                            <a href="https://github.com/atrumin16/open-sentinel" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fab fa-github"></i> Código</a>
-                        </div>
-                        <p class="project-desc">Sistema open-source de telemetría de hardware, alertas de arranque multicanal (Discord, Telegram, WhatsApp) y consola forense remota con escáner de seguridad Zero-Trust.</p>
-                        
-                        
-                    </div>
-
-                    <!-- Project 3: Automation Suite -->
-                    <div class="glass-card project-card border-top-purple" data-category="automation devops">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge purple-badge" data-i18n="proj_auto_badge">AUTOMATIZACIÓN</span>
-                                <h3 data-i18n="proj_auto_title">Suite de Automatización (Bash, PowerShell, Python)</h3>
-                            </div>
-                            <a href="https://github.com/AlbertoTrujillo-ITB2425/scripts-1ASIXc" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_view_repo"><i class="fab fa-github"></i> Código</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_auto_desc">Conjunto de scripts para realizar copias de seguridad incrementales, aprovisionamiento en Active Directory y monitorización de sistemas de forma automatizada.</p>
-                    </div>
-
                 </div>
             </div>
         </section>
+
 
         <!-- Formación Section -->
         <section id="formacion" class="section-padding scroll-reveal">
@@ -781,7 +773,7 @@
                                 <span class="project-badge blue-badge" style="background:rgba(59,130,246,0.1); color:#60a5fa;"><i class="fas fa-check-circle"></i> VERIFIED CREDENTIAL</span>
                                 <h3>Microsoft Applied Skills: Get started with identities and access using Microsoft Entra</h3>
                             </div>
-                            <a href="https://learn.microsoft.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verificar</a>
+                            <a href="https://learn.microsoft.com/en-us/users/albertotrujillo-8566/credentials/f89c9ffb072c4c9a?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verificar</a>
                         </div>
                         <p class="project-desc" style="color: #a1a1aa; margin-top: 0.5rem;"><strong>Emisor:</strong> Microsoft (Sep. 2026) <br><strong>ID Credencial:</strong> F89C9FFB072C4C9A</p>
                         <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
@@ -971,5 +963,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+    <script type="module" src="/src/js/github-projects.js"></script>
 </body>
 </html>
