@@ -376,6 +376,13 @@ html.dark, body.dark {
 }
 </style>
 
+
+<style>
+.lang-btn:hover {
+    background-color: var(--bg-badge) !important;
+    color: var(--text-title) !important;
+}
+</style>
 </head>
 <body class="dark">
     <!-- Back to Top Floating Button -->
@@ -415,17 +422,26 @@ html.dark, body.dark {
                         
                     
 
-<div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
-    <button type="button" id="mobile-lang-trigger" class="lang-btn" style="background-color: rgba(24,24,27,0.9); border: 1px solid rgba(63,63,70,0.6); border-radius: 0.5rem; padding: 0.375rem 0.75rem; color: #e4e4e7; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: background 0.2s;">
-        <span id="mobile-current-lang-text" style="display:flex; align-items:center; gap:6px;"><svg width="16" height="12" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg> ES</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7;"><path d="m6 9 6 6 6-6"/></svg>
-    </button>
-    <div id="mobile-lang-menu" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); min-width: 140px; z-index: 50; padding: 0.375rem; flex-direction: column; gap: 0.25rem;">
-        <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg> Español</button>
-        <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 9 6"><rect width="9" height="6" fill="#fedd00"/><path d="M0 1h9v1H0zm0 2h9v1H0z" fill="#da121a"/></svg> Català</button>
-        <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: #d4d4d8; padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; width: 100%; display:flex; align-items:center; gap:8px; transition: background 0.2s;"><svg width="16" height="12" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> English</button>
-    </div>
-</div>
+
+                    <div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
+                        <button type="button" id="lang-trigger" class="lang-btn" style="background-color: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.5rem; padding: 0.375rem 0.75rem; color: var(--text-title); display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.75rem; font-weight: 600; box-shadow: var(--shadow-card); transition: all 0.2s;">
+                            <span id="current-lang-svg"><svg width="18" height="13" viewBox="0 0 3 2" style="border-radius: 2px; overflow: hidden;"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg></span>
+                            <span id="current-lang-text">ES</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a1a1aa;"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div id="lang-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background-color: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); min-width: 140px; z-index: 50; padding: 0.375rem; flex-direction: column; gap: 0.25rem;">
+                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <svg width="18" height="13" viewBox="0 0 3 2" style="border-radius: 2px; overflow: hidden;"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg> Español
+                            </button>
+                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <svg width="18" height="13" viewBox="0 0 9 6" style="border-radius: 2px; overflow: hidden;"><rect width="9" height="6" fill="#fedd00"/><path d="M0 1h9v1H0zm0 2h9v1H0z" fill="#da121a"/></svg> Català
+                            </button>
+                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <svg width="18" height="13" viewBox="0 0 60 30" style="border-radius: 2px; overflow: hidden;"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> English
+                            </button>
+                        </div>
+                    </div>
+
 
 
 
@@ -436,15 +452,22 @@ html.dark, body.dark {
             <!-- Header Controls & Actions -->
             <div class="header-actions-wrapper">
                 <div class="header-controls desktop-controls">
-                    
                     <div class="lang-dropdown-wrapper" style="position: relative; display: inline-block;">
-                        <button type="button" id="lang-trigger" class="lang-btn" style="background-color: rgba(24, 24, 27, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 0.5rem 1rem; color: white; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                            <span id="current-lang-text">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8em;"></i>
+                        <button type="button" id="lang-trigger" class="lang-btn" style="background-color: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.5rem; padding: 0.375rem 0.75rem; color: var(--text-title); display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.75rem; font-weight: 600; box-shadow: var(--shadow-card); transition: all 0.2s;">
+                            <span id="current-lang-svg" style="display:flex; align-items:center;"><svg width="18" height="13" viewBox="0 0 3 2" style="border-radius: 2px; overflow: hidden;"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg></span>
+                            <span id="current-lang-text">ES</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a1a1aa;"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
-                        <div id="lang-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background-color: #09090b; border: 1px solid #27272a; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-width: 120px; z-index: 50; overflow: hidden; flex-direction: column;">
-                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Espanol</button>
-                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">Catala</button>
-                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: white; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: background 0.2s;">English</button>
+                        <div id="lang-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background-color: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); min-width: 140px; z-index: 50; padding: 0.375rem; flex-direction: column; gap: 0.25rem;">
+                            <button type="button" class="lang-btn" data-lang="es" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <span class="lang-svg-wrapper"><svg width="18" height="13" viewBox="0 0 3 2" style="border-radius: 2px; overflow: hidden;"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg></span> Español
+                            </button>
+                            <button type="button" class="lang-btn" data-lang="ca" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <span class="lang-svg-wrapper"><svg width="18" height="13" viewBox="0 0 9 6" style="border-radius: 2px; overflow: hidden;"><rect width="9" height="6" fill="#fedd00"/><path d="M0 1h9v1H0zm0 2h9v1H0z" fill="#da121a"/></svg></span> Català
+                            </button>
+                            <button type="button" class="lang-btn" data-lang="en" style="background: transparent; border: none; color: var(--text-desc); padding: 0.5rem 0.75rem; text-align: left; cursor: pointer; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 500; width: 100%; display:flex; align-items:center; gap:10px; transition: all 0.2s;">
+                                <span class="lang-svg-wrapper"><svg width="18" height="13" viewBox="0 0 60 30" style="border-radius: 2px; overflow: hidden;"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg></span> English
+                            </button>
                         </div>
                     </div>
 
@@ -471,108 +494,56 @@ html.dark, body.dark {
             <div class="hero-gradient"></div>
             <div class="container hero-container">
                 <div class="hero-grid">
+                    
                     <div class="hero-content">
-                        <div class="status-badge scroll-reveal mb-4">
-                            <span class="status-pulse"></span>
+                        <div class="status-badge scroll-reveal mb-4" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 500; display: inline-flex; align-items: center; gap: 0.375rem;">
+                            <span style="width:6px; height:6px; background-color:#10b981; border-radius:50%; display:inline-block;"></span>
                             <span data-i18n="avail_join_status">Incorporación Inmediata</span>
                         </div>
-
-                        <h1 class="hero-title scroll-reveal" data-i18n="hero_title">Alberto Trujillo</h1>
-                        <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle" style="font-size:1.5rem; line-height:1.4; color:#a1a1aa; margin-bottom:1.5rem;">Systems & Cloud Administrator | Cybersecurity · Microsoft Entra ID / IAM · IT Infrastructure</h2>
-                        
-                        <div class="hero-tags scroll-reveal">
-                            <span class="glass-tag tag-purple"><i class="fas fa-graduation-cap"></i> <span data-i18n="hero_tag1">ASIR + SMR (Grado Sup. & Medio)</span></span>
-                            <span class="glass-tag tag-blue"><i class="fas fa-cloud"></i> <span data-i18n="hero_tag2">Administraci�n de Sistemas, Cloud/IAM y Seguridad</span></span>
-                            <span class="glass-tag tag-indigo"><i class="fas fa-user-ninja"></i> <span data-i18n="hero_tag3">Autodidacta & Ciberseguridad</span></span>
-                        </div>
-
-                        <p class="hero-description scroll-reveal" data-i18n="hero_description">Técnico Superior ASIXc (Ciberseguridad) especializado en administración de infraestructuras críticas, gestión de identidades y accesos (Microsoft Entra ID, Active Directory), seguridad perimetral y hardening de sistemas. Incorporación inmediata.</p>
-
-                        <div class="hero-ctas scroll-reveal">
-                            <a href="/CV.pdf" download class="btn btn-primary btn-green" data-i18n="hero_download_cv"><i class="fas fa-download"></i> Descargar CV</a>
-                            <a href="#contacto" class="btn btn-outline" data-i18n="hero_contact">Contactar</a>
-                        </div>
-                    </div>
-
-                    <!-- Executive Profile Summary Card -->
-                    <div class="hero-profile-col scroll-reveal">
-                        <div class="profile-summary-card">
-                            <div class="profile-avatar-wrapper">
-                                <img src="/assets/images/Alberto.webp?v=p2" alt="Fotografía profesional de Alberto Trujillo Mingorance - Systems & Cloud Security Engineer" class="profile-avatar-img">
-                                <span class="profile-status-online" title="Disponible para contratación"></span>
-                            </div>
-                            <h3 class="profile-card-name">Alberto Trujillo Mingorance</h3>
-                            <p class="profile-card-role">Systems & Cloud Security Engineer</p>
-                            <div class="profile-meta-pills">
-                                <span class="meta-pill"><i class="fas fa-map-marker-alt text-blue"></i> <span data-i18n="hero_pill_loc">Barcelona / Remoto</span></span>
-                                
-                                <span class="meta-pill"><i class="fas fa-graduation-cap text-purple"></i> <span data-i18n="hero_pill_edu">ASIR (Sup.) + SMR (Med.)</span></span>
-                                <span class="meta-pill"><i class="fas fa-universal-access text-orange"></i> <span data-i18n="hero_pill_disability">Discapacidad Oficial >33%</span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Executive Key Stats & Metrics Bar -->
-                <div class="hero-stats-bar scroll-reveal">
-                    <div class="stat-item">
-                        <span class="stat-number" data-i18n="stat_exp_val">+3 Años</span>
-                        <span class="stat-label" data-i18n="stat_exp">Experiencia IT & Sistemas</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label" data-i18n="stat_cloud">Serverless & Edge Cloud</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">>33%</span>
-                        <span class="stat-label" data-i18n="stat_disability">Discapacidad Oficial Certificada</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">99.9%</span>
-                        <span class="stat-label" data-i18n="stat_uptime">Monitorización Edge</span>
-                    </div>
-                </div>
-
-                <!-- Interactive SysAdmin Terminal Simulator -->
-                <div class="terminal-window scroll-reveal">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="terminal-title-text">
-                            <i class="fas fa-terminal text-green"></i> <span data-i18n="terminal_title">Consola Interactive SysAdmin</span>
-                        </div>
-                        <div></div>
-                    </div>
-                    <div class="terminal-controls">
-                        <div class="terminal-pills">
-                            <button type="button" class="terminal-pill" data-cmd="whoami">whoami</button>
-                            <button type="button" class="terminal-pill" data-cmd="sysinfo">sysinfo</button>
-                            <button type="button" class="terminal-pill" data-cmd="hardening">hardening</button>
-                            <button type="button" class="terminal-pill" data-cmd="attestto">attestto</button>
-                            <button type="button" class="terminal-pill" data-cmd="skills">skills</button>
-                            <button type="button" class="terminal-pill" data-cmd="projects">projects</button>
-                            <button type="button" class="terminal-pill" data-cmd="exp">exp</button>
-                            <button type="button" class="terminal-pill" data-cmd="certs">certs</button>
-                            <button type="button" class="terminal-pill" data-cmd="status">status</button>
-                            <button type="button" class="terminal-pill" data-cmd="contact">contact</button>
-                            <button type="button" class="terminal-pill" data-cmd="clear">clear</button>
-                        </div>
-                    </div>
-                    <div class="terminal-body" id="terminal-output">
+<!-- Interactive SysAdmin Terminal Simulator -->
+                
+<div class="terminal-window scroll-reveal" style="background-color: #09090b; border: 1px solid rgba(39, 39, 42, 0.8); border-radius: 1rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); overflow: hidden; font-family: monospace; font-size: 0.75rem;">
+    <div class="terminal-header" style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background-color: #09090b; border-bottom: 1px solid rgba(39, 39, 42, 0.8);">
+        <div class="terminal-dots" style="display: flex; gap: 0.375rem;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ef4444;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #eab308;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #22c55e;"></span>
+        </div>
+        <div class="terminal-title-text" style="color: #71717a; font-size: 0.75rem; font-weight: 500;">
+            &gt;_ terminal.trujillomingorance.com
+        </div>
+        <div style="width: 42px;"></div> <!-- Spacer for perfect centering -->
+    </div>
+    <div class="terminal-controls" style="padding: 0.75rem 1rem; border-bottom: 1px solid rgba(39, 39, 42, 0.8);">
+        <div class="terminal-pills" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <button type="button" class="terminal-pill" data-cmd="whoami" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">whoami</button>
+            <button type="button" class="terminal-pill" data-cmd="sysinfo" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">sysinfo</button>
+            <button type="button" class="terminal-pill" data-cmd="hardening" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">hardening</button>
+            <button type="button" class="terminal-pill" data-cmd="skills" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">skills</button>
+            <button type="button" class="terminal-pill" data-cmd="projects" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">projects</button>
+            <button type="button" class="terminal-pill" data-cmd="exp" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">exp</button>
+            <button type="button" class="terminal-pill" data-cmd="certs" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">certs</button>
+            <button type="button" class="terminal-pill" data-cmd="status" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">status</button>
+            <button type="button" class="terminal-pill" data-cmd="contact" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">contact</button>
+            <button type="button" class="terminal-pill" data-cmd="clear" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">clear</button>
+        
+            <button type="button" class="terminal-pill" data-cmd="attestto" style="background-color: #18181b; border: 1px solid #27272a; color: #d4d4d8; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 11px; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.backgroundColor='#27272a'" onmouseout="this.style.backgroundColor='#18181b'">attestto</button></div>
+    </div>
+    <div class="terminal-body" id="terminal-output">
                         <div class="terminal-line"><span class="prompt-user">alberto@sys-node</span>:<span class="prompt-path">~</span>$ <span class="cmd-text">whoami</span></div>
+                        
                         <div class="terminal-line response-line">
-                            <div class="term-card">
-                                [ IDENTITY SUMMARY ]<br>
-                                Name: Alberto Trujillo Mingorance<br>
-                                Title: Junior Systems & Cloud Security Engineer | Cybersecurity & Cloud/IAM<br>
-                                Education: ASIR (Higher Degree) + SMR (Mid Degree) @ Institut Tecnològic de Barcelona (ITB)<br>
-                                
-                                Status: Certified Official Disability >33% (Employer Tax Deduction Eligible) | Immediate Availability
+                            
+                            <div class="term-card" style="line-height: 1.6;">
+                                <div style="font-weight: 700; color: #60a5fa; margin-bottom: 8px;">[ RESUMEN DE IDENTIDAD ]</div>
+                                Nombre Completo: Alberto Trujillo Mingorance<br>
+                                Rol Principal: Systems & Cloud Administrator | Cybersecurity & IAM<br>
+                                Titulaciones: ASIR (Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
+                                Estado Actual: Ex-SecOps & Systems en Attestto | Certificado Discapacidad &gt;33% | Incorporación Inmediata
                             </div>
+
                         </div>
+    
                     </div>
                     <div class="terminal-controls">
                         <form id="terminal-form" class="terminal-input-wrapper">
@@ -581,6 +552,27 @@ html.dark, body.dark {
                         </form>
                     </div>
                 </div>
+
+                        <h1 class="hero-title scroll-reveal" data-i18n="hero_title" style="font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.025em; color: var(--text-title); margin-top: 1rem;">Alberto Trujillo</h1>
+                        
+                        <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle" style="font-size: 1rem; font-weight: 500; color: var(--text-desc); margin-top: 0.5rem;">Systems & Cloud Administrator | Cybersecurity · Microsoft Entra ID · Infrastructure</h2>
+
+                        <p class="hero-description scroll-reveal" data-i18n="hero_description" style="font-size: 0.875rem; color: var(--text-desc); margin-top: 1rem; max-width: 36rem; line-height: 1.625;">Técnico Superior ASIR especializado en administración de infraestructuras críticas, gestión de identidades y accesos (Microsoft Entra ID, Active Directory), seguridad perimetral y hardening de sistemas. Incorporación inmediata.</p>
+
+                        <div class="hero-ctas scroll-reveal" style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                            <a href="/CV.pdf" download class="btn" data-i18n="hero_download_cv" style="background-color: var(--text-title); color: var(--bg-card); padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">Descargar CV</a>
+                            <a href="#contacto" class="btn" data-i18n="hero_contact" style="border: 1px solid var(--border-card); color: var(--text-title); padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; text-decoration: none;">Contactar</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Executive Profile Summary Card -->
+                    </div>
+                </div>
+
+                
+
+                
             </div>
             <a href="#disponibilidad" class="scroll-down-indicator" aria-label="Scroll down">
                 <i class="fas fa-chevron-down"></i>
@@ -1013,34 +1005,37 @@ html.dark, body.dark {
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   function setupDropdown(triggerId, menuId) {
-    const trigger = document.getElementById(triggerId);
-    const menu = document.getElementById(menuId);
-    if (!trigger || !menu) return;
-    
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isVisible = menu.style.display === 'flex';
-      menu.style.display = isVisible ? 'none' : 'flex';
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !trigger.contains(e.target)) {
-        menu.style.display = 'none';
-      }
-    });
-
-    menu.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        trigger.querySelector('span').innerHTML = btn.innerHTML.split(' ')[0] + ' ' + btn.getAttribute('data-lang').toUpperCase();
-        menu.style.display = 'none';
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      if (!trigger || !menu) return;
+      
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isVisible = menu.style.display === 'flex';
+        menu.style.display = isVisible ? 'none' : 'flex';
       });
-      // hover effect
-      btn.addEventListener('mouseenter', () => btn.style.backgroundColor = 'rgba(255,255,255,0.1)');
-      btn.addEventListener('mouseleave', () => btn.style.backgroundColor = 'transparent');
-    });
-  }
-  setupDropdown('lang-trigger', 'lang-menu');
-  setupDropdown('mobile-lang-trigger', 'mobile-lang-menu');
+  
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+          menu.style.display = 'none';
+        }
+      });
+  
+      menu.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const svgHtml = btn.querySelector('.lang-svg-wrapper').innerHTML;
+          const code = btn.getAttribute('data-lang').toUpperCase();
+          const svgTarget = trigger.querySelector('#current-lang-svg') || trigger.querySelector('span');
+          const textTarget = trigger.querySelector('#current-lang-text');
+          if (svgTarget) svgTarget.innerHTML = svgHtml;
+          if (textTarget) textTarget.textContent = code;
+          menu.style.display = 'none';
+        });
+        // hover handled by CSS now or let's keep it simple
+      });
+    }
+    setupDropdown('lang-trigger', 'lang-menu');
+    setupDropdown('mobile-lang-trigger', 'mobile-lang-menu');
 });
 </script>
 

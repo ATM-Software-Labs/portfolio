@@ -144,29 +144,23 @@ export function initTerminal() {
 
       case 'whoami':
         const whoText = lang === 'en'
-          ? `[ IDENTITY SUMMARY ]<br>
+          ? `<div style="font-weight: 700; color: #60a5fa; margin-bottom: 8px;">[ IDENTITY SUMMARY ]</div>
              Full Name: Alberto Trujillo Mingorance<br>
-             Primary Role: Junior Systems & Cloud Security Engineer | Cybersecurity & IAM<br>
-             Academic Degrees: ASIR (Higher Degree, Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
-             Current Status: Ex-SecOps & Systems at Attestto | Certified Disability >33% | Immediate Availability<br>
-             
-             `
+             Primary Role: Systems & Cloud Administrator | Cybersecurity & IAM<br>
+             Degrees: ASIR (Cybersecurity Profile) + SMR @ Institut Tecnològic de Barcelona<br>
+             Current Status: Ex-SecOps & Systems at Attestto | Certified Disability &gt;33% | Immediate Availability`
           : lang === 'ca'
-          ? `[ RESUM D'IDENTITAT ]<br>
+          ? `<div style="font-weight: 700; color: #60a5fa; margin-bottom: 8px;">[ RESUM D'IDENTITAT ]</div>
              Nom Complet: Alberto Trujillo Mingorance<br>
-             Rol Principal: Systems & Cloud Administrator | Ciberseguretat i IAM<br>
-             Titulacions Acadèmiques: ASIXc (Grau Superior, Perfil Ciberseguretat) + SMX @ Institut Tecnològic de Barcelona<br>
-             Estatus Actual: Ex-SecOps & Systems a Attestto | Discapacitat Certificada >33% | Incorporacio Immediata<br>
-             
-             `
-          : `[ RESUMEN DE IDENTIDAD ]<br>
+             Rol Principal: Systems & Cloud Administrator | Cybersecurity & IAM<br>
+             Titulacions: ASIXc (Perfil Ciberseguretat) + SMX @ Institut Tecnològic de Barcelona<br>
+             Estat Actual: Ex-SecOps & Systems a Attestto | Certificat Discapacitat &gt;33% | Incorporació Immediata`
+          : `<div style="font-weight: 700; color: #60a5fa; margin-bottom: 8px;">[ RESUMEN DE IDENTIDAD ]</div>
              Nombre Completo: Alberto Trujillo Mingorance<br>
-             Rol Principal: Systems & Cloud Administrator | Ciberseguridad e IAM<br>
-             Titulaciones Académicas: ASIR (Grado Superior, Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
-             Estatus Actual: Ex-SecOps & Systems en Attestto | Discapacidad Certificada >33% | Incorporacion Inmediata<br>
-             
-             `;
-        appendOutput(`<div class="term-card">${whoText}</div>`);
+             Rol Principal: Systems & Cloud Administrator | Cybersecurity & IAM<br>
+             Titulaciones: ASIR (Perfil Ciberseguridad) + SMR @ Institut Tecnològic de Barcelona<br>
+             Estado Actual: Ex-SecOps & Systems en Attestto | Certificado Discapacidad &gt;33% | Incorporación Inmediata`;
+        appendOutput(`<div class="term-card" style="line-height: 1.6;">${whoText}</div>`);
         break;
 
       case 'sysinfo':
@@ -356,9 +350,8 @@ Estatus Laboral:     Incorporación Inmediata para Puestos Presenciales / Híbri
       case 'certs':
         const certTextNew = `
           <div class="term-card">
-            <div style="font-weight: 700; color: var(--accent-primary); margin-bottom: 8px;">[ ACTIVE CREDENTIALS ]</div>
-            - [ACTIVE] Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
-            &nbsp;&nbsp;Credential ID: F89C9FFB072C4C9A (Verified)
+            <div style="font-weight: 700; color: #a855f7; margin-bottom: 8px;">[ ACTIVE CREDENTIALS ]</div>
+            - [ACTIVE] Microsoft Applied Skills: Get started with identities and access using Microsoft Entra (ID: F89C9FFB072C4C9A)
           </div>`;
         appendOutput(certTextNew);
         break;
