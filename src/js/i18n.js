@@ -30,7 +30,7 @@ const translations = {
         // Attestto
         exp_attestto_role: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
         exp_attestto_company: 'Attestto · Jornada parcial',
-        exp_attestto_period: 'jul. 2026 - sep. 2026 · 3 meses',
+        exp_attestto_period: 'Jul. 2026 - Sept. 2026 · 3 meses',
         exp_attestto_location: 'Delaware, Estados Unidos · En remoto',
         exp_attestto_context: '',
         exp_attestto_1: 'Colaboré en la protección y gestión de la infraestructura técnica: administración de identidad y nube (Google Workspace/IAM, Cloudflare, GitHub, Fly.io), aplicación de hardening, políticas de mínimo privilegio, respuesta a incidentes y monitorización de seguridad en repositorios. Desarrollo de soporte para estándares de identidad abierta (W3C DID/VC, vLEI).',
@@ -199,7 +199,7 @@ const translations = {
         // Attestto
         exp_attestto_role: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
         exp_attestto_company: 'Attestto · Jornada parcial',
-        exp_attestto_period: 'jul. 2026 - set. 2026 · 3 mesos',
+        exp_attestto_period: 'Jul. 2026 - Sept. 2026 · 3 meses',
         exp_attestto_location: 'Delaware, Estats Units · En remot',
         exp_attestto_context: '',
         exp_attestto_1: 'Colaboré en la protección y gestión de la infraestructura técnica: administración de identidad y nube (Google Workspace/IAM, Cloudflare, GitHub, Fly.io), aplicación de hardening, políticas de mínimo privilegio, respuesta a incidentes y monitorización de seguridad en repositorios. Desarrollo de soporte para estándares de identidad abierta (W3C DID/VC, vLEI).',
@@ -371,7 +371,7 @@ const translations = {
         // Attestto
         exp_attestto_role: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
         exp_attestto_company: 'Attestto · Part-time',
-        exp_attestto_period: 'Jul. 2026 - Sept. 2026 · 2 mos',
+        exp_attestto_period: 'Jul. 2026 - Sept. 2026 · 3 meses',
         exp_attestto_location: 'Delaware, United States · Remote',
         exp_attestto_context: '',
         exp_attestto_1: 'Colaboré en la protección y gestión de la infraestructura técnica: administración de identidad y nube (Google Workspace/IAM, Cloudflare, GitHub, Fly.io), aplicación de hardening, políticas de mínimo privilegio, respuesta a incidentes y monitorización de seguridad en repositorios. Desarrollo de soporte para estándares de identidad abierta (W3C DID/VC, vLEI).',
@@ -594,15 +594,15 @@ export function applyTranslation(lang) {
     document.documentElement.lang = targetLang;
     
     // Dynamically calculate and refresh experience dates to prevent any staleness
-    translations.es.exp_attestto_period = calculateExperience(2026, 7, 'es', 'jul. 2026');
+    
     
     translations.es.stat_exp_val = calculateTotalItYears('es');
 
-    translations.ca.exp_attestto_period = calculateExperience(2026, 7, 'ca', 'jul. 2026');
+    
     
     translations.ca.stat_exp_val = calculateTotalItYears('ca');
 
-    translations.en.exp_attestto_period = calculateExperience(2026, 7, 'en', 'Jul. 2026');
+    
     
     translations.en.stat_exp_val = calculateTotalItYears('en');
 
