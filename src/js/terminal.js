@@ -1,6 +1,6 @@
 /**
- * Terminal CLI + filtros de proyectos.
- * Sin anti-debug, sin mutar el grid, sin listeners duplicados.
+ * Terminal CLI + filtros de proyectos (módulo ES).
+ * Sin anti-debug, sin listeners duplicados, sin reconstruir el DOM del grid.
  */
 const EMAIL = 'alberto@trujillomingorance.com';
 const PROMPT = 'alberto@sys-node:~$';
@@ -84,15 +84,19 @@ export function initTerminal() {
   const form = document.getElementById('terminal-form');
   const input = document.getElementById('terminal-input');
   if (!root || !output || !form || !input) return;
+  if (root.dataset.bound === '1') return;
+  root.dataset.bound = '1';
 
   const history = [];
   let cursor = 0;
   let scrollRaf = 0;
-  let busy = false;
 
-  const unlockInput = () => {
-    input.readOnly = false;
+  input.disabled = false;
+  input.readOnly = false;
+
+  const focusInput = () => {
     input.disabled = false;
+    input.readOnly = false;
     requestAnimationFrame(() => {
       try {
         input.focus({ preventScroll: true });
@@ -131,12 +135,12 @@ export function initTerminal() {
   };
 
   const dispatch = (raw) => {
-    if (busy) return;
-    busy = true;
-    input.readOnly = true;
     try {
       const cmd = sanitizeCommand(raw);
-      if (!cmd) return;
+      if (!cmd) {
+        focusInput();
+        return;
+      }
 
       remember(cmd);
       appendTrusted(
@@ -156,11 +160,10 @@ export function initTerminal() {
       try {
         appendTrusted('<span class="text-red-300">Error al ejecutar el comando.</span>');
       } catch {
-        /* el output no debe tumbar el hilo */
+        /* no congelar el hilo */
       }
     } finally {
-      busy = false;
-      unlockInput();
+      focusInput();
     }
   };
 
@@ -179,7 +182,7 @@ export function initTerminal() {
       return;
     }
     if (!event.target.closest('a, button, input, textarea')) {
-      unlockInput();
+      focusInput();
     }
   });
 
@@ -201,6 +204,8 @@ export function initProjectFilters() {
   const grid = document.getElementById('project-grid');
   const empty = document.getElementById('project-empty');
   if (!toolbar || !grid) return;
+  if (toolbar.dataset.bound === '1') return;
+  toolbar.dataset.bound = '1';
 
   const cards = grid.querySelectorAll('[data-category]');
   const buttons = toolbar.querySelectorAll('[data-filter]');
