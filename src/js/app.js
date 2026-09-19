@@ -2,6 +2,7 @@
  * i18n ES/EN, tema, nav, contacto. Terminal/filtros: ./terminal.js
  */
 import '../css/styles.css';
+import template from './template.html?raw';
 import { initTerminal, initProjectFilters } from './terminal.js';
 
 const EMAIL = 'alberto@trujillomingorance.com';
@@ -228,6 +229,10 @@ function applyI18n(lang) {
     const key = el.getAttribute('data-i18n-aria');
     if (dict[key] != null) el.setAttribute('aria-label', dict[key]);
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
+  });
   const code = document.getElementById('lang-code');
   if (code) code.textContent = lang.toUpperCase();
   localStorage.setItem(LANG_KEY, lang);
@@ -271,7 +276,6 @@ function initNavigation() {
   const toggle = document.getElementById('nav-toggle');
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.getElementById('nav-backdrop');
-  const topBtn = document.getElementById('back-to-top');
   const year = document.getElementById('copyright-year');
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -304,7 +308,6 @@ function initNavigation() {
   const links = [...document.querySelectorAll('[data-nav-link]')];
   const onScroll = () => {
     const y = window.scrollY;
-    if (topBtn) topBtn.classList.toggle('hidden', y < 400);
     let current = sections[0]?.id || '';
     sections.forEach((section) => {
       if (y >= section.offsetTop - 140) current = section.id;
@@ -315,10 +318,9 @@ function initNavigation() {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 960) setOpen(false);
+    if (window.innerWidth >= 768) setOpen(false);
   });
   onScroll();
-  topBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
 function initModals() {
@@ -412,6 +414,8 @@ function initContact() {
 ready(() => {
   if (window.__portfolioAppReady) return;
   window.__portfolioAppReady = true;
+  const root = document.getElementById('app');
+  if (root) root.innerHTML = template;
   try { initI18n(); } catch (error) { console.error('[i18n]', error); }
   try { initTheme(); } catch (error) { console.error('[theme]', error); }
   try { initNavigation(); } catch (error) { console.error('[nav]', error); }

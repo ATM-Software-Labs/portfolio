@@ -1,0 +1,227 @@
+<a class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-cyan focus:px-3 focus:py-2 focus:text-canvas" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+<header class="sticky top-0 z-50 border-b border-line bg-canvas/90 backdrop-blur-md">
+  <div class="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
+    <a href="#hero" class="text-sm font-semibold">Alberto Trujillo</a>
+    <nav class="hidden items-center gap-6 text-sm text-muted md:flex">
+      <a class="nav-link hover:text-ink" data-nav-link data-i18n="nav_experience" href="#experience">Experience</a>
+      <a class="nav-link hover:text-ink" data-nav-link data-i18n="nav_projects" href="#projects">Projects</a>
+      <a class="nav-link hover:text-ink" data-nav-link data-i18n="nav_education" href="#education">Education</a>
+      <a class="nav-link hover:text-ink" data-nav-link data-i18n="nav_contact" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button type="button" id="nav-toggle" class="menu-btn grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Menú">☰</button>
+      <button type="button" id="lang-toggle" class="rounded-full border border-line px-3 py-1.5 text-xs font-semibold"><span id="lang-code">ES</span></button>
+      <button type="button" id="theme-toggle" class="grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Tema">◐</button>
+    </div>
+  </div>
+</header>
+<div id="nav-backdrop" class="drawer-backdrop fixed inset-0 z-40 bg-black/50"></div>
+<aside id="mobile-drawer" class="drawer fixed inset-y-0 right-0 z-50 w-64 flex-col gap-4 border-l border-line bg-canvas p-6">
+  <button type="button" class="self-end text-muted" data-nav-close>×</button>
+  <a data-nav-link data-i18n="nav_experience" href="#experience">Experience</a>
+  <a data-nav-link data-i18n="nav_projects" href="#projects">Projects</a>
+  <a data-nav-link data-i18n="nav_education" href="#education">Education</a>
+  <a data-nav-link data-i18n="nav_contact" href="#contact">Contact</a>
+</aside>
+<main id="contenido">
+  <section id="hero" class="mx-auto grid max-w-5xl gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+    <div>
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok/10 px-3 py-1 text-xs text-ok"><span class="h-1.5 w-1.5 rounded-full bg-ok"></span><span data-i18n="avail_badge">Immediate Availability</span></p>
+      <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Alberto <span class="gradient">Trujillo</span></h1>
+      <p class="mt-3 text-cyan" data-i18n="hero_role">Systems &amp; Cloud Administrator | Cybersecurity · Cloud/IAM</p>
+      <p class="mt-5 max-w-md text-sm leading-relaxed text-muted" data-i18n="hero_lead">Ex-SecOps en Attestto y Ex-Minsait (Indra). ASIR (perfil ciberseguridad) + SMR. Hardening, Cloud/IAM, Zero-Trust. Incorporación inmediata.</p>
+      <div class="mt-8 flex gap-3">
+        <a class="rounded-lg bg-cyan px-4 py-2.5 text-sm font-semibold text-canvas" data-i18n="btn_cv" href="https://drive.google.com/file/d/1Zbh1BN5wfNraUauE13s-5sbQ_rZ6z29s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a class="rounded-lg border border-line px-4 py-2.5 text-sm" data-i18n="btn_contact" href="#contact">Contact Me</a>
+      </div>
+    </div>
+    <aside class="rounded-2xl border border-line bg-surface p-6 text-center">
+      <img class="mx-auto h-24 w-24 rounded-full object-cover ring-2 ring-ok/60" src="/assets/images/Alberto.webp" alt="Alberto Trujillo Mingorance" width="96" height="96">
+      <h2 class="mt-4 font-semibold">Alberto Trujillo Mingorance</h2>
+      <p class="mt-1 font-mono text-xs text-cyan" data-i18n="id_role">Systems &amp; Cloud Administrator</p>
+      <ul class="mt-5 space-y-2 text-left text-sm text-muted">
+        <li class="rounded-lg border border-line px-3 py-2" data-i18n="id_loc">Barcelona / Remoto</li>
+        <li class="rounded-lg border border-line px-3 py-2">Attestto &amp; Minsait</li>
+        <li class="rounded-lg border border-line px-3 py-2" data-i18n="id_edu">ASIR + SMR</li>
+        <li class="rounded-lg border border-line px-3 py-2" data-i18n="id_disability">Discapacidad &gt;33%</li>
+      </ul>
+    </aside>
+  </section>
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <div id="terminal" class="term" role="region" aria-label="Terminal">
+      <div class="flex items-center gap-2 border-b border-line px-4 py-2">
+        <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
+        <p class="flex-1 text-center font-mono text-[11px] text-muted">alberto@devops-node</p>
+      </div>
+      <div class="term-cmds">
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="whoami">whoami</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="skills">skills</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="exp">exp</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="projects">projects</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="certs">certs</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="contact">contact</button>
+        <button type="button" class="shrink-0 rounded border border-line px-2 py-1 font-mono text-[11px] text-muted" data-cmd="clear">clear</button>
+      </div>
+      <div id="terminal-output" class="term-body"><div><span class="term-prompt">alberto@devops-node:~$</span> whoami</div><div>Alberto Trujillo Mingorance · ASIR + SMR</div></div>
+      <form id="terminal-form" class="flex items-center gap-2 border-t border-line px-4 py-2">
+        <label class="sr-only" for="terminal-input">cmd</label>
+        <span class="term-prompt">alberto@devops-node:~$</span>
+        <input id="terminal-input" class="min-w-0 flex-1 bg-transparent font-mono text-[12.5px] outline-none" autocomplete="off" spellcheck="false">
+      </form>
+    </div>
+  </section>
+  <section id="experience" class="border-t border-line py-16">
+    <div class="mx-auto max-w-5xl px-4">
+      <h2 class="mb-8 text-2xl font-semibold" data-i18n="exp_title">Experience</h2>
+      <ol class="timeline space-y-5 pl-8">
+        <li>
+          <article class="rounded-xl border border-line bg-surface p-5">
+            <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
+              <div class="flex gap-3">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/attestto_logo.jpg" alt="">
+                <div>
+                  <h3 class="font-medium" data-i18n="job1_title">Junior SecOps &amp; Systems Engineer</h3>
+                  <p class="text-sm text-cyan" data-i18n="job1_meta">Attestto · parcial · remoto</p>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-muted">jul. 2026 – sept. 2026</span>
+            </div>
+            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+              <li data-i18n="job1_b1">Cloud/IAM: Google Workspace, Cloudflare, GitHub y Fly.io.</li>
+              <li data-i18n="job1_b2">Hardening, mínimo privilegio y respuesta ante incidentes.</li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article class="rounded-xl border border-line bg-surface p-5">
+            <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
+              <div class="flex gap-3">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/minsait_logo.jpeg" alt="">
+                <div>
+                  <h3 class="font-medium" data-i18n="job2_title">Systems Support Technician</h3>
+                  <p class="text-sm text-cyan" data-i18n="job2_meta">Minsait (Indra) · Salut / CTTI</p>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-muted">nov. 2025 – may. 2026</span>
+            </div>
+            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+              <li data-i18n="job2_b1">Active Directory, GPO y credenciales en SAP ERP.</li>
+              <li data-i18n="job2_b3">Incidencias con BMC Remedy y soporte de nivel 2.</li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article class="rounded-xl border border-line bg-surface p-5">
+            <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
+              <div class="flex gap-3">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/1742933903062.jpeg" alt="">
+                <div>
+                  <h3 class="font-medium" data-i18n="job3_title">IT Maintenance Technician</h3>
+                  <p class="text-sm text-cyan" data-i18n="job3_meta">Institut Indústria Sostenible</p>
+                </div>
+              </div>
+              <span class="font-mono text-[11px] text-muted">may. 2023 – nov. 2023</span>
+            </div>
+            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+              <li data-i18n="job3_b2">Imágenes de sistema con Clonezilla y mantenimiento preventivo.</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section id="projects" class="border-t border-line py-16">
+    <div class="mx-auto max-w-5xl px-4">
+      <h2 class="mb-6 text-2xl font-semibold" data-i18n="projects_title">Projects</h2>
+      <div id="project-filters" class="mb-6 flex flex-wrap gap-2">
+        <button type="button" class="filter-btn is-active rounded-full border border-line px-3 py-1 text-sm text-muted" data-filter="all" data-i18n="filter_all">Todos</button>
+        <button type="button" class="filter-btn rounded-full border border-line px-3 py-1 text-sm text-muted" data-filter="systems" data-i18n="filter_systems">Sistemas</button>
+        <button type="button" class="filter-btn rounded-full border border-line px-3 py-1 text-sm text-muted" data-filter="security" data-i18n="filter_security">Ciberseguridad</button>
+        <button type="button" class="filter-btn rounded-full border border-line px-3 py-1 text-sm text-muted" data-filter="tools" data-i18n="filter_tools">Herramientas</button>
+      </div>
+      <div id="project-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="systems">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">Trujillo AI Studio</h3><a class="text-muted" href="https://ai.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p1">IA multimodal en Cloudflare Workers.</p>
+        </article>
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="tools">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">Rewrite AI</h3><a class="text-muted" href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p2">Reescritura en Cloudflare Edge.</p>
+        </article>
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="systems">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">Trujillo Guides</h3><a class="text-muted" href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p3">Runbooks de sistemas.</p>
+        </article>
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="security">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">FocusGuard</h3><a class="text-muted" href="https://focusguard.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p4">DNS Zero-Trust.</p>
+        </article>
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="tools">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">ATM Tools</h3><a class="text-muted" href="https://tools.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p5">Herramientas en el cliente.</p>
+        </article>
+        <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="security">
+          <div class="mb-2 flex justify-between"><h3 class="font-medium">Open-Sentinel</h3><a class="text-muted" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer">↗</a></div>
+          <p class="text-sm text-muted" data-i18n="p6">Telemetría local.</p>
+        </article>
+      </div>
+      <p id="project-empty" class="mt-6 hidden text-sm text-muted" data-i18n="projects_empty">No hay proyectos en esta categoría.</p>
+    </div>
+  </section>
+  <section id="education" class="border-t border-line py-16">
+    <div class="mx-auto max-w-5xl px-4">
+      <h2 class="mb-8 text-2xl font-semibold" data-i18n="edu_title">Education</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border border-line bg-surface p-5">
+          <h3 class="font-medium" data-i18n="edu1_title">Administración de Sistemas Informáticos en Red</h3>
+          <p class="mt-2 text-sm text-muted" data-i18n="edu1_meta">ASIR · perfil ciberseguridad · ITB · 2024 — 2026</p>
+        </article>
+        <article class="rounded-xl border border-line bg-surface p-5">
+          <h3 class="font-medium" data-i18n="edu2_title">Sistemas Microinformáticos y Redes</h3>
+          <p class="mt-2 text-sm text-muted" data-i18n="edu2_meta">SMR · ITB · 2022 — 2024</p>
+        </article>
+      </div>
+      <article class="mt-4 rounded-xl border border-line bg-surface p-5">
+        <h3 class="font-medium">Microsoft Applied Skills · Microsoft Entra ID</h3>
+        <p class="mt-2 text-sm text-muted" data-i18n="cert_meta">ID F89C9FFB072C4C9A</p>
+      </article>
+    </div>
+  </section>
+  <section id="contact" class="border-t border-line py-16">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-semibold" data-i18n="contact_title">Contact</h2>
+        <p class="mt-3 text-sm text-muted" data-i18n="contact_lead">Proyecto u oportunidad laboral: escríbeme.</p>
+        <p class="mt-4 text-sm"><a href="mailto:alberto@trujillomingorance.com">alberto@trujillomingorance.com</a></p>
+        <button type="button" id="copy-email" class="mt-4 rounded-lg border border-line px-4 py-2 text-sm" data-i18n="copy_email">Copy Email</button>
+      </div>
+      <form id="contact-form" class="space-y-3" action="/api/contact" method="POST">
+        <div class="hidden" aria-hidden="true"><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <input class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="name" name="name" required maxlength="100" data-i18n-placeholder="form_name" placeholder="Nombre">
+        <input class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="email" name="email" type="email" required maxlength="100" placeholder="Email">
+        <textarea class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="message" name="message" rows="4" required maxlength="4000" data-i18n-placeholder="form_message" placeholder="Mensaje"></textarea>
+        <button type="submit" class="w-full rounded-lg bg-cyan py-2.5 text-sm font-semibold text-canvas" data-i18n="form_send">Enviar</button>
+        <p id="form-feedback" class="hidden text-sm text-muted" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="border-t border-line py-8">
+  <div class="mx-auto flex max-w-5xl flex-wrap justify-between gap-3 px-4 text-sm text-muted">
+    <p>© <span id="copyright-year">2026</span> Alberto Trujillo Mingorance</p>
+    <p>
+      <button type="button" data-modal="privacy" data-i18n="legal_privacy">Privacidad</button>
+      · <a href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer">GitHub</a>
+      · <a href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<div id="legal-modal" class="modal-overlay" aria-hidden="true">
+  <div class="relative max-h-[80vh] w-full max-w-lg overflow-auto rounded-xl border border-line bg-surface p-6">
+    <button type="button" class="absolute right-3 top-2 text-muted" data-modal-close>×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+<div id="toast-container" class="toast-wrap"></div>
