@@ -38,18 +38,54 @@ body {
   color: var(--color-cyan);
 }
 
-.lang-opt {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  opacity: 0.45;
+.lang-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 60;
+  min-width: 8rem;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
+.lang-menu.is-open {
+  display: grid;
+  gap: 4px;
+}
+
+.lang-opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lang-opt:hover,
 .lang-opt.is-active {
-  opacity: 1;
-  box-shadow: 0 0 0 1px var(--color-cyan);
+  background: color-mix(in srgb, var(--color-cyan) 12%, transparent);
+}
+
+.icon-sun {
+  display: none;
+}
+
+html[data-theme="light"] .icon-moon {
+  display: none;
+}
+
+html[data-theme="light"] .icon-sun {
+  display: block;
 }
 
 .project-card.is-hidden,

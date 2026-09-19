@@ -94,6 +94,8 @@ const translations = {
     copied: '¡Copiado!',
     form_name: 'Nombre',
     form_message: 'Mensaje',
+    form_hint: 'Respuesta habitual en 24–48 h.',
+    form_required: 'Campos obligatorios',
     form_send: 'Enviar mensaje',
     form_ok: 'Mensaje enviado correctamente.',
     form_err: 'Error al enviar. Inténtalo de nuevo.',
@@ -188,6 +190,8 @@ const translations = {
     copied: 'Copied!',
     form_name: 'Name',
     form_message: 'Message',
+    form_hint: 'I usually reply within 24–48 h.',
+    form_required: 'Required fields',
     form_send: 'Send message',
     form_ok: 'Message sent.',
     form_err: 'Could not send. Please try again.',
@@ -266,7 +270,9 @@ const translations = {
     copied: 'Copiat!',
     form_name: 'Nom',
     form_message: 'Missatge',
-    form_send: 'Enviar',
+    form_hint: 'Resposta habitual en 24–48 h.',
+    form_required: 'Camps obligatoris',
+    form_send: 'Enviar missatge',
     form_ok: 'Missatge enviat.',
     form_err: 'Error en enviar. Torna-ho a provar.',
     legal_privacy: 'Privadesa',
@@ -331,16 +337,35 @@ function applyI18n(lang) {
   document.querySelectorAll('[data-lang]').forEach((btn) => {
     btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
   });
+  document.querySelectorAll('[data-lang-flag]').forEach((el) => {
+    el.classList.toggle('hidden', el.getAttribute('data-lang-flag') !== lang);
+  });
+  const code = document.getElementById('lang-code');
+  if (code) code.textContent = lang.toUpperCase();
   localStorage.setItem(LANG_KEY, lang);
 }
 
 function initI18n() {
   applyI18n(currentLang());
+  const trigger = document.getElementById('lang-trigger');
+  const menu = document.getElementById('lang-menu');
+  const setOpen = (open) => {
+    menu?.classList.toggle('is-open', open);
+    trigger?.setAttribute('aria-expanded', String(open));
+  };
+  trigger?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    setOpen(!menu?.classList.contains('is-open'));
+  });
   document.querySelectorAll('[data-lang]').forEach((btn) => {
     if (btn.dataset.bound === '1') return;
     btn.dataset.bound = '1';
-    btn.addEventListener('click', () => applyI18n(btn.getAttribute('data-lang')));
+    btn.addEventListener('click', () => {
+      applyI18n(btn.getAttribute('data-lang'));
+      setOpen(false);
+    });
   });
+  document.addEventListener('click', () => setOpen(false));
 }
 
 function initJobMore() {
@@ -487,6 +512,13 @@ function initContact() {
   if (!form) return;
   const feedback = document.getElementById('form-feedback');
   const submit = form.querySelector('button[type="submit"]');
+  const message = form.querySelector('#message');
+  const counter = document.getElementById('msg-count');
+  const updateCount = () => {
+    if (counter && message) counter.textContent = `${message.value.length} / 4000`;
+  };
+  message?.addEventListener('input', updateCount);
+  updateCount();
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const original = submit ? submit.textContent : '';

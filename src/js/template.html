@@ -10,18 +10,32 @@
     </nav>
     <div class="flex items-center gap-2">
       <button type="button" id="nav-toggle" class="menu-btn grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Menú">☰</button>
-      <div class="flex items-center gap-1 rounded-full border border-line p-1" role="group" aria-label="Idioma">
-        <button type="button" class="lang-opt" data-lang="es" title="Español" aria-label="Español">
-          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>
+      <div class="relative" id="lang-switch">
+        <button type="button" id="lang-trigger" class="flex h-9 items-center gap-2 rounded-full border border-line px-2.5 text-xs font-semibold" aria-expanded="false" aria-haspopup="listbox">
+          <span data-lang-flag="es"><svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg></span>
+          <span class="hidden" data-lang-flag="en"><svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 19 10"><rect width="19" height="10" fill="#b22234"/><rect y="1" width="19" height="1" fill="#fff"/><rect y="3" width="19" height="1" fill="#fff"/><rect y="5" width="19" height="1" fill="#fff"/><rect y="7" width="19" height="1" fill="#fff"/><rect y="9" width="19" height="1" fill="#fff"/><rect width="8" height="5.5" fill="#3c3b6e"/></svg></span>
+          <span class="hidden" data-lang-flag="ca"><svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="1" height="2" fill="#0018a8"/><rect x="1" width="1" height="2" fill="#fedf00"/><rect x="2" width="1" height="2" fill="#d0103a"/></svg></span>
+          <span id="lang-code">ES</span>
         </button>
-        <button type="button" class="lang-opt" data-lang="en" title="English" aria-label="English">
-          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 19 10"><rect width="19" height="10" fill="#b22234"/><rect y="1" width="19" height="1" fill="#fff"/><rect y="3" width="19" height="1" fill="#fff"/><rect y="5" width="19" height="1" fill="#fff"/><rect y="7" width="19" height="1" fill="#fff"/><rect y="9" width="19" height="1" fill="#fff"/><rect width="8" height="5.5" fill="#3c3b6e"/></svg>
-        </button>
-        <button type="button" class="lang-opt" data-lang="ca" title="Català" aria-label="Català">
-          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="1" height="2" fill="#0018a8"/><rect x="1" width="1" height="2" fill="#fedf00"/><rect x="2" width="1" height="2" fill="#d0103a"/></svg>
-        </button>
+        <div id="lang-menu" class="lang-menu" role="listbox">
+          <button type="button" data-lang="es" class="lang-opt" title="Español">
+            <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>
+            ES
+          </button>
+          <button type="button" data-lang="en" class="lang-opt" title="English">
+            <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 19 10"><rect width="19" height="10" fill="#b22234"/><rect y="1" width="19" height="1" fill="#fff"/><rect y="3" width="19" height="1" fill="#fff"/><rect y="5" width="19" height="1" fill="#fff"/><rect y="7" width="19" height="1" fill="#fff"/><rect y="9" width="19" height="1" fill="#fff"/><rect width="8" height="5.5" fill="#3c3b6e"/></svg>
+            EN
+          </button>
+          <button type="button" data-lang="ca" class="lang-opt" title="Català">
+            <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="1" height="2" fill="#0018a8"/><rect x="1" width="1" height="2" fill="#fedf00"/><rect x="2" width="1" height="2" fill="#d0103a"/></svg>
+            CA
+          </button>
+        </div>
       </div>
-      <button type="button" id="theme-toggle" class="grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Tema">◐</button>
+      <button type="button" id="theme-toggle" class="grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Tema">
+        <svg class="icon-sun h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.2 6.2 4.8 4.8M19.2 19.2l-1.4-1.4M6.2 17.8l-1.4 1.4M19.2 4.8l-1.4 1.4"/></svg>
+        <svg class="icon-moon h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -245,29 +259,27 @@
     </div>
   </section>
   <section id="education" class="border-t border-line py-16">
-    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2">
-      <div>
-        <h2 class="mb-6 text-2xl font-semibold" data-i18n="edu_title">Education</h2>
-        <div class="space-y-4">
-          <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
-            <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
-            <div>
-              <h3 class="font-medium" data-i18n="edu1_title">Administración de Sistemas Informáticos en Red</h3>
-              <p class="mt-1 text-sm text-muted" data-i18n="edu1_meta">ASIR · perfil ciberseguridad · ITB · 2024 — 2026</p>
-            </div>
-          </article>
-          <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
-            <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
-            <div>
-              <h3 class="font-medium" data-i18n="edu2_title">Sistemas Microinformáticos y Redes</h3>
-              <p class="mt-1 text-sm text-muted" data-i18n="edu2_meta">SMR · ITB · 2022 — 2024</p>
-            </div>
-          </article>
-        </div>
-      </div>
-      <div id="credentials">
-        <h2 class="mb-6 text-2xl font-semibold" data-i18n="cred_title">Credentials</h2>
+    <div class="mx-auto max-w-5xl px-4">
+      <h2 class="mb-6 text-2xl font-semibold" data-i18n="edu_title">Education</h2>
+      <div class="grid gap-4 md:grid-cols-2">
         <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
+          <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
+          <div>
+            <h3 class="font-medium" data-i18n="edu1_title">Administración de Sistemas Informáticos en Red</h3>
+            <p class="mt-1 text-sm text-muted" data-i18n="edu1_meta">ASIR · perfil ciberseguridad · ITB · 2024 — 2026</p>
+          </div>
+        </article>
+        <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
+          <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
+          <div>
+            <h3 class="font-medium" data-i18n="edu2_title">Sistemas Microinformáticos y Redes</h3>
+            <p class="mt-1 text-sm text-muted" data-i18n="edu2_meta">SMR · ITB · 2022 — 2024</p>
+          </div>
+        </article>
+      </div>
+      <div id="credentials" class="mt-10">
+        <h2 class="mb-6 text-2xl font-semibold" data-i18n="cred_title">Credentials</h2>
+        <article class="flex max-w-xl gap-3 rounded-xl border border-line bg-surface p-5">
           <svg class="h-12 w-12 shrink-0" viewBox="0 0 23 23" aria-label="Microsoft"><rect fill="#f25022" x="1" y="1" width="10" height="10"/><rect fill="#7fba00" x="12" y="1" width="10" height="10"/><rect fill="#00a4ef" x="1" y="12" width="10" height="10"/><rect fill="#ffb900" x="12" y="12" width="10" height="10"/></svg>
           <div>
             <h3 class="font-medium">Microsoft Applied Skills</h3>
@@ -300,19 +312,26 @@
         </div>
         <button type="button" id="copy-email" class="mt-6 rounded-lg border border-line px-4 py-2.5 text-sm font-medium hover:border-cyan/50 hover:text-cyan" data-i18n="copy_email">Copy Email</button>
       </div>
-      <form id="contact-form" class="space-y-3" action="/api/contact" method="POST">
+      <form id="contact-form" class="rounded-2xl border border-line bg-surface p-5 sm:p-6" action="/api/contact" method="POST">
         <div class="hidden" aria-hidden="true"><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
-        <label class="block text-sm font-medium" for="name"><span data-i18n="form_name">Nombre</span>
-          <input class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="name" name="name" required maxlength="100" autocomplete="name">
+        <p class="mb-4 text-sm text-muted" data-i18n="form_hint">Respuesta habitual en 24–48 h.</p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block text-sm font-medium" for="name"><span data-i18n="form_name">Nombre</span>
+            <input class="mt-1.5 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none transition focus:border-cyan" id="name" name="name" required maxlength="100" autocomplete="name">
+          </label>
+          <label class="block text-sm font-medium" for="email">Email
+            <input class="mt-1.5 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none transition focus:border-cyan" id="email" name="email" type="email" required maxlength="100" autocomplete="email">
+          </label>
+        </div>
+        <label class="mt-4 block text-sm font-medium" for="message"><span data-i18n="form_message">Mensaje</span>
+          <textarea class="mt-1.5 w-full resize-y rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none transition focus:border-cyan" id="message" name="message" rows="5" required maxlength="4000"></textarea>
         </label>
-        <label class="block text-sm font-medium" for="email">Email
-          <input class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="email" name="email" type="email" required maxlength="100" autocomplete="email">
-        </label>
-        <label class="block text-sm font-medium" for="message"><span data-i18n="form_message">Mensaje</span>
-          <textarea class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="message" name="message" rows="4" required maxlength="4000"></textarea>
-        </label>
-        <button type="submit" class="w-full rounded-lg bg-cyan py-2.5 text-sm font-semibold text-canvas transition hover:brightness-110" data-i18n="form_send">Enviar</button>
-        <p id="form-feedback" class="hidden text-sm text-muted" role="status"></p>
+        <div class="mt-2 flex items-center justify-between text-[11px] text-muted">
+          <span data-i18n="form_required">Campos obligatorios</span>
+          <span id="msg-count">0 / 4000</span>
+        </div>
+        <button type="submit" class="mt-4 w-full rounded-lg bg-cyan py-3 text-sm font-semibold text-canvas transition hover:brightness-110" data-i18n="form_send">Enviar mensaje</button>
+        <p id="form-feedback" class="mt-3 hidden text-sm" role="status"></p>
       </form>
     </div>
   </section>
