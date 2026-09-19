@@ -38,6 +38,20 @@ body {
   color: var(--color-cyan);
 }
 
+.lang-opt {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  opacity: 0.45;
+}
+
+.lang-opt.is-active {
+  opacity: 1;
+  box-shadow: 0 0 0 1px var(--color-cyan);
+}
+
 .project-card.is-hidden,
 .hidden {
   display: none !important;

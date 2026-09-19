@@ -10,7 +10,17 @@
     </nav>
     <div class="flex items-center gap-2">
       <button type="button" id="nav-toggle" class="menu-btn grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Menú">☰</button>
-      <button type="button" id="lang-toggle" class="rounded-full border border-line px-3 py-1.5 text-xs font-semibold"><span id="lang-code">ES</span></button>
+      <div class="flex items-center gap-1 rounded-full border border-line p-1" role="group" aria-label="Idioma">
+        <button type="button" class="lang-opt" data-lang="es" title="Español" aria-label="Español">
+          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>
+        </button>
+        <button type="button" class="lang-opt" data-lang="en" title="English" aria-label="English">
+          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 19 10"><rect width="19" height="10" fill="#b22234"/><rect y="1" width="19" height="1" fill="#fff"/><rect y="3" width="19" height="1" fill="#fff"/><rect y="5" width="19" height="1" fill="#fff"/><rect y="7" width="19" height="1" fill="#fff"/><rect y="9" width="19" height="1" fill="#fff"/><rect width="8" height="5.5" fill="#3c3b6e"/></svg>
+        </button>
+        <button type="button" class="lang-opt" data-lang="ca" title="Català" aria-label="Català">
+          <svg class="h-3.5 w-5 rounded-[2px]" viewBox="0 0 3 2"><rect width="1" height="2" fill="#0018a8"/><rect x="1" width="1" height="2" fill="#fedf00"/><rect x="2" width="1" height="2" fill="#d0103a"/></svg>
+        </button>
+      </div>
       <button type="button" id="theme-toggle" class="grid h-9 w-9 place-items-center rounded-full border border-line" aria-label="Tema">◐</button>
     </div>
   </div>
@@ -80,7 +90,7 @@
           <article class="rounded-xl border border-line bg-surface p-5">
             <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
               <div class="flex gap-3">
-                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/attestto_logo.jpg" alt="">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/attestto_logo.jpg" alt="Attestto">
                 <div>
                   <h3 class="font-medium" data-i18n="job1_title">Junior SecOps &amp; Systems Engineer</h3>
                   <p class="text-sm text-cyan" data-i18n="job1_meta">Attestto · parcial · remoto</p>
@@ -88,9 +98,19 @@
               </div>
               <span class="font-mono text-[11px] text-muted">jul. 2026 – sept. 2026</span>
             </div>
-            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+            <p class="text-sm text-muted" data-i18n="job1_summary">Cloud/IAM, Hardening e identidad digital (DID/VC, vLEI) en entorno cloud.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Cloud/IAM</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Cloudflare</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Hardening</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">W3C DID/VC</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Fly.io</span>
+            </div>
+            <button type="button" class="mt-3 text-xs text-cyan" data-more aria-expanded="false"><span data-i18n-more data-i18n="see_more">Ver más</span></button>
+            <ul class="job-more mt-2 hidden list-disc space-y-1 pl-5 text-sm text-muted">
               <li data-i18n="job1_b1">Cloud/IAM: Google Workspace, Cloudflare, GitHub y Fly.io.</li>
               <li data-i18n="job1_b2">Hardening, mínimo privilegio y respuesta ante incidentes.</li>
+              <li data-i18n="job1_b3">Identidad digital: W3C DID/VC, vLEI / GLEIF y eIDAS.</li>
             </ul>
           </article>
         </li>
@@ -98,7 +118,7 @@
           <article class="rounded-xl border border-line bg-surface p-5">
             <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
               <div class="flex gap-3">
-                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/minsait_logo.jpeg" alt="">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/minsait_logo.jpeg" alt="Minsait">
                 <div>
                   <h3 class="font-medium" data-i18n="job2_title">Systems Support Technician</h3>
                   <p class="text-sm text-cyan" data-i18n="job2_meta">Minsait (Indra) · Salut / CTTI</p>
@@ -106,8 +126,18 @@
               </div>
               <span class="font-mono text-[11px] text-muted">nov. 2025 – may. 2026</span>
             </div>
-            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+            <p class="text-sm text-muted" data-i18n="job2_summary">Soporte de sistemas en infraestructuras críticas de salud.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Active Directory</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">GPO</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">SAP ERP</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">BMC Remedy</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">CTTI</span>
+            </div>
+            <button type="button" class="mt-3 text-xs text-cyan" data-more aria-expanded="false"><span data-i18n-more data-i18n="see_more">Ver más</span></button>
+            <ul class="job-more mt-2 hidden list-disc space-y-1 pl-5 text-sm text-muted">
               <li data-i18n="job2_b1">Active Directory, GPO y credenciales en SAP ERP.</li>
+              <li data-i18n="job2_b2">Continuidad operativa en entornos hospitalarios.</li>
               <li data-i18n="job2_b3">Incidencias con BMC Remedy y soporte de nivel 2.</li>
             </ul>
           </article>
@@ -116,7 +146,7 @@
           <article class="rounded-xl border border-line bg-surface p-5">
             <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
               <div class="flex gap-3">
-                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/1742933903062.jpeg" alt="">
+                <img class="h-10 w-10 rounded-md object-cover" src="/assets/images/1742933903062.jpeg" alt="Institut Indústria Sostenible">
                 <div>
                   <h3 class="font-medium" data-i18n="job3_title">IT Maintenance Technician</h3>
                   <p class="text-sm text-cyan" data-i18n="job3_meta">Institut Indústria Sostenible</p>
@@ -124,7 +154,16 @@
               </div>
               <span class="font-mono text-[11px] text-muted">may. 2023 – nov. 2023</span>
             </div>
-            <ul class="list-disc space-y-1 pl-5 text-sm text-muted">
+            <p class="text-sm text-muted" data-i18n="job3_summary">Mantenimiento de aulas, hardware y clonación de sistemas.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Clonezilla</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Hardware</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Redes</span>
+              <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Soporte</span>
+            </div>
+            <button type="button" class="mt-3 text-xs text-cyan" data-more aria-expanded="false"><span data-i18n-more data-i18n="see_more">Ver más</span></button>
+            <ul class="job-more mt-2 hidden list-disc space-y-1 pl-5 text-sm text-muted">
+              <li data-i18n="job3_b1">Soporte de aulas, hardware y cableado de red.</li>
               <li data-i18n="job3_b2">Imágenes de sistema con Clonezilla y mantenimiento preventivo.</li>
             </ul>
           </article>
@@ -171,22 +210,38 @@
     </div>
   </section>
   <section id="education" class="border-t border-line py-16">
-    <div class="mx-auto max-w-5xl px-4">
-      <h2 class="mb-8 text-2xl font-semibold" data-i18n="edu_title">Education</h2>
-      <div class="grid gap-4 md:grid-cols-2">
-        <article class="rounded-xl border border-line bg-surface p-5">
-          <h3 class="font-medium" data-i18n="edu1_title">Administración de Sistemas Informáticos en Red</h3>
-          <p class="mt-2 text-sm text-muted" data-i18n="edu1_meta">ASIR · perfil ciberseguridad · ITB · 2024 — 2026</p>
-        </article>
-        <article class="rounded-xl border border-line bg-surface p-5">
-          <h3 class="font-medium" data-i18n="edu2_title">Sistemas Microinformáticos y Redes</h3>
-          <p class="mt-2 text-sm text-muted" data-i18n="edu2_meta">SMR · ITB · 2022 — 2024</p>
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2">
+      <div>
+        <h2 class="mb-6 text-2xl font-semibold" data-i18n="edu_title">Education</h2>
+        <div class="space-y-4">
+          <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
+            <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
+            <div>
+              <h3 class="font-medium" data-i18n="edu1_title">Administración de Sistemas Informáticos en Red</h3>
+              <p class="mt-1 text-sm text-muted" data-i18n="edu1_meta">ASIR · perfil ciberseguridad · ITB · 2024 — 2026</p>
+            </div>
+          </article>
+          <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
+            <img class="h-12 w-12 shrink-0 rounded-md object-cover" src="/assets/images/itecbcn_logo.jpeg" alt="Institut Tecnològic de Barcelona">
+            <div>
+              <h3 class="font-medium" data-i18n="edu2_title">Sistemas Microinformáticos y Redes</h3>
+              <p class="mt-1 text-sm text-muted" data-i18n="edu2_meta">SMR · ITB · 2022 — 2024</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div id="credentials">
+        <h2 class="mb-6 text-2xl font-semibold" data-i18n="cred_title">Credentials</h2>
+        <article class="flex gap-3 rounded-xl border border-line bg-surface p-5">
+          <svg class="h-12 w-12 shrink-0" viewBox="0 0 23 23" aria-label="Microsoft"><rect fill="#f25022" x="1" y="1" width="10" height="10"/><rect fill="#7fba00" x="12" y="1" width="10" height="10"/><rect fill="#00a4ef" x="1" y="12" width="10" height="10"/><rect fill="#ffb900" x="12" y="12" width="10" height="10"/></svg>
+          <div>
+            <h3 class="font-medium">Microsoft Applied Skills</h3>
+            <p class="mt-1 text-sm text-muted">Identities and Access using Microsoft Entra ID</p>
+            <p class="mt-1 font-mono text-[11px] text-muted" data-i18n="cert_meta">ID F89C9FFB072C4C9A</p>
+            <a class="mt-2 inline-block text-xs text-cyan" href="https://learn.microsoft.com/en-us/users/albertotrujillo-8566/credentials/f89c9ffb072c4c9a" target="_blank" rel="noopener noreferrer" data-i18n="verify">Verificar</a>
+          </div>
         </article>
       </div>
-      <article class="mt-4 rounded-xl border border-line bg-surface p-5">
-        <h3 class="font-medium">Microsoft Applied Skills · Microsoft Entra ID</h3>
-        <p class="mt-2 text-sm text-muted" data-i18n="cert_meta">ID F89C9FFB072C4C9A</p>
-      </article>
     </div>
   </section>
   <section id="contact" class="border-t border-line py-16">

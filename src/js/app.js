@@ -46,6 +46,12 @@ const translations = {
     fact4_title: 'Movilidad geográfica',
     fact4_body: 'Adaptabilidad completa a presencial, híbrido o remoto.',
     exp_title: 'Experience',
+    see_more: 'Ver más',
+    see_less: 'Ver menos',
+    cred_title: 'Credenciales',
+    job1_summary: 'Cloud/IAM, Hardening e identidad digital (DID/VC, vLEI) en entorno cloud.',
+    job2_summary: 'Soporte de sistemas en infraestructuras críticas de salud.',
+    job3_summary: 'Mantenimiento de aulas, hardware y clonación de sistemas.',
     job1_title: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
     job1_meta: 'Attestto · jornada parcial · remoto',
     job1_b1: 'Cloud/IAM: Google Workspace, Cloudflare, GitHub y Fly.io.',
@@ -134,6 +140,12 @@ const translations = {
     fact4_title: 'Geographic mobility',
     fact4_body: 'On-site, hybrid or remote.',
     exp_title: 'Experience',
+    see_more: 'See more',
+    see_less: 'See less',
+    cred_title: 'Credentials',
+    job1_summary: 'Cloud/IAM, Hardening and digital identity (DID/VC, vLEI) in a cloud environment.',
+    job2_summary: 'Systems support in critical healthcare infrastructure.',
+    job3_summary: 'Classroom maintenance, hardware and system imaging.',
     job1_title: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
     job1_meta: 'Attestto · part-time · remote',
     job1_b1: 'Cloud/IAM: Google Workspace, Cloudflare, GitHub and Fly.io.',
@@ -186,6 +198,81 @@ const translations = {
     legal_terms: 'Terms',
     legal_disability: 'Disability certificate >33%',
   },
+  ca: {
+    skip: 'Salta al contingut',
+    menu: 'Menú',
+    nav_experience: 'Experiència',
+    nav_stack: 'Tech Stack',
+    nav_projects: 'Projectes',
+    nav_education: 'Formació',
+    nav_contact: 'Contacte',
+    theme_aria: 'Canviar tema',
+    menu_aria: 'Obrir menú',
+    avail_badge: 'Disponibilitat immediata',
+    hero_role: 'Systems & Cloud Administrator | Cybersecurity · Cloud/IAM',
+    hero_tag1: 'ASIR + SMR',
+    hero_tag3: 'Cybersecurity / Web3',
+    hero_lead: 'Ex-SecOps a Attestto i Ex-Minsait (Indra). ASIR (perfil ciberseguretat) + SMR. Hardening, Cloud/IAM, Zero-Trust. Incorporació immediata.',
+    btn_cv: 'Descarregar CV',
+    btn_contact: 'Contactar',
+    id_role: 'Systems & Cloud Administrator',
+    id_loc: 'Barcelona / Remot',
+    id_edu: 'ASIR + SMR',
+    id_disability: 'Certificat de discapacitat >33%',
+    cmd_label: 'Ordre',
+    see_more: 'Veure més',
+    see_less: 'Veure menys',
+    cred_title: 'Credencials',
+    job1_summary: 'Cloud/IAM, Hardening i identitat digital (DID/VC, vLEI) en entorn cloud.',
+    job2_summary: 'Suport de sistemes en infraestructures crítiques de salut.',
+    job3_summary: 'Manteniment d’aules, maquinari i clonació de sistemes.',
+    exp_title: 'Experiència',
+    job1_title: 'Junior SecOps & Systems Engineer | Cloud/IAM & Security',
+    job1_meta: 'Attestto · jornada parcial · remot',
+    job1_b1: 'Cloud/IAM: Google Workspace, Cloudflare, GitHub i Fly.io.',
+    job1_b2: 'Hardening, mínim privilegi i resposta a incidents.',
+    job1_b3: 'Identitat digital: W3C DID/VC, vLEI / GLEIF i eIDAS.',
+    job2_title: 'Systems Support Technician',
+    job2_meta: 'Minsait (Indra) · Infraestructures crítiques Salut / CTTI',
+    job2_b1: 'Active Directory, GPO i credencials a SAP ERP.',
+    job2_b2: 'Continuïtat operativa en entorns hospitalaris.',
+    job2_b3: 'Incidències amb BMC Remedy i suport de nivell 2.',
+    job3_title: 'IT Maintenance Technician',
+    job3_meta: 'Institut Indústria Sostenible · pràctiques',
+    job3_b1: 'Suport d’aules, maquinari i cablejat de xarxa.',
+    job3_b2: 'Imatges de sistema amb Clonezilla i manteniment preventiu.',
+    projects_title: 'Projectes',
+    filter_all: 'Tots',
+    filter_systems: 'Sistemes',
+    filter_security: 'Ciberseguretat',
+    filter_tools: 'Eines',
+    p1: 'IA multimodal a Cloudflare Workers.',
+    p2: 'Reescriptura a Cloudflare Edge.',
+    p3: 'Runbooks de sistemes.',
+    p4: 'DNS Zero-Trust.',
+    p5: 'Eines al client.',
+    p6: 'Telemetria local.',
+    projects_empty: 'No hi ha projectes en aquesta categoria.',
+    edu_title: 'Formació',
+    edu1_title: 'Administració de Sistemes Informàtics en Xarxa',
+    edu1_meta: 'ASIR · perfil ciberseguretat · ITB · 2024 — 2026',
+    edu2_title: 'Sistemes Microinformàtics i Xarxes',
+    edu2_meta: 'SMR · ITB · 2022 — 2024',
+    cert_meta: 'ID F89C9FFB072C4C9A',
+    verify: 'Verificar',
+    contact_title: 'Contacte',
+    contact_lead: 'Projecte o oportunitat laboral: escriu-me.',
+    copy_email: 'Copiar email',
+    copied: 'Copiat!',
+    form_name: 'Nom',
+    form_message: 'Missatge',
+    form_send: 'Enviar',
+    form_ok: 'Missatge enviat.',
+    form_err: 'Error en enviar. Torna-ho a provar.',
+    legal_privacy: 'Privadesa',
+    legal_terms: 'Termes',
+    legal_disability: 'Certificat de discapacitat >33%',
+  },
 };
 
 const LEGAL = {
@@ -199,6 +286,11 @@ const LEGAL = {
     terms: `<h3>Terms</h3><p class="muted">Professional portfolio. Content is protected. Unauthorized reproduction is prohibited.</p>`,
     compliance: `<h3>Disability certificate &gt;33%</h3><p class="muted">Official certificate. Hiring incentives and statutory quota (Ley 43/2006 / LGD).</p>`,
   },
+  ca: {
+    privacy: `<h3>Política de privadesa</h3><p class="muted">Responsable: Alberto Trujillo Mingorance (${EMAIL}). Les dades del formulari només s’usen per respondre consultes professionals.</p>`,
+    terms: `<h3>Termes</h3><p class="muted">Portfoli professional. Contingut protegit. Queda prohibida la reproducció no autoritzada.</p>`,
+    compliance: `<h3>Certificat de discapacitat &gt;33%</h3><p class="muted">Certificat oficial. Incentius a la contractació i quota de reserva (Llei 43/2006 / LGD).</p>`,
+  },
 };
 
 function ready(fn) {
@@ -209,8 +301,11 @@ function ready(fn) {
   }
 }
 
+const LANGS = ['es', 'en', 'ca'];
+
 function currentLang() {
-  return localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'es';
+  const value = localStorage.getItem(LANG_KEY);
+  return LANGS.includes(value) ? value : 'es';
 }
 
 function t(key) {
@@ -233,18 +328,37 @@ function applyI18n(lang) {
     const key = el.getAttribute('data-i18n-placeholder');
     if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
   });
-  const code = document.getElementById('lang-code');
-  if (code) code.textContent = lang.toUpperCase();
+  document.querySelectorAll('[data-lang]').forEach((btn) => {
+    btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+  });
   localStorage.setItem(LANG_KEY, lang);
 }
 
 function initI18n() {
   applyI18n(currentLang());
-  const btn = document.getElementById('lang-toggle');
-  if (!btn || btn.dataset.bound === '1') return;
-  btn.dataset.bound = '1';
-  btn.addEventListener('click', () => {
-    applyI18n(currentLang() === 'es' ? 'en' : 'es');
+  document.querySelectorAll('[data-lang]').forEach((btn) => {
+    if (btn.dataset.bound === '1') return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', () => applyI18n(btn.getAttribute('data-lang')));
+  });
+}
+
+function initJobMore() {
+  document.querySelectorAll('[data-more]').forEach((btn) => {
+    if (btn.dataset.bound === '1') return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', () => {
+      const extra = btn.closest('article')?.querySelector('.job-more');
+      if (!extra) return;
+      const open = extra.classList.contains('hidden');
+      extra.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', String(open));
+      const label = btn.querySelector('[data-i18n-more]');
+      if (label) {
+        label.setAttribute('data-i18n', open ? 'see_less' : 'see_more');
+        label.textContent = t(open ? 'see_less' : 'see_more');
+      }
+    });
   });
 }
 
@@ -417,6 +531,7 @@ ready(() => {
   const root = document.getElementById('app');
   if (root) root.innerHTML = template;
   try { initI18n(); } catch (error) { console.error('[i18n]', error); }
+  try { initJobMore(); } catch (error) { console.error('[more]', error); }
   try { initTheme(); } catch (error) { console.error('[theme]', error); }
   try { initNavigation(); } catch (error) { console.error('[nav]', error); }
   try { initTerminal(); } catch (error) { console.error('[terminal]', error); }
