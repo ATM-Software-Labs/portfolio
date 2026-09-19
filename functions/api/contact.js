@@ -72,7 +72,10 @@ export async function onRequestPost(context) {
   const allowedOrigins = [
     'https://alberto.trujillomingorance.com',
     'https://trujillomingorance.com',
-    'http://localhost:5173' // Local dev
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:5173',
   ];
   
   const effectiveOrigin = allowedOrigins.includes(origin) ? origin : 'https://alberto.trujillomingorance.com';
@@ -199,7 +202,10 @@ export async function onRequestOptions(context) {
   const allowedOrigins = [
     'https://alberto.trujillomingorance.com',
     'https://trujillomingorance.com',
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:5173'
   ];
   
   const effectiveOrigin = allowedOrigins.includes(origin) ? origin : 'https://alberto.trujillomingorance.com';

@@ -1,130 +1,45 @@
-# Alberto Trujillo Mingorance - Engineering Portfolio
+# Alberto Trujillo Mingorance
 
-[![Status](https://img.shields.io/badge/Status-Production%20Live-emerald?style=flat-square)](https://alberto.trujillomingorance.com)
-[![Platform](https://img.shields.io/badge/Platform-Cloudflare%20Pages-f38020?style=flat-square&logo=cloudflare)](https://pages.cloudflare.com)
-[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=flat-square&logo=githubactions)](https://github.com/atrumin16/portfolio/actions)
-[![Bundler](https://img.shields.io/badge/Bundler-Vite%206-646CFF?style=flat-square&logo=vite)](https://vitejs.dev)
-[![Theme](https://img.shields.io/badge/Theme-Corporate%20Dark%20Slate-0ea5e9?style=flat-square)](#)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](./LICENSE)
+[alberto.trujillomingorance.com](https://alberto.trujillomingorance.com)
 
-Personal portfolio and technical showcase for Alberto Trujillo Mingorance, focusing on systems administration, cloud infrastructure, network architecture, and software engineering.
+Portfolio de **Systems & Cloud Security Engineer**. ASIR (perfil ciberseguridad) + SMR. Barcelona / remoto.
 
-The application is built with modern HTML5, vanilla ES modules, and a dark slate design system. It runs on Cloudflare Pages and includes an interactive client-side terminal, multi-language support (English and Spanish), and performance optimizations aimed at achieving high Lighthouse scores.
+Stack que se enseña en el sitio: Linux, Windows Server, Active Directory, Microsoft Entra ID, Cloudflare, Hardening, Zero-Trust, Cloud/IAM.
 
----
+## Stack del repo
 
-## Production Deployment
+Vite 6 · JavaScript vanilla · Tailwind CSS 4 · Cloudflare Pages + Pages Function (`/api/contact`).
 
-- Production Domain: [alberto.trujillomingorance.com](https://alberto.trujillomingorance.com)
-- Hosting: Cloudflare Pages Anycast Network
-- CI/CD Pipeline: GitHub Actions running automated Vite build validations on `main` and `develop` branches.
-
----
-
-## Technical Highlights
-
-- Dark Slate Design System: Built using CSS custom properties with an obsidian navy background (#080c14), semi-transparent glass cards, and high-contrast typography following WCAG standards.
-- Interactive Terminal: A lightweight in-browser CLI emulator providing quick access to experience records, technical certifications, skill breakdowns, and contact options.
-- Internationalization: Native client-side bilingual translation (ES/EN) persisted across sessions using localStorage.
-- Performance and Assets: Bundled with Vite 6. Images are pre-processed and optimized into WebP formats, critical styles are inlined, and caching headers are managed via Cloudflare Pages `_headers`.
-
----
-
-## System Architecture
-
-```mermaid
-flowchart TD
-    User["Client Browser"]
-    subgraph Edge["Cloudflare Anycast Global Edge Network"]
-        CDN["Static Asset CDN<br/>Cache-Control: immutable"]
-        PagesRouter["Pages Router<br/>_routes.json / _headers"]
-        Functions["Edge Functions Layer<br/>/functions/api/*.js"]
-    end
-    subgraph ClientApp["Vite Single Page Application"]
-        Shell["HTML5 Shell<br/>Dark Slate Design System"]
-        Terminal["In-Browser Terminal CLI<br/>Interactive Command Parser"]
-        i18n["Client i18n Engine<br/>Bilingual State Storage"]
-    end
-
-    User --> CDN
-    CDN --> Shell
-    Shell --> Terminal
-    Shell --> i18n
-    Terminal -.-> Functions
-    PagesRouter --> Functions
-```
-
----
-
-## Repository Structure
+No hay framework, i18n ni backend más allá del formulario.
 
 ```
-portfolio/
-├── .github/
-│   └── workflows/
-│       └── ci.yml               # Automated build validation on PRs and pushes
-├── functions/                   # Cloudflare Pages Functions (Edge API handlers)
-├── public/                      # Static assets, Web App Manifest, robots.txt, icons
-├── scripts/                     # Build tools (favicon generation, asset verification)
-├── src/                         # Core styles, terminal emulator logic, and interactive modules
-├── index.html                   # Main single-page application entry point
-├── package.json                 # Project dependencies and build scripts
-├── vite.config.js               # Bundler configuration
-└── wrangler.toml                # Cloudflare Pages configuration
+index.html                 # página
+src/css/styles.css         # Tailwind + tokens
+src/js/app.js              # terminal, filtros, contacto, nav
+functions/api/contact.js   # POST del formulario (Resend)
+public/                    # estáticos, CV, cabeceras
 ```
 
----
+## Local
 
-## Branching Model
-
-This repository follows a clean GitFlow branching strategy:
-
-- `main`: The production branch. Pushes to this branch reflect what is deployed live on the primary domain.
-- `develop`: The active integration branch. New features, UI refinements, and content updates are merged here first for testing.
-- `feature/*`: Short-lived branches created for specific improvements before opening a pull request to `develop`.
-
----
-
-## Local Development
-
-### Requirements
-- Node.js 20 or higher
-- npm
-
-### Installation and Setup
+Node 20+.
 
 ```bash
-# Clone the repository
-git clone https://github.com/atrumin16/portfolio.git
-cd portfolio
-
-# Switch to the development branch
-git checkout develop
-
-# Install dependencies
 npm install
-
-# Start the Vite local development server
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build    # salida en dist/
 ```
 
-The site will be available at `http://localhost:5173`.
+## Deploy
 
-### Production Build and Verification
+Push a `main`. Cloudflare Pages ejecuta `npm run build` y publica `dist/`.
 
-```bash
-# Verify TypeScript / modules and build production artifacts
-npm run build
+Formulario de contacto: secrets `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO` en el dashboard de Pages. Plantilla en `.env.example`.
 
-# Preview the production build locally
-npm run preview
+## Contacto
 
-# Deploy manually to Cloudflare Pages (requires wrangler login)
-npm run deploy
-```
+- Email: [alberto@trujillomingorance.com](mailto:alberto@trujillomingorance.com)
+- LinkedIn: [alberto-trujillo-mingorance](https://linkedin.com/in/alberto-trujillo-mingorance-288237266/)
+- GitHub: [atrumin16](https://github.com/atrumin16)
 
----
-
-## License
-
-Copyright (c) 2026 Alberto Trujillo Mingorance. Released under the MIT License.
+MIT.
