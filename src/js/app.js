@@ -457,7 +457,7 @@ function initNavigation() {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) setOpen(false);
+    if (window.innerWidth >= 1024) setOpen(false);
   });
   onScroll();
 }
