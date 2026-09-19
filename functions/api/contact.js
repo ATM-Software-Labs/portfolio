@@ -1,8 +1,5 @@
 /**
- * Cloudflare Pages Function: Contact Form API (Military-Grade Hardened)
- * Endpoint: POST /api/contact
- * Features: Rate limiting, IP sanitization, CRLF prevention, honeypot traps,
- * strict CORS, HTML entity encoding, and fail-closed error handling.
+ * POST /api/contact
  */
 
 const rateLimitMap = new Map();
@@ -128,31 +125,29 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Verify Resend Secret Key
-    const resendApiKey = env.RESEND_API_KEY;
-    if (!resendApiKey) {
-      console.error('[SECURITY ALERT] RESEND_API_KEY binding is missing');
+    const mailKey = env.MAIL_KEY || env.RESEND_API_KEY;
+    const emailFrom = env.EMAIL_FROM;
+    const emailTo = env.EMAIL_TO || 'alberto@trujillomingorance.com';
+    const mailEndpoint = env.MAIL_ENDPOINT || 'https://api.resend.com/emails';
+
+    if (!mailKey || !emailFrom) {
       return new Response(
         JSON.stringify({ success: false, error: 'Servicio de mensajería temporalmente no disponible.' }),
         { status: 503, headers }
       );
     }
 
-    const emailFrom = env.EMAIL_FROM || 'Portfolio Contact <noreply@trujillomingorance.com>';
-    const emailTo = env.EMAIL_TO || 'jostrume16@gmail.com';
-
-    // Dispatch Secure Payload to Resend API
-    const resendResponse = await fetch('https://api.resend.com/emails', {
+    const mailResponse = await fetch(mailEndpoint, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${resendApiKey}`,
+        'Authorization': `Bearer ${mailKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         from: emailFrom,
         to: emailTo,
         reply_to: email,
-        subject: `[SECURE-CONTACT] Nuevo mensaje de ${name}`,
+        subject: `Contacto: ${name}`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 20px auto; background-color: #0f172a; color: #f8fafc; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden;">
             <div style="background-color: #1e293b; padding: 20px; border-bottom: 2px solid #3b82f6;">
@@ -176,20 +171,18 @@ export async function onRequestPost(context) {
       }),
     });
 
-    if (resendResponse.ok) {
+    if (mailResponse.ok) {
       return new Response(
         JSON.stringify({ success: true, message: '¡Mensaje transmitido con éxito!' }),
         { status: 200, headers }
       );
     } else {
-      console.error('[SECURITY ERROR] Resend Dispatch Failed:', resendResponse.status);
       return new Response(
         JSON.stringify({ success: false, error: 'Error al enviar el mensaje. Inténtalo más tarde.' }),
         { status: 500, headers }
       );
     }
   } catch (err) {
-    console.error('[SECURITY ERROR] API Handler Exception:', err);
     return new Response(
       JSON.stringify({ success: false, error: 'Error interno del servidor.' }),
       { status: 500, headers }

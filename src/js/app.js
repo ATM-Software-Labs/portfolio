@@ -190,12 +190,12 @@ const translations = {
 const LEGAL = {
   es: {
     privacy: `<h3>Política de privacidad</h3><p class="muted">Responsable: Alberto Trujillo Mingorance (${EMAIL}). Los datos del formulario se usan solo para responder consultas profesionales.</p>`,
-    terms: `<h3>Términos</h3><p class="muted">Portfolio profesional. Contenido protegido. Infraestructura en Cloudflare Pages con TLS.</p>`,
+    terms: `<h3>Términos</h3><p class="muted">Portfolio profesional. Contenido protegido. Queda prohibida la reproducción no autorizada.</p>`,
     compliance: `<h3>Certificado de discapacidad &gt;33%</h3><p class="muted">Certificado oficial. Incentivos a la contratación y cuota de reserva (Ley 43/2006 / LGD).</p>`,
   },
   en: {
     privacy: `<h3>Privacy policy</h3><p class="muted">Controller: Alberto Trujillo Mingorance (${EMAIL}). Contact-form data is used only to reply to professional enquiries.</p>`,
-    terms: `<h3>Terms</h3><p class="muted">Professional portfolio. Content is protected. Hosted on Cloudflare Pages with TLS.</p>`,
+    terms: `<h3>Terms</h3><p class="muted">Professional portfolio. Content is protected. Unauthorized reproduction is prohibited.</p>`,
     compliance: `<h3>Disability certificate &gt;33%</h3><p class="muted">Official certificate. Hiring incentives and statutory quota (Ley 43/2006 / LGD).</p>`,
   },
 };
