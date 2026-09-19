@@ -41,8 +41,8 @@
       <p class="mt-3 text-cyan" data-i18n="hero_role">Systems &amp; Cloud Administrator | Cybersecurity · Cloud/IAM</p>
       <p class="mt-5 max-w-md text-sm leading-relaxed text-muted" data-i18n="hero_lead">Ex-SecOps en Attestto y Ex-Minsait (Indra). ASIR (perfil ciberseguridad) + SMR. Hardening, Cloud/IAM, Zero-Trust. Incorporación inmediata.</p>
       <div class="mt-8 flex gap-3">
-        <a class="rounded-lg bg-cyan px-4 py-2.5 text-sm font-semibold text-canvas" data-i18n="btn_cv" href="https://drive.google.com/file/d/1Zbh1BN5wfNraUauE13s-5sbQ_rZ6z29s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
-        <a class="rounded-lg border border-line px-4 py-2.5 text-sm" data-i18n="btn_contact" href="#contact">Contact Me</a>
+        <a class="rounded-lg bg-cyan px-4 py-2.5 text-sm font-semibold tracking-tight text-canvas transition hover:brightness-110" data-i18n="btn_cv" href="https://drive.google.com/file/d/1Zbh1BN5wfNraUauE13s-5sbQ_rZ6z29s/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a class="rounded-lg border border-line px-4 py-2.5 text-sm font-medium tracking-tight transition hover:border-cyan/50 hover:text-cyan" data-i18n="btn_contact" href="#contact">Contact Me</a>
       </div>
     </div>
     <aside class="rounded-2xl border border-line bg-surface p-6 text-center">
@@ -182,28 +182,63 @@
       </div>
       <div id="project-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="systems">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">Trujillo AI Studio</h3><a class="text-muted" href="https://ai.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p1">IA multimodal en Cloudflare Workers.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">Trujillo AI Studio</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/trujillo-ai-studio" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+              <a class="icon-link" href="https://ai.trujillomingorance.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p1">IA multimodal en Cloudflare Workers.</p>
         </article>
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="tools">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">Rewrite AI</h3><a class="text-muted" href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p2">Reescritura en Cloudflare Edge.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">Rewrite AI</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/rewrite-ai" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+              <a class="icon-link" href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p2">Reescritura en Cloudflare Edge.</p>
         </article>
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="systems">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">Trujillo Guides</h3><a class="text-muted" href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p3">Runbooks de sistemas.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">Trujillo Guides</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/trujillo-guides" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+              <a class="icon-link" href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p3">Runbooks de sistemas.</p>
         </article>
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="security">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">FocusGuard</h3><a class="text-muted" href="https://focusguard.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p4">DNS Zero-Trust.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">FocusGuard</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/focusguard-saas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+              <a class="icon-link" href="https://focusguard.trujillomingorance.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p4">DNS Zero-Trust.</p>
         </article>
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="tools">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">ATM Tools</h3><a class="text-muted" href="https://tools.trujillomingorance.com" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p5">Herramientas en el cliente.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">ATM Tools</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/atm-tools" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+              <a class="icon-link" href="https://tools.trujillomingorance.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p5">Herramientas en el cliente.</p>
         </article>
         <article class="project-card flex min-h-44 flex-col rounded-xl border border-line bg-surface p-5" data-category="security">
-          <div class="mb-2 flex justify-between"><h3 class="font-medium">Open-Sentinel</h3><a class="text-muted" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer">↗</a></div>
-          <p class="text-sm text-muted" data-i18n="p6">Telemetría local.</p>
+          <div class="mb-3 flex items-start justify-between gap-3">
+            <h3 class="font-medium">Open-Sentinel</h3>
+            <div class="flex gap-2">
+              <a class="icon-link" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></a>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-muted" data-i18n="p6">Telemetría local.</p>
         </article>
       </div>
       <p id="project-empty" class="mt-6 hidden text-sm text-muted" data-i18n="projects_empty">No hay proyectos en esta categoría.</p>
@@ -245,19 +280,38 @@
     </div>
   </section>
   <section id="contact" class="border-t border-line py-16">
-    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2">
+    <div class="mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-2">
       <div>
-        <h2 class="text-2xl font-semibold" data-i18n="contact_title">Contact</h2>
-        <p class="mt-3 text-sm text-muted" data-i18n="contact_lead">Proyecto u oportunidad laboral: escríbeme.</p>
-        <p class="mt-4 text-sm"><a href="mailto:alberto@trujillomingorance.com">alberto@trujillomingorance.com</a></p>
-        <button type="button" id="copy-email" class="mt-4 rounded-lg border border-line px-4 py-2 text-sm" data-i18n="copy_email">Copy Email</button>
+        <h2 class="text-2xl font-semibold tracking-tight" data-i18n="contact_title">Contact</h2>
+        <p class="mt-3 text-sm leading-relaxed text-muted" data-i18n="contact_lead">Proyecto u oportunidad laboral: escríbeme.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a class="icon-link" href="mailto:alberto@trujillomingorance.com" aria-label="Enviar correo">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a class="text-sm hover:text-cyan" href="mailto:alberto@trujillomingorance.com">alberto@trujillomingorance.com</a>
+        </div>
+        <div class="mt-4 flex gap-2">
+          <a class="icon-link" href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 3.2a4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+          </a>
+          <a class="icon-link" href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.79-2.05C21.4 8.65 22 11.1 22 14.43V21h-4v-5.8c0-1.38-.02-3.16-1.93-3.16-1.93 0-2.23 1.5-2.23 3.06V21H9z"/></svg>
+          </a>
+        </div>
+        <button type="button" id="copy-email" class="mt-6 rounded-lg border border-line px-4 py-2.5 text-sm font-medium hover:border-cyan/50 hover:text-cyan" data-i18n="copy_email">Copy Email</button>
       </div>
       <form id="contact-form" class="space-y-3" action="/api/contact" method="POST">
         <div class="hidden" aria-hidden="true"><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
-        <input class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="name" name="name" required maxlength="100" data-i18n-placeholder="form_name" placeholder="Nombre">
-        <input class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="email" name="email" type="email" required maxlength="100" placeholder="Email">
-        <textarea class="w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm" id="message" name="message" rows="4" required maxlength="4000" data-i18n-placeholder="form_message" placeholder="Mensaje"></textarea>
-        <button type="submit" class="w-full rounded-lg bg-cyan py-2.5 text-sm font-semibold text-canvas" data-i18n="form_send">Enviar</button>
+        <label class="block text-sm font-medium" for="name"><span data-i18n="form_name">Nombre</span>
+          <input class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="name" name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label class="block text-sm font-medium" for="email">Email
+          <input class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="email" name="email" type="email" required maxlength="100" autocomplete="email">
+        </label>
+        <label class="block text-sm font-medium" for="message"><span data-i18n="form_message">Mensaje</span>
+          <textarea class="mt-1 w-full rounded-lg border border-line bg-canvas px-3 py-2.5 text-sm outline-none focus:border-cyan" id="message" name="message" rows="4" required maxlength="4000"></textarea>
+        </label>
+        <button type="submit" class="w-full rounded-lg bg-cyan py-2.5 text-sm font-semibold text-canvas transition hover:brightness-110" data-i18n="form_send">Enviar</button>
         <p id="form-feedback" class="hidden text-sm text-muted" role="status"></p>
       </form>
     </div>

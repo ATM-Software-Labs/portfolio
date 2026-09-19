@@ -507,6 +507,7 @@ function initContact() {
       if (feedback) {
         feedback.textContent = t('form_ok');
         feedback.classList.remove('hidden');
+        feedback.style.color = 'var(--color-ok)';
       }
       showToast(t('form_ok'));
     } catch (error) {

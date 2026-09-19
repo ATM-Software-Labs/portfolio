@@ -126,11 +126,11 @@ export async function onRequestPost(context) {
     }
 
     const mailKey = env.MAIL_KEY || env.RESEND_API_KEY;
-    const emailFrom = env.EMAIL_FROM;
+    const emailFrom = env.EMAIL_FROM || 'Alberto Trujillo <noreply@trujillomingorance.com>';
     const emailTo = env.EMAIL_TO || 'alberto@trujillomingorance.com';
     const mailEndpoint = env.MAIL_ENDPOINT || 'https://api.resend.com/emails';
 
-    if (!mailKey || !emailFrom) {
+    if (!mailKey) {
       return new Response(
         JSON.stringify({ success: false, error: 'Servicio de mensajería temporalmente no disponible.' }),
         { status: 503, headers }
@@ -145,9 +145,10 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: emailFrom,
-        to: emailTo,
+        to: [emailTo],
         reply_to: email,
         subject: `Contacto: ${name}`,
+        text: `${name} <${email}>\n\n${message}`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 20px auto; background-color: #0f172a; color: #f8fafc; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden;">
             <div style="background-color: #1e293b; padding: 20px; border-bottom: 2px solid #3b82f6;">
