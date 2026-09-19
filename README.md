@@ -2,22 +2,23 @@
 
 [alberto.trujillomingorance.com](https://alberto.trujillomingorance.com)
 
-Portfolio de **Systems & Cloud Security Engineer**. ASIR (perfil ciberseguridad) + SMR. Barcelona / remoto.
+Ingeniero de sistemas y seguridad cloud. Barcelona / remoto. Incorporación inmediata.
 
-Stack que se enseña en el sitio: Linux, Windows Server, Active Directory, Microsoft Entra ID, Cloudflare, Hardening, Zero-Trust, Cloud/IAM.
+ASIR (perfil ciberseguridad) + SMR. Ex-SecOps en Attestto y Ex-Minsait (Indra). Certificado de discapacidad &gt;33%.
 
-## Stack del repo
+**Áreas:** Cloud/IAM · Hardening · Zero-Trust · Active Directory · Microsoft Entra ID · Cloudflare.
 
-Vite 6 · JavaScript vanilla · Tailwind CSS 4 · Cloudflare Pages + Pages Function (`/api/contact`).
+## Este repositorio
 
-No hay framework, i18n ni backend más allá del formulario.
+Sitio estático en **Vite + JavaScript vanilla + Tailwind CSS**, publicado en **Cloudflare Pages**. El formulario de contacto es una Pages Function (`functions/api/contact.js`).
 
 ```
-index.html                 # página
-src/css/styles.css         # Tailwind + tokens
-src/js/app.js              # terminal, filtros, contacto, nav
-functions/api/contact.js   # POST del formulario (Resend)
-public/                    # estáticos, CV, cabeceras
+index.html              página
+src/css/styles.css      estilos
+src/js/                 terminal, filtros, nav, contacto
+functions/api/          POST /api/contact
+public/                 CV, imágenes, cabeceras
+wrangler.toml           salida dist/ → proyecto alberto-portfolio
 ```
 
 ## Local
@@ -27,19 +28,21 @@ Node 20+.
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # salida en dist/
+npm run build
 ```
 
 ## Deploy
 
-Push a `main`. Cloudflare Pages ejecuta `npm run build` y publica `dist/`.
+Push a `main` (Pages construye y publica) o:
 
-Formulario de contacto: secrets `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO` en el dashboard de Pages. Plantilla en `.env.example`.
+```bash
+npm run deploy
+```
+
+Secrets del formulario en el dashboard de Pages: `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO`. Ver `.env.example`.
 
 ## Contacto
 
-- Email: [alberto@trujillomingorance.com](mailto:alberto@trujillomingorance.com)
-- LinkedIn: [alberto-trujillo-mingorance](https://linkedin.com/in/alberto-trujillo-mingorance-288237266/)
-- GitHub: [atrumin16](https://github.com/atrumin16)
+[alberto@trujillomingorance.com](mailto:alberto@trujillomingorance.com) · [LinkedIn](https://linkedin.com/in/alberto-trujillo-mingorance-288237266/) · [GitHub](https://github.com/atrumin16)
 
 MIT.
