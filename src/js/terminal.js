@@ -3,17 +3,20 @@
  * Sin anti-debug, sin listeners duplicados, sin reconstruir el DOM del grid.
  */
 const EMAIL = 'alberto@trujillomingorance.com';
-const PROMPT = 'alberto@sys-node:~$';
+const PROMPT = 'alberto@devops-node:~$';
 const MAX_HISTORY = 80;
 const FILTER_ALL = 'all';
 
 const COMMANDS = Object.freeze({
   help: 'Lista los comandos disponibles',
-  whoami: 'Resumen de identidad y perfil profesional',
+  whoami: 'Identidad y perfil profesional',
+  sysinfo: 'Arquitectura de sistemas y cloud',
+  hardening: 'Estándares de Hardening e IAM',
   skills: 'Stack técnico y competencias',
   exp: 'Experiencia profesional',
   projects: 'Proyectos en producción y laboratorio',
   certs: 'Certificaciones y credenciales',
+  status: 'Disponibilidad y datos clave',
   contact: 'Canales de contacto',
   clear: 'Limpia la consola',
 });
@@ -41,9 +44,21 @@ function commandHtml(cmd) {
     case 'whoami':
       return `<div class="mb-2 text-sky">[ identidad ]</div>
         Nombre: Alberto Trujillo Mingorance<br>
-        Rol: Ingeniero de sistemas y seguridad cloud<br>
+        Rol: Systems &amp; Cloud Administrator | Cybersecurity · Cloud/IAM<br>
         Formación: ASIR (perfil ciberseguridad) + SMR · Institut Tecnològic de Barcelona<br>
         Estado: Ex-SecOps en Attestto y Ex-Minsait (Indra) · discapacidad &gt;33% · incorporación inmediata`;
+    case 'sysinfo':
+      return `<div class="mb-2 text-sky">[ sysinfo ]</div>
+        Host: alberto@devops-node<br>
+        Cloud: Cloudflare Pages / Workers, Fly.io<br>
+        IAM: Microsoft Entra ID, Google Workspace, Active Directory<br>
+        Edge: DNS, TLS, Zero-Trust`;
+    case 'hardening':
+      return `<div class="mb-2 text-sky">[ hardening ]</div>
+        - Mínimo privilegio y RBAC en Cloud/IAM<br>
+        - Hardening Linux/Windows Server y GPO<br>
+        - Perímetro Cloudflare y Zero-Trust<br>
+        - Identidad digital: W3C DID/VC, vLEI, eIDAS`;
     case 'skills':
       return `<div class="mb-2 text-sky">[ stack ]</div>
         - Cloud/IAM: Microsoft Entra ID, Google Workspace, Cloudflare, Fly.io<br>
@@ -65,9 +80,15 @@ function commandHtml(cmd) {
         - Open-Sentinel — <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer">GitHub</a>`;
     case 'certs':
       return `<div class="mb-2 text-sky">[ credenciales ]</div>
-        - Microsoft Applied Skills: identities and access with Microsoft Entra ID<br>
+        - Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
         - ID: F89C9FFB072C4C9A<br>
         - ASIR (perfil ciberseguridad) + SMR · ITB`;
+    case 'status':
+      return `<div class="mb-2 text-sky">[ status ]</div>
+        Disponibilidad: inmediata<br>
+        Ubicación: Barcelona / Remoto<br>
+        Discapacidad: &gt;33% acreditada<br>
+        Edge monitoring: 99.9%`;
     case 'contact':
       return `<div class="mb-2 text-sky">[ contacto ]</div>
         Email: <a class="text-cyan underline" href="mailto:${EMAIL}">${EMAIL}</a><br>
@@ -144,7 +165,7 @@ export function initTerminal() {
 
       remember(cmd);
       appendTrusted(
-        `<span class="text-cyan">${PROMPT}</span> <span>${escapeHtml(cmd)}</span>`,
+        `<span class="term-prompt">${PROMPT}</span> <span>${escapeHtml(cmd)}</span>`,
         true
       );
 

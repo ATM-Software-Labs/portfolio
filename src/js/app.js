@@ -148,14 +148,24 @@ function initModals() {
 
 function initContact() {
   const copyBtn = document.getElementById('copy-email');
-  copyBtn?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL);
-      showToast('Email copiado al portapapeles');
-    } catch {
-      showToast(EMAIL);
-    }
-  });
+  if (copyBtn && copyBtn.dataset.bound !== '1') {
+    copyBtn.dataset.bound = '1';
+    let copyTimer = 0;
+    const label = copyBtn.textContent;
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(EMAIL);
+        copyBtn.textContent = '¡Copiado!';
+        window.clearTimeout(copyTimer);
+        copyTimer = window.setTimeout(() => {
+          copyBtn.textContent = label;
+        }, 2000);
+        showToast('¡Copiado!');
+      } catch {
+        copyBtn.textContent = EMAIL;
+      }
+    });
+  }
 
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -209,10 +219,18 @@ function initContact() {
   });
 }
 
+function initTheme() {
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light');
+  });
+}
+
 ready(() => {
   if (window.__portfolioAppReady) return;
   window.__portfolioAppReady = true;
   try { initNavigation(); } catch (error) { console.error('[nav]', error); }
+  try { initTheme(); } catch (error) { console.error('[theme]', error); }
   try { initTerminal(); } catch (error) { console.error('[terminal]', error); }
   try { initProjectFilters(); } catch (error) { console.error('[filters]', error); }
   try { initContact(); } catch (error) { console.error('[contact]', error); }
