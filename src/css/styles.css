@@ -31,6 +31,56 @@ html[data-theme="light"] {
 
 body {
   @apply bg-canvas text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(900px 480px at 88% -12%, rgba(56, 189, 248, 0.14), transparent 55%),
+    radial-gradient(700px 420px at 0% 12%, rgba(45, 212, 191, 0.08), transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  margin-bottom: 8px;
+}
+
+.identity-card {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 88%, white 0%), var(--color-canvas));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.avatar-glow {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ok) 50%, transparent), 0 0 28px rgba(52, 211, 153, 0.35);
+}
+
+.pulse-dot {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.4; }
+}
+
+.fact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+}
+
+.project-card {
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.project-card:hover {
+  border-color: color-mix(in srgb, var(--color-cyan) 40%, var(--color-line));
+  transform: translateY(-2px);
 }
 
 .nav-link.is-active,
@@ -185,6 +235,36 @@ html[data-theme="light"] .term {
   bottom: 8px;
   width: 1px;
   background: var(--color-line);
+}
+
+.timeline > li {
+  position: relative;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -32px;
+  top: 28px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--color-canvas);
+  border: 2px solid var(--color-cyan);
+}
+
+.timeline-node.purple {
+  border-color: #a78bfa;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.65);
+}
+
+.timeline-node.cyan {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
+}
+
+.timeline-node.green {
+  border-color: var(--color-ok);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.65);
 }
 
 .drawer,
