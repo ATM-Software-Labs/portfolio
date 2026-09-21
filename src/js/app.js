@@ -4,7 +4,7 @@
 import '../css/styles.css';
 import { initTerminal, initProjectFilters } from './terminal.js';
 
-const EMAIL = 'alberto@trujillomingorance.com';
+const EMAIL = ['alberto', 'trujillomingorance.com'].join('@');
 const LANG_KEY = 'lang';
 const THEME_KEY = 'theme';
 

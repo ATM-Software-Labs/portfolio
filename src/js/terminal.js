@@ -2,7 +2,7 @@
  * Terminal CLI + filtros de proyectos (módulo ES).
  * Sin anti-debug, sin listeners duplicados, sin reconstruir el DOM del grid.
  */
-const EMAIL = 'alberto@trujillomingorance.com';
+const EMAIL = ['alberto', 'trujillomingorance.com'].join('@');
 const PROMPT = 'alberto@secops-node:~$';
 const MAX_HISTORY = 80;
 const FILTER_ALL = 'all';
