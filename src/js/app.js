@@ -561,6 +561,14 @@ function initContact() {
 ready(() => {
   if (window.__portfolioAppReady) return;
   window.__portfolioAppReady = true;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
   const root = document.getElementById('app');
   if (root) root.innerHTML = template;
   try { initI18n(); } catch (error) { console.error('[i18n]', error); }
@@ -572,3 +580,4 @@ ready(() => {
   try { initContact(); } catch (error) { console.error('[contact]', error); }
   try { initModals(); } catch (error) { console.error('[modals]', error); }
 });
+

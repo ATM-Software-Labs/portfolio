@@ -488,35 +488,13 @@ body.dark .glass-nav {
   transform: scale(1.08);
 }
 
-.lang-switcher {
-  display: flex;
-  background: var(--border-color);
-  padding: 3px;
-  border-radius: var(--radius-full);
-  gap: 2px;
-}
 
-.lang-btn {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-weight: 600;
-  font-size: 0.78rem;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
 
-.lang-btn:hover {
-  color: var(--text-main);
-}
 
-.lang-btn.active {
-  background: var(--accent-primary);
-  color: white;
-}
+
+
+
+
 
 .mobile-menu-toggle {
   display: none;
@@ -751,24 +729,7 @@ body.dark .glass-nav {
     padding: 0;
   }
 
-  .mobile-lang-switcher .lang-btn {
-    flex: 1;
-    text-align: center;
-    padding: 9px 0;
-    font-size: 0.84rem;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
   }
-
-  .mobile-lang-switcher .lang-btn.active {
-    background: var(--accent-primary);
-    color: white;
-    border-color: var(--accent-primary);
-  }
-}
 
 /* ==========================================================================
    7. Hero Section (Gradient Mesh & Typing)
@@ -2920,5 +2881,58 @@ body.dark .toast-message {
 }
 
 
+
+
+
+
+.lang-switcher {
+  display: inline-flex;
+  background: #18181b; /* zinc-900 */
+  border: 1px solid #27272a; /* zinc-800 */
+  padding: 4px;
+  border-radius: 9999px; /* rounded-full */
+  gap: 2px;
+  align-items: center;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #a1a1aa; /* zinc-400 */
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #e4e4e7; /* zinc-200 */
+}
+
+.lang-btn.active, .lang-btn.is-active {
+  background: #3f3f46; /* zinc-700 */
+  color: #ffffff; /* white */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+html[data-theme='light'] .lang-switcher {
+  background: #f4f4f5; /* zinc-100 */
+  border-color: #e4e4e7; /* zinc-200 */
+}
+html[data-theme='light'] .lang-btn {
+  color: #71717a; /* zinc-500 */
+}
+html[data-theme='light'] .lang-btn:hover {
+  color: #18181b; /* zinc-900 */
+}
+html[data-theme='light'] .lang-btn.active, html[data-theme='light'] .lang-btn.is-active {
+  background: #ffffff;
+  color: #18181b;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
 
