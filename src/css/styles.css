@@ -2885,14 +2885,30 @@ body.dark .toast-message {
 
 
 
+
+
+
+
+
+
+
+
+html[data-theme='light'] 
+html[data-theme='light'] 
+html[data-theme='light'] 
+
+
+
+
 .lang-switcher {
   display: inline-flex;
-  background: #18181b; /* zinc-900 */
+  background: rgba(24, 24, 27, 0.5); /* zinc-900/50 */
   border: 1px solid #27272a; /* zinc-800 */
   padding: 4px;
   border-radius: 9999px; /* rounded-full */
   gap: 2px;
   align-items: center;
+  backdrop-filter: blur(8px);
 }
 
 .lang-btn {
@@ -2904,7 +2920,7 @@ body.dark .toast-message {
   font-family: var(--font-mono);
   color: #a1a1aa; /* zinc-400 */
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 9999px;
   transition: all 0.2s ease;
 }
@@ -2914,13 +2930,14 @@ body.dark .toast-message {
 }
 
 .lang-btn.active, .lang-btn.is-active {
-  background: #3f3f46; /* zinc-700 */
-  color: #ffffff; /* white */
+  background: #f4f4f5; /* zinc-100 (gris claro/blanco) */
+  color: #18181b; /* texto oscuro (zinc-900) */
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Light mode overrides */
 html[data-theme='light'] .lang-switcher {
-  background: #f4f4f5; /* zinc-100 */
+  background: rgba(244, 244, 245, 0.5); /* zinc-100/50 */
   border-color: #e4e4e7; /* zinc-200 */
 }
 html[data-theme='light'] .lang-btn {
@@ -2934,5 +2951,3 @@ html[data-theme='light'] .lang-btn.active, html[data-theme='light'] .lang-btn.is
   color: #18181b;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
-
-

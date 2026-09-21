@@ -20,7 +20,793 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alberto Trujillo Mingorance","jobTitle":"Systems & Cloud Administrator","url":"https://alberto.trujillomingorance.com/","email":"mailto:alberto@trujillomingorance.com","image":"https://alberto.trujillomingorance.com/assets/images/Alberto.webp","address":{"@type":"PostalAddress","addressLocality":"Barcelona","addressCountry":"ES"},"alumniOf":{"@type":"EducationalOrganization","name":"Institut Tecnològic de Barcelona"},"sameAs":["https://github.com/atrumin16","https://linkedin.com/in/alberto-trujillo-mingorance-288237266/"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"Microsoft Applied Skills: Identities and Access using Microsoft Entra ID","recognizedBy":{"@type":"Organization","name":"Microsoft"}}}</script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+
+    <!-- Back to Top Floating Button -->
+    <div class="floating-controls">
+        <button id="back-to-top" class="floating-btn hidden" aria-label="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header glass-nav">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="Alberto Trujillo - Inicio">
+                <span class="logo-icon">AT</span>
+                <span class="logo-text">Alberto Trujillo</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+                <div class="mobile-nav-header">
+                    <span class="mobile-nav-title">Navegación</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#experiencia"><i class="fas fa-briefcase nav-icon"></i><span data-i18n="nav_experience">Experiencia</span></a></li>
+                    <li><a href="#stack"><i class="fas fa-layer-group nav-icon"></i><span data-i18n="nav_stack">Stack Técnico</span></a></li>
+                    <li><a href="#proyectos"><i class="fas fa-code-branch nav-icon"></i><span data-i18n="nav_projects">Proyectos</span></a></li>
+                    <li><a href="#formacion"><i class="fas fa-graduation-cap nav-icon"></i><span data-i18n="nav_education">Formación</span></a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope nav-icon"></i><span data-i18n="nav_contact">Contacto</span></a></li>
+                </ul>
+                <div class="mobile-nav-footer">
+                    <a href="/CV.pdf" target="_blank" rel="noopener" class="btn btn-primary btn-sm mobile-cv-btn" style="width:100%; justify-content:center; gap:8px;">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Descargar CV (PDF)</span>
+                    </a>
+                    <div class="mobile-lang-container">
+                        <span class="mobile-lang-label">Idioma / Language:</span>
+                        <div class="lang-switcher mobile-lang-switcher">
+                            <button type="button" class="lang-btn" data-lang="es">Español</button>
+                            <button type="button" class="lang-btn" data-lang="ca">Català</button>
+                            <button type="button" class="lang-btn" data-lang="en">English</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header Controls & Actions -->
+            <div class="header-actions-wrapper">
+                <div class="header-controls desktop-controls">
+                    <div class="lang-switcher">
+                        <button type="button" class="lang-btn" data-lang="es">ES</button>
+                        <button type="button" class="lang-btn" data-lang="ca">CA</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button class="header-theme-btn theme-toggle-btn" aria-label="Alternar modo oscuro" title="Modo Oscuro / Claro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <div class="mobile-actions">
+                    <button class="header-theme-btn theme-toggle-btn mobile-theme-btn" aria-label="Alternar modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-gradient"></div>
+            <div class="container hero-container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="status-badge scroll-reveal mb-4">
+                            <span class="status-pulse"></span>
+                            <span data-i18n="avail_join_status">Incorporación Inmediata</span>
+                        </div>
+
+                        <h1 class="hero-name scroll-reveal">Alberto Trujillo</h1>
+                        <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle">Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM</h2>
+                        
+                        <div class="hero-tags scroll-reveal">
+                            <span class="glass-tag tag-purple"><i class="fas fa-graduation-cap"></i> <span data-i18n="hero_tag1">ASIR + SMR (Grado Sup. & Medio)</span></span>
+                            <span class="glass-tag tag-blue"><i class="fas fa-cloud"></i> <span data-i18n="hero_tag2">DevOps, Cloud/IAM & Hardening</span></span>
+                            <span class="glass-tag tag-indigo"><i class="fas fa-user-ninja"></i> <span data-i18n="hero_tag3">Autodidacta & Ciberseguridad / Web3</span></span>
+                        </div>
+
+                        <p class="hero-description scroll-reveal" data-i18n="hero_description">
+                            Titulado en ASIR y SMR con perfil fuertemente autodidacta. Especializado en protección y administración de infraestructuras cloud e identidad (Google Workspace/IAM, Cloudflare, Fly.io), hardening, identidades descentralizadas y gestión cuantitativa de riesgos.
+                        </p>
+
+                        <div class="hero-ctas scroll-reveal">
+                            <a href="/CV.pdf" download class="btn btn-primary btn-green" data-i18n="hero_download_cv"><i class="fas fa-download"></i> Descargar CV</a>
+                            <a href="#contacto" class="btn btn-outline" data-i18n="hero_contact">Contactar</a>
+                        </div>
+                    </div>
+
+                    <!-- Executive Profile Summary Card -->
+                    <div class="hero-profile-col scroll-reveal">
+                        <div class="profile-summary-card">
+                            <div class="profile-avatar-wrapper">
+                                <img src="/assets/images/Alberto.webp?v=p2" alt="Fotografía profesional de Alberto Trujillo Mingorance - DevOps & Systems Engineer" class="profile-avatar-img">
+                                <span class="profile-status-online" title="Disponible para contratación"></span>
+                            </div>
+                            <h3 class="profile-card-name">Alberto Trujillo Mingorance</h3>
+                            <p class="profile-card-role">DevOps & Systems Engineer</p>
+                            <div class="profile-meta-pills">
+                                <span class="meta-pill"><i class="fas fa-map-marker-alt text-blue"></i> <span data-i18n="hero_pill_loc">Barcelona / Remoto</span></span>
+                                <span class="meta-pill"><i class="fas fa-building text-green"></i> Attestto & eToro</span>
+                                <span class="meta-pill"><i class="fas fa-graduation-cap text-purple"></i> <span data-i18n="hero_pill_edu">ASIR (Sup.) + SMR (Med.)</span></span>
+                                <span class="meta-pill"><i class="fas fa-universal-access text-orange"></i> <span data-i18n="hero_pill_disability">Discapacidad Oficial >33%</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Key Stats & Metrics Bar -->
+                <div class="hero-stats-bar scroll-reveal">
+                    <div class="stat-item">
+                        <span class="stat-number" data-i18n="stat_exp_val">+3 Años</span>
+                        <span class="stat-label" data-i18n="stat_exp">Experiencia IT & DevOps</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label" data-i18n="stat_cloud">Serverless & Edge Cloud</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">>33%</span>
+                        <span class="stat-label" data-i18n="stat_disability">Discapacidad Oficial Certificada</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label" data-i18n="stat_uptime">Monitorización Edge</span>
+                    </div>
+                </div>
+
+                <!-- Interactive SysAdmin Terminal Simulator -->
+                <div id="terminal" class="terminal-window scroll-reveal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title-text">
+                            <i class="fas fa-terminal text-green"></i> <span data-i18n="terminal_title">Consola Interactive SysAdmin</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="terminal-controls">
+                        <div class="terminal-pills">
+                            <button type="button" class="terminal-pill" data-cmd="whoami">whoami</button>
+                            <button type="button" class="terminal-pill" data-cmd="sysinfo">sysinfo</button>
+                            <button type="button" class="terminal-pill" data-cmd="hardening">hardening</button>
+                            <button type="button" class="terminal-pill" data-cmd="attestto">attestto</button>
+                            <button type="button" class="terminal-pill" data-cmd="skills">skills</button>
+                            <button type="button" class="terminal-pill" data-cmd="projects">projects</button>
+                            <button type="button" class="terminal-pill" data-cmd="exp">exp</button>
+                            <button type="button" class="terminal-pill" data-cmd="certs">certs</button>
+                            <button type="button" class="terminal-pill" data-cmd="status">status</button>
+                            <button type="button" class="terminal-pill" data-cmd="contact">contact</button>
+                            <button type="button" class="terminal-pill" data-cmd="clear">clear</button>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal-output">
+                        <div class="terminal-line"><span class="prompt-user">alberto@devops-node</span>:<span class="prompt-path">~</span>$ <span class="cmd-text">whoami</span></div>
+                        <div class="terminal-line response-line">
+                            <div class="term-card">
+                                [ IDENTITY SUMMARY ]<br>
+                                Name: Alberto Trujillo Mingorance<br>
+                                Title: Junior DevOps & Systems Engineer | Cybersecurity & Cloud/IAM<br>
+                                Education: ASIR (Higher Degree) + SMR (Mid Degree) @ Institut Tecnològic de Barcelona (ITB)<br>
+                                Current Positions: Attestto (Cloud/IAM & Digital Identity) & eToro (Popular Investor)<br>
+                                Status: Certified Official Disability >33% (Employer Tax Deduction Eligible) | Immediate Availability
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terminal-controls">
+                        <form id="terminal-form" class="terminal-input-wrapper">
+                            <span class="terminal-prompt-label">alberto@devops-node:~$</span>
+                            <input type="text" id="terminal-input" autocomplete="off" placeholder="Escribe un comando (ej: help, skills, matrix)..." class="terminal-input">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <a href="#disponibilidad" class="scroll-down-indicator" aria-label="Scroll down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- Disponibilidad Section -->
+        <section id="disponibilidad" class="section-padding scroll-reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="availability_title">Disponibilidad y Datos Clave</h2>
+                <div class="grid-4 availability-grid">
+                    <div class="glass-card">
+                        <div class="card-icon blue-icon"><i class="fas fa-universal-access"></i></div>
+                        <h3 data-i18n="avail_disability_title">Discapacidad >33%</h3>
+                        <p data-i18n="avail_disability_text">Certificado oficial >33%, medidas de fomento del empleo.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-icon green-icon"><i class="fas fa-calendar-check"></i></div>
+                        <h3 data-i18n="avail_join_title">Incorporación Inmediata</h3>
+                        <p data-i18n="avail_join_text">Disponibilidad Inmediata para nuevos retos.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-icon purple-icon"><i class="fas fa-clock"></i></div>
+                        <h3 data-i18n="avail_schedule_title">Flexibilidad Horaria</h3>
+                        <p data-i18n="avail_schedule_text">Jornada partida, turnos rotativos, guardias.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-icon indigo-icon"><i class="fas fa-route"></i></div>
+                        <h3 data-i18n="avail_mobility_title">Movilidad Geográfica</h3>
+                        <p data-i18n="avail_mobility_text">Presencial, híbrido o teletrabajo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia Section -->
+        <section id="experiencia" class="section-padding bg-alt scroll-reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="exp_title">Experiencia</h2>
+                <div class="timeline">
+                    
+                    <!-- Job 1: Attestto -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker purple-marker"></div>
+                        <div class="glass-card job-card border-left-purple">
+                            <div class="job-header">
+                                <img src="/assets/images/attestto_logo.jpg?v=p2" alt="Logotipo oficial de Attestto - Alberto Trujillo Mingorance DevOps Engineer" class="job-logo">
+                                <div class="job-title-wrapper">
+                                    <h3 data-i18n="exp_attestto_role">Ingeniero Junior de DevOps y Sistemas | Ciberseguridad · Cloud/IAM</h3>
+                                    <h4 data-i18n="exp_attestto_company">Attestto · Jornada parcial</h4>
+                                    <div class="job-meta-details">
+                                        <span class="job-location"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp_attestto_location">Delaware, Estados Unidos · En remoto</span></span>
+                                    </div>
+                                </div>
+                                <span class="job-period purple-badge" data-i18n="exp_attestto_period">jul. 2026 - actualidad · 2 meses</span>
+                            </div>
+                            <p class="job-context" data-i18n="exp_attestto_context">Gestión de Infraestructura Cloud/IAM, Hardening & Estándares de Identidad Digital (W3C DID/VC, vLEI, eIDAS)</p>
+                            <ul class="job-tasks">
+                                <li data-i18n="exp_attestto_1">Administración de nube e identidad: <strong>Google Workspace/IAM, Cloudflare, GitHub y Fly.io</strong>.</li>
+                                <li data-i18n="exp_attestto_2">Robustecimiento de seguridad (<strong>hardening</strong>), acceso de <strong>mínimo privilegio</strong> y respuesta ante incidentes.</li>
+                                <li data-i18n="exp_attestto_3">Monitorización continua de seguridad y auditoría en repositorios de código de la organización.</li>
+                                <li data-i18n="exp_attestto_4">Desarrollo de infraestructura de identidad digital y confianza basada en estándares abiertos: credenciales verificables (<strong>W3C DID/VC</strong>), identidad organizacional (<strong>GLEIF / vLEI</strong>) e interoperabilidad con firmas digitales de la UE (<strong>eIDAS</strong>).</li>
+                                <li data-i18n="exp_attestto_5">Mantenimiento de infraestructura segura, confiable y bien documentada, además de soporte a la comunidad hispanohablante y localización (<strong>EN↔ES</strong>).</li>
+                            </ul>
+                            <div class="job-skills-tags">
+                                <span class="skill-pill">Google Workspace/IAM</span>
+                                <span class="skill-pill">Cloudflare</span>
+                                <span class="skill-pill">Fly.io</span>
+                                <span class="skill-pill">GitHub Security</span>
+                                <span class="skill-pill">Hardening</span>
+                                <span class="skill-pill">W3C DID/VC</span>
+                                <span class="skill-pill">vLEI / GLEIF</span>
+                                <span class="skill-pill">eIDAS</span>
+                                <span class="skill-pill">Localización EN↔ES</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 2: eToro -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker orange-marker"></div>
+                        <div class="glass-card job-card border-left-orange">
+                            <div class="job-header">
+                                <img src="/assets/images/etoro_logo.png?v=p2" alt="Logotipo oficial de eToro - Alberto Trujillo Mingorance Popular Investor" class="job-logo">
+                                <div class="job-title-wrapper">
+                                    <h3 data-i18n="exp_etoro_role">Inversor Popular de eToro (Popular Investor - Categoría Cadete)</h3>
+                                    <h4 data-i18n="exp_etoro_company">eToro · Profesional independiente</h4>
+                                    <div class="job-meta-details">
+                                        <span class="job-location"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp_etoro_location">Limasol, Chipre · En remoto</span></span>
+                                    </div>
+                                </div>
+                                <span class="job-period orange-badge" data-i18n="exp_etoro_period">jun. 2026 - actualidad · 3 meses</span>
+                            </div>
+                            <p class="job-context" data-i18n="exp_etoro_context">Análisis Cuantitativo, Gestión de Riesgos & Selección Estratégica de Activos Tecnológicos</p>
+                            <ul class="job-tasks">
+                                <li data-i18n="exp_etoro_1"><strong>Gestión y consistencia:</strong> Acceso al programa oficial tras cumplir criterios de consistencia, perfil de riesgo óptimo y comportamiento de mercado.</li>
+                                <li data-i18n="exp_etoro_2"><strong>Análisis cuantitativo:</strong> Aplicación de metodologías lógicas para la selección estratégica de activos tecnológicos y de valor a largo plazo.</li>
+                                <li data-i18n="exp_etoro_3"><strong>Mitigación de riesgos:</strong> Monitorización continua de métricas de volatilidad y control estricto de drawdown, aplicando una filosofía analítica y de control transferible a la gestión de entornos críticos de IT.</li>
+                                <li data-i18n="exp_etoro_4"><strong>Tracción y réplica:</strong> Cuenta pública de inversión replicada actualmente por inversores minoristas (copiers) de forma pasiva dentro de la plataforma.</li>
+                            </ul>
+                            <div class="job-skills-tags">
+                                <span class="skill-pill">Gestión de Riesgos</span>
+                                <span class="skill-pill">Análisis Cuantitativo</span>
+                                <span class="skill-pill">Control de Drawdown</span>
+                                <span class="skill-pill">Estrategia Tecnológica</span>
+                                <span class="skill-pill">Monitoreo de Volatilidad</span>
+                                <span class="skill-pill">Popular Investor Cadete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 3: Minsait -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker blue-marker"></div>
+                        <div class="glass-card job-card border-left-blue">
+                            <div class="job-header">
+                                <img src="/assets/images/minsait_logo.jpeg?v=p2" alt="Logotipo oficial de Minsait Indra Group - Alberto Trujillo Mingorance Soporte CTTI" class="job-logo">
+                                <div class="job-title-wrapper">
+                                    <h3 data-i18n="exp_minsait_role">Técnico de Soporte de Sistemas</h3>
+                                    <h4 data-i18n="exp_minsait_company">Minsait (Indra Group)</h4>
+                                </div>
+                                <span class="job-period blue-badge" data-i18n="exp_minsait_period">Nov 2025 - May 2026</span>
+                            </div>
+                            <p class="job-context" data-i18n="exp_minsait_context">Soporte de Infraestructuras Críticas & Macroproyecto CTTI – Sector Sanitario (Metropolitana Sud)</p>
+                            <ul class="job-tasks">
+                                <li data-i18n="exp_minsait_1">Gestión de Active Directory y políticas de seguridad (GPOs).</li>
+                                <li data-i18n="exp_minsait_2">Administración y reseteo de credenciales en entornos SAP.</li>
+                                <li data-i18n="exp_minsait_3">Garantizar la continuidad operativa en entornos hospitalarios críticos.</li>
+                                <li data-i18n="exp_minsait_4">Resolución de incidencias mediante BMC Remedy.</li>
+                                <li data-i18n="exp_minsait_5">Soporte de Nivel 2 a personal sanitario e IT interno.</li>
+                            </ul>
+                            <div class="job-skills-tags">
+                                <span class="skill-pill">Active Directory</span>
+                                <span class="skill-pill">SAP ERP</span>
+                                <span class="skill-pill">BMC Remedy</span>
+                                <span class="skill-pill">Infraestructuras Críticas</span>
+                                <span class="skill-pill">CTTI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 4: Institut Indústria Sostenible -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker green-marker"></div>
+                        <div class="glass-card job-card border-left-green">
+                            <div class="job-header">
+                                <img src="/assets/images/1742933903062.jpeg?v=p2" alt="Logotipo oficial de Institut Indústria Sostenible - Alberto Trujillo Mingorance" class="job-logo">
+                                <div class="job-title-wrapper">
+                                    <h3 data-i18n="exp_iis_role">Técnico de Mantenimiento Informático (Prácticas)</h3>
+                                    <h4 data-i18n="exp_iis_company">Institut Indústria Sostenible</h4>
+                                </div>
+                                <span class="job-period green-badge" data-i18n="exp_iis_period">May 2023 - Nov 2023</span>
+                            </div>
+                            <ul class="job-tasks">
+                                <li data-i18n="exp_iis_1">Soporte técnico en aulas y resolución de incidencias.</li>
+                                <li data-i18n="exp_iis_2">Diagnóstico de hardware y reparación.</li>
+                                <li data-i18n="exp_iis_3">Gestión de cableado y red física.</li>
+                                <li data-i18n="exp_iis_4">Despliegue de imágenes de SO utilizando Clonezilla.</li>
+                                <li data-i18n="exp_iis_5">Instalación automatizada de software.</li>
+                                <li data-i18n="exp_iis_6">Mantenimiento preventivo y correctivo.</li>
+                            </ul>
+                            <div class="job-skills-tags">
+                                <span class="skill-pill">Clonezilla</span>
+                                <span class="skill-pill">Mantenimiento Hardware</span>
+                                <span class="skill-pill">Cableado de Red</span>
+                                <span class="skill-pill">Soporte N1/N2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack Técnico Section -->
+        <section id="stack" class="section-padding scroll-reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="stack_title">Arsenal Tecnológico</h2>
+                <div class="grid-3 stack-grid">
+                    <div class="glass-card">
+                        <h3 class="stack-category"><i class="fas fa-cloud purple-icon"></i> <span data-i18n="stack_cloud_title">Cloud, IAM & DevOps</span></h3>
+                        <ul class="stack-list">
+                            <li data-i18n="stack_cloud_1">Administración de nube e identidades: Google Workspace / IAM.</li>
+                            <li data-i18n="stack_cloud_2">Seguridad perimetral y proxies/DNS con Cloudflare.</li>
+                            <li data-i18n="stack_cloud_3">Despliegue serverless de contenedores en Fly.io.</li>
+                            <li data-i18n="stack_cloud_4">Estándares de Identidad Digital: W3C DID/VC, GLEIF / vLEI, eIDAS.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="stack-category"><i class="fab fa-docker blue-icon"></i> <span data-i18n="stack_virt_title">Virtualización & Contenedores</span></h3>
+                        <ul class="stack-list">
+                            <li data-i18n="stack_virt_1">Despliegue y gestión de contenedores con Docker.</li>
+                            <li data-i18n="stack_virt_2">Creación de Dockerfiles y orquestación básica (Docker Compose).</li>
+                            <li data-i18n="stack_virt_3">Virtualización completa con Proxmox VE y VirtualBox.</li>
+                            <li data-i18n="stack_virt_4">Aislamiento de entornos de desarrollo y producción.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="stack-category"><span class="os-icons"><i class="fab fa-linux"></i><i class="fab fa-windows"></i></span> <span data-i18n="stack_os_title">Sistemas Operativos</span></h3>
+                        <ul class="stack-list">
+                            <li data-i18n="stack_os_1">Administración avanzada de servidores Linux (Debian/CentOS).</li>
+                            <li data-i18n="stack_os_2">Gestión de dominios Windows Server y Group Policy Objects (GPO).</li>
+                            <li data-i18n="stack_os_3">Servicios de Directorio: Active Directory, Samba AD, OpenLDAP.</li>
+                            <li data-i18n="stack_os_4">Hardening de sistemas y gestión de parches de seguridad.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="stack-category"><i class="fas fa-shield-alt orange-icon"></i> <span data-i18n="stack_net_title">Redes, Ciberseguridad & Riesgos</span></h3>
+                        <ul class="stack-list">
+                            <li data-i18n="stack_net_1">Configuración de VLANs, Trunking y Spanning Tree.</li>
+                            <li data-i18n="stack_net_2">Enrutamiento dinámico (OSPF, RIP) y estático.</li>
+                            <li data-i18n="stack_net_3">Análisis cuantitativo de volatilidad y control de drawdown aplicado a IT.</li>
+                            <li data-i18n="stack_net_4">Auditoría de smart contracts y trazabilidad blockchain.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="stack-category"><i class="fas fa-terminal indigo-icon"></i> <span data-i18n="stack_auto_title">Automatización & Código</span></h3>
+                        <ul class="stack-list">
+                            <li data-i18n="stack_auto_1">Scripting potente: Bash (Linux) y PowerShell (Windows).</li>
+                            <li data-i18n="stack_auto_2">Desarrollo de herramientas de administración con Python.</li>
+                            <li data-i18n="stack_auto_3">Gestión de configuración con Ansible.</li>
+                            <li data-i18n="stack_auto_4">Control de versiones fluido con Git / GitHub.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tag-cloud">
+                    <span class="glass-tag">Google Workspace / IAM</span>
+                    <span class="glass-tag">Cloudflare & Fly.io</span>
+                    <span class="glass-tag">W3C DID/VC & vLEI</span>
+                    <span class="glass-tag">Análisis Cuantitativo & Riesgos</span>
+                    <span class="glass-tag">MySQL/PostgreSQL</span>
+                    <span class="glass-tag">AWS Cloud Practitioner</span>
+                    <span class="glass-tag">Jira/BMC Remedy</span>
+                    <span class="glass-tag">Ollama/IA en local</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section id="proyectos" class="section-padding bg-alt scroll-reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projects_title">Proyectos</h2>
+
+                <!-- Project Category Filters -->
+                <div id="project-filters" class="filter-container">
+                    <button type="button" class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">Todos los Proyectos</button>
+                    <button type="button" class="filter-btn" data-filter="devops" data-i18n="proj_filter_devops">Cloud & DevOps</button>
+                    <button type="button" class="filter-btn" data-filter="security" data-i18n="proj_filter_security">Ciberseguridad & Web3</button>
+                    <button type="button" class="filter-btn" data-filter="automation" data-i18n="proj_filter_automation">Automatización</button>
+                </div>
+
+                <div id="project-grid" class="projects-container"> <div id="project-empty" style="display:none; text-align:center; padding: 2rem;">No hay proyectos en esta categoría.</div>
+                    
+                    <!-- Project: Trujillo AI Studio & Discord Bot -->
+                    <div class="glass-card project-card featured-project border-top-blue" data-category="devops automation security">
+                        <div class="project-header">
+                            <div>
+                                <span class="project-badge blue-badge" data-i18n="proj_trujillo_badge">IA & ARQUITECTURA SERVERLESS</span>
+                                <h3 data-i18n="proj_trujillo_title">Trujillo AI — Serverless AI Studio & Discord Bot</h3>
+                            </div>
+                            <a href="https://ai.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
+                        </div>
+                        <p class="project-desc" data-i18n="proj_trujillo_desc">Estudio de Inteligencia Artificial full-stack y bot de Discord de alta velocidad desplegado sobre Cloudflare Workers Edge. Incorpora streaming en tiempo real con Meta Llama 3.3 70B, búsqueda web en vivo, síntesis de imágenes con Flux AI, memoria KV persistente, autenticación JWT/OTP y defensas de grado militar.</p>
+                        
+                        <div class="project-info-cards grid-3">
+                            <div class="info-card">
+                                <h4 data-i18n="proj_tech">Tecnología</h4>
+                                <p data-i18n="proj_trujillo_tech">Cloudflare Workers Edge, Groq (Llama 3.3 70B), Flux AI, KV Storage, Discord API v10, SSE Streaming</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_application">Aplicación</h4>
+                                <p data-i18n="proj_trujillo_app">Estudio de IA generativa, bot de Discord con comandos slash, razonamiento profundo y generación de imágenes.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_value">Valor Profesional</h4>
+                                <p data-i18n="proj_trujillo_value">Arquitectura de coste cero con edge caching, rate limiting L1 en RAM y sistema de defensa perimetral de grado militar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 1: Solana Forensics -->
+                    <div class="glass-card project-card featured-project border-top-indigo" data-category="security devops">
+                        <div class="project-header">
+                            <div>
+                                <span class="project-badge indigo-badge" data-i18n="proj_solana_badge">AUDITORÍA BLOCKCHAIN</span>
+                                <h3>Solana Forensics - Blockchain Intelligence & Audit Tool</h3>
+                            </div>
+                            <a href="https://solanaforensic.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
+                        </div>
+                        <p class="project-desc" data-i18n="proj_solana_desc">Herramienta de seguimiento de transacciones en la blockchain de Solana y análisis forense. Permite rastrear el flujo de fondos y detectar patrones anómalos.</p>
+                        
+                        <div class="project-info-cards grid-3">
+                            <div class="info-card">
+                                <h4 data-i18n="proj_tech">Tecnología</h4>
+                                <p data-i18n="proj_solana_tech">RPC Solana, Python</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_application">Aplicación</h4>
+                                <p data-i18n="proj_solana_app">Detección de anomalías</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_value">Valor Profesional</h4>
+                                <p data-i18n="proj_solana_value">Web3 skills aplicadas a seguridad</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: FocusGuard -->
+                    <div class="glass-card project-card featured-project border-top-green" data-category="devops security">
+                        <div class="project-header">
+                            <div>
+                                <span class="project-badge green-badge" data-i18n="proj_focus_badge">SEGURIDAD & REDES</span>
+                                <h3 data-i18n="proj_focus_title">FocusGuard - Zero-Trust Parental Shield</h3>
+                            </div>
+                            <a href="https://focusguard.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
+                        </div>
+                        <p class="project-desc" data-i18n="proj_focus_desc">Sistema de filtrado DNS y protección Zero-Trust en tiempo real para bloquear contenido no deseado y de distracción. Diseñado y desplegado sobre la infraestructura serverless de Cloudflare Workers.</p>
+                        
+                        <div class="project-info-cards grid-3">
+                            <div class="info-card">
+                                <h4 data-i18n="proj_tech">Tecnología</h4>
+                                <p data-i18n="proj_focus_tech">Cloudflare Workers, D1 Database</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_application">Aplicación</h4>
+                                <p data-i18n="proj_focus_app">Filtrado DNS en tiempo real</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 data-i18n="proj_value">Valor Profesional</h4>
+                                <p data-i18n="proj_focus_value">Arquitectura serverless y seguridad perimetral</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Open-Sentinel -->
+                    <div class="glass-card project-card featured-project border-top-blue" data-category="security devops automation">
+                        <div class="project-header">
+                            <div>
+                                <span class="project-badge blue-badge">TELEMETRÍA & FORENSICS</span>
+                                <h3>Open-Sentinel - PC Telemetry & Boot Alerts</h3>
+                            </div>
+                            <a href="https://github.com/atrumin16/open-sentinel" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                        <p class="project-desc">Sistema open-source de telemetría de hardware, alertas de arranque multicanal (Discord, Telegram, WhatsApp) y consola forense remota con escáner de seguridad Zero-Trust.</p>
+                        
+                        <div class="project-info-cards grid-3">
+                            <div class="info-card">
+                                <h4>Tecnología</h4>
+                                <p>Python, Bash, PowerShell, GitHub Actions CI/CD</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Aplicación</h4>
+                                <p>Monitorización forense de endpoints y alertas de intrusión</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Valor Profesional</h4>
+                                <p>Observabilidad de endpoints, seguridad Zero-Trust y automatización</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Automation Suite -->
+                    <div class="glass-card project-card border-top-purple" data-category="automation devops">
+                        <div class="project-header">
+                            <div>
+                                <span class="project-badge purple-badge" data-i18n="proj_auto_badge">AUTOMATIZACIÓN</span>
+                                <h3 data-i18n="proj_auto_title">Suite de Automatización (Bash, PowerShell, Python)</h3>
+                            </div>
+                            <a href="https://github.com/AlbertoTrujillo-ITB2425/scripts-1ASIXc" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_view_repo"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                        <p class="project-desc" data-i18n="proj_auto_desc">Conjunto de scripts para realizar copias de seguridad incrementales, aprovisionamiento en Active Directory y monitorización de sistemas de forma automatizada.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+<div class="glass-card project-card featured-project border-top-purple" data-category="tools">
+    <div class="project-header">
+        <div>
+            <span class="project-badge purple-badge">HERRAMIENTAS & IA</span>
+            <h3>Rewrite AI</h3>
+        </div>
+        <a href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Visitar</a>
+    </div>
+    <p class="project-desc">Reescritura de texto con IA. Serverless en Cloudflare.</p>
+    <div class="project-info-cards grid-2">
+        <div class="info-card">
+            <h4>Tecnologia</h4>
+            <p>Workers AI</p>
+        </div>
+        <div class="info-card">
+            <h4>Aplicacion</h4>
+            <p>Texto IA</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card project-card featured-project border-top-purple" data-category="tools">
+    <div class="project-header">
+        <div>
+            <span class="project-badge purple-badge">HERRAMIENTAS & IA</span>
+            <h3>Trujillo Guides</h3>
+        </div>
+        <a href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Visitar</a>
+    </div>
+    <p class="project-desc">Guias tecnicas y documentacion.</p>
+    <div class="project-info-cards grid-2">
+        <div class="info-card">
+            <h4>Tecnologia</h4>
+            <p>Markdown, Vite</p>
+        </div>
+        <div class="info-card">
+            <h4>Aplicacion</h4>
+            <p>Documentacion</p>
+        </div>
+    </div>
+</div>
+
+<!-- Formación Section -->
+        <section id="formacion" class="section-padding scroll-reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="edu_title">Formación</h2>
+                <div class="grid-2 education-grid">
+                    <div class="glass-card border-left-blue edu-card">
+                        <img src="/assets/images/itecbcn_logo.jpeg?v=p2" alt="Logotipo oficial de Institut Tecnològic de Barcelona ITB - Alberto Trujillo Mingorance ASIR y SMR" class="edu-logo">
+                        <div class="edu-content">
+                            <h3 data-i18n="edu_asir_title">ASIR (Grado Superior)</h3>
+                            <h4 data-i18n="edu_asir_level">Administración de Sistemas Informáticos en Red</h4>
+                            <p class="edu-school">Institut Tecnològic de Barcelona</p>
+                            <span class="edu-period">2024 - 2026</span>
+                            <p class="edu-desc" data-i18n="edu_asir_desc">Especialización en arquitectura de redes, servicios de sistema y administración de bases de datos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card border-left-green edu-card">
+                        <img src="/assets/images/itecbcn_logo.jpeg?v=p2" alt="Logotipo oficial de Institut Tecnològic de Barcelona ITB - Alberto Trujillo Mingorance ASIR y SMR" class="edu-logo">
+                        <div class="edu-content">
+                            <h3 data-i18n="edu_smr_title">SMR (Grado Medio)</h3>
+                            <h4 data-i18n="edu_smr_level">Sistemas Microinformáticos y Redes</h4>
+                            <p class="edu-school">Institut Tecnològic de Barcelona</p>
+                            <span class="edu-period">2022 - 2024</span>
+                            <p class="edu-desc" data-i18n="edu_smr_desc">Fundamentos de hardware, montaje de equipos y configuración de redes locales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="section-padding scroll-reveal">
+            <div class="container contact-container glass-card padding-0">
+                <div class="contact-split">
+                    <div class="contact-info bg-gradient-blue">
+                        <h2 data-i18n="contact_lets_talk">Hablemos</h2>
+                        <p data-i18n="contact_intro">¿Tienes un proyecto en mente o una oportunidad laboral? No dudes en contactarme.</p>
+                        
+                        <ul class="contact-list">
+                            <li>
+                                <a href="mailto:alberto@trujillomingorance.com" data-i18n-href="mailto_link">
+                                    <i class="fas fa-envelope"></i> alberto@trujillomingorance.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> github.com/atrumin16
+                                </a>
+                            </li>
+                        </ul>
+
+                        <button type="button" id="copy-email" class="btn btn-outline btn-sm copy-email-btn" style="margin-top: 20px; border-color: rgba(255,255,255,0.4); color: white;">
+                            <i class="fas fa-copy"></i> <span data-i18n="copy_email">Copiar Email</span>
+                        </button>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form action="/api/contact" method="POST" class="contact-form" id="contact-form">
+                            <!-- Honeypot anti-spam field -->
+                            <div style="display:none;" aria-hidden="true">
+                                <label for="website">Leave this field blank</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" data-i18n="form_name">Nombre</label>
+                                <input type="text" id="name" name="name" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="form_email">Email</label>
+                                <input type="email" id="email" name="email" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="form_message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="form_send">Enviar Mensaje</button>
+                            
+                            <div id="form-feedback" class="hidden form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Corporate Enterprise Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Executive Summary -->
+                <div class="footer-brand-col">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-icon">AT</span>
+                        <span class="logo-text">Alberto Trujillo</span>
+                    </a>
+                    <p class="footer-brand-desc" data-i18n="footer_brand_desc">
+                        Ingeniero de DevOps, Sistemas y Ciberseguridad. Especializado en Cloud/IAM, Hardening de Infraestructuras e Identidad Digital Descentralizada.
+                    </p>
+                    <div class="footer-status-pill">
+                        <span class="status-pulse"></span>
+                        <span data-i18n="footer_status">All Systems Operational · Cloudflare Secured</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title" data-i18n="footer_nav_title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="#experiencia" data-i18n="nav_experience">Experiencia</a></li>
+                        <li><a href="#stack" data-i18n="nav_stack">Stack Técnico</a></li>
+                        <li><a href="#proyectos" data-i18n="nav_projects">Proyectos</a></li>
+                        <li><a href="#formacion" data-i18n="nav_education">Formación</a></li>
+                        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Specializations & Credentials -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title" data-i18n="footer_specs_title">Especialidades & Certificación</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-text-link" data-i18n="footer_spec_1">ASIR & SMR · ITB</span></li>
+                        <li><span class="footer-text-link" data-i18n="footer_spec_2">Google Workspace & Cloud IAM</span></li>
+                        <li><span class="footer-text-link" data-i18n="footer_spec_3">W3C DID/VC & vLEI / GLEIF</span></li>
+                        <li><span class="footer-text-link" data-i18n="footer_spec_4">Linux Security Hardening</span></li>
+                        <li><span class="footer-text-link" data-i18n="footer_spec_5">Análisis Cuantitativo de Riesgos</span></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Legal & Compliance (Enterprise Touch) -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title" data-i18n="footer_legal_title">Legal & Compliance</h4>
+                    <ul class="footer-links">
+                        <li><button type="button" class="legal-trigger text-btn" data-modal="privacy" data-i18n="footer_privacy">Política de Privacidad</button></li>
+                        <li><button type="button" class="legal-trigger text-btn" data-modal="terms" data-i18n="footer_terms">Términos y Condiciones</button></li>
+                        <li><button type="button" class="legal-trigger text-btn" data-modal="compliance" data-i18n="footer_disability">Certificado Discapacidad >33%</button></li>
+                        <li><a href="/sitemap.xml" target="_blank" data-i18n="footer_sitemap">Sitemap XML</a></li>
+                        <li><a href="/llms.txt" target="_blank" data-i18n="footer_ai_indexing">AI Indexing (llms.txt)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal-copy">
+                    <p>&copy; <span id="copyright-year">2026</span> Alberto Trujillo Mingorance. <span data-i18n="footer_copyright">Todos los derechos reservados.</span></p>
+                </div>
+                <div class="footer-social-icons">
+                    <a href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:alberto@trujillomingorance.com" data-i18n-href="mailto_link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enterprise Legal Compliance Modal -->
+    <div id="legal-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="modal-close-btn">&times;</button>
+            <div id="modal-content" class="modal-body">
+                <!-- Content populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+
+
+
+
+</div>
   <script type="module" src="/src/js/app.js"></script>
 </body>
 </html>
+
