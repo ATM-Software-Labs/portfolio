@@ -18,7 +18,8 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alberto Trujillo Mingorance","jobTitle":"Systems & Cloud Administrator","url":"https://alberto.trujillomingorance.com/","email":"#","image":"https://alberto.trujillomingorance.com/assets/images/Alberto.webp","address":{"@type":"PostalAddress","addressLocality":"Barcelona","addressCountry":"ES"},"alumniOf":{"@type":"EducationalOrganization","name":"Institut Tecnològic de Barcelona"},"sameAs":["https://github.com/atrumin16","https://linkedin.com/in/alberto-trujillo-mingorance-288237266/"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"Microsoft Applied Skills: Identities and Access using Microsoft Entra ID","recognizedBy":{"@type":"Organization","name":"Microsoft"}}}</script>
-</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
 <body>
   <div id="app">
 
@@ -426,199 +427,103 @@
                     <button type="button" class="filter-btn" data-filter="automation" data-i18n="proj_filter_automation">Automatización</button>
                 </div>
 
-                <div id="project-grid" class="projects-container"> <div id="project-empty" style="display:none; text-align:center; padding: 2rem;">No hay proyectos en esta categoría.</div>
-                    
-                    <!-- Project: Trujillo AI Studio & Discord Bot -->
-                    <div class="glass-card project-card featured-project border-top-blue" data-category="devops automation security">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge blue-badge" data-i18n="proj_trujillo_badge">IA & ARQUITECTURA SERVERLESS</span>
-                                <h3 data-i18n="proj_trujillo_title">Trujillo AI — Serverless AI Studio & Discord Bot</h3>
-                            </div>
-                            <a href="https://ai.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_trujillo_desc">Estudio de Inteligencia Artificial full-stack y bot de Discord de alta velocidad desplegado sobre Cloudflare Workers Edge. Incorpora streaming en tiempo real con Meta Llama 3.3 70B, búsqueda web en vivo, síntesis de imágenes con Flux AI, memoria KV persistente, autenticación JWT/OTP y defensas de grado militar.</p>
-                        
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_trujillo_tech">Cloudflare Workers Edge, Groq (Llama 3.3 70B), Flux AI, KV Storage, Discord API v10, SSE Streaming</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_trujillo_app">Estudio de IA generativa, bot de Discord con comandos slash, razonamiento profundo y generación de imágenes.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_trujillo_value">Arquitectura de coste cero con edge caching, rate limiting L1 en RAM y sistema de defensa perimetral de grado militar.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div id="project-grid" class="projects-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
 
-                    <!-- Project 1: Solana Forensics -->
-                    <div class="glass-card project-card featured-project border-top-indigo" data-category="security devops">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge indigo-badge" data-i18n="proj_solana_badge">AUDITORÍA BLOCKCHAIN</span>
-                                <h3>Solana Forensics - Blockchain Intelligence & Audit Tool</h3>
-                            </div>
-                            <a href="https://solanaforensic.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_solana_desc">Herramienta de seguimiento de transacciones en la blockchain de Solana y análisis forense. Permite rastrear el flujo de fondos y detectar patrones anómalos.</p>
-                        
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_solana_tech">RPC Solana, Python</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_solana_app">Detección de anomalías</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_solana_value">Web3 skills aplicadas a seguridad</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: FocusGuard -->
-                    <div class="glass-card project-card featured-project border-top-green" data-category="devops security">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge green-badge" data-i18n="proj_focus_badge">SEGURIDAD & REDES</span>
-                                <h3 data-i18n="proj_focus_title">FocusGuard - Zero-Trust Parental Shield</h3>
-                            </div>
-                            <a href="https://focusguard.trujillomingorance.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_visit_platform"><i class="fas fa-external-link-alt"></i> Visitar</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_focus_desc">Sistema de filtrado DNS y protección Zero-Trust en tiempo real para bloquear contenido no deseado y de distracción. Diseñado y desplegado sobre la infraestructura serverless de Cloudflare Workers.</p>
-                        
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4 data-i18n="proj_tech">Tecnología</h4>
-                                <p data-i18n="proj_focus_tech">Cloudflare Workers, D1 Database</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_application">Aplicación</h4>
-                                <p data-i18n="proj_focus_app">Filtrado DNS en tiempo real</p>
-                            </div>
-                            <div class="info-card">
-                                <h4 data-i18n="proj_value">Valor Profesional</h4>
-                                <p data-i18n="proj_focus_value">Arquitectura serverless y seguridad perimetral</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project: Open-Sentinel -->
-                    <div class="glass-card project-card featured-project border-top-blue" data-category="security devops automation">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge blue-badge">TELEMETRÍA & FORENSICS</span>
-                                <h3>Open-Sentinel - PC Telemetry & Boot Alerts</h3>
-                            </div>
-                            <a href="https://github.com/atrumin16/open-sentinel" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fab fa-github"></i> Código</a>
-                        </div>
-                        <p class="project-desc">Sistema open-source de telemetría de hardware, alertas de arranque multicanal (Discord, Telegram, WhatsApp) y consola forense remota con escáner de seguridad Zero-Trust.</p>
-                        
-                        <div class="project-info-cards grid-3">
-                            <div class="info-card">
-                                <h4>Tecnología</h4>
-                                <p>Python, Bash, PowerShell, GitHub Actions CI/CD</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Aplicación</h4>
-                                <p>Monitorización forense de endpoints y alertas de intrusión</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Valor Profesional</h4>
-                                <p>Observabilidad de endpoints, seguridad Zero-Trust y automatización</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Automation Suite -->
-                    <div class="glass-card project-card border-top-purple" data-category="automation devops">
-                        <div class="project-header">
-                            <div>
-                                <span class="project-badge purple-badge" data-i18n="proj_auto_badge">AUTOMATIZACIÓN</span>
-                                <h3 data-i18n="proj_auto_title">Suite de Automatización (Bash, PowerShell, Python)</h3>
-                            </div>
-                            <a href="https://github.com/AlbertoTrujillo-ITB2425/scripts-1ASIXc" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="proj_view_repo"><i class="fab fa-github"></i> Código</a>
-                        </div>
-                        <p class="project-desc" data-i18n="proj_auto_desc">Conjunto de scripts para realizar copias de seguridad incrementales, aprovisionamiento en Active Directory y monitorización de sistemas de forma automatizada.</p>
-                    </div>
-
-                </div>
-            <div class="glass-card project-card featured-project border-top-purple" data-category="tools">
-    <div class="project-header">
-        <div>
-            <span class="project-badge purple-badge">HERRAMIENTAS & IA</span>
-            <h3>Rewrite AI</h3>
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> trujillo-ai-studio
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Open-source multimodal AI studio and Discord bot on Cloudflare Workers and Groq LPU</p>
         </div>
-        <a href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Visitar</a>
-    </div>
-    <p class="project-desc">Reescritura de texto con IA. Serverless en Cloudflare.</p>
-    <div class="project-info-cards grid-2">
-        <div class="info-card">
-            <h4>Tecnologia</h4>
-            <p>Workers AI</p>
-        </div>
-        <div class="info-card">
-            <h4>Aplicacion</h4>
-            <p>Texto IA</p>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://ai.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/trujillo-ai-studio" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
         </div>
     </div>
-</div>
-
-
-<div class="glass-card project-card featured-project border-top-purple" data-category="tools">
-    <div class="project-header">
-        <div>
-            <span class="project-badge purple-badge">HERRAMIENTAS & IA</span>
-            <h3>Trujillo Guides</h3>
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> rewrite-ai
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Zero-AI Stealth Text Humanizer & Academic Anti-Plagiarism Engine on Cloudflare Edge</p>
         </div>
-        <a href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Visitar</a>
-    </div>
-    <p class="project-desc">Guias tecnicas y documentacion.</p>
-    <div class="project-info-cards grid-2">
-        <div class="info-card">
-            <h4>Tecnologia</h4>
-            <p>Markdown, Vite</p>
-        </div>
-        <div class="info-card">
-            <h4>Aplicacion</h4>
-            <p>Documentacion</p>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/rewrite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
         </div>
     </div>
-</div>
-
-
-<div class="glass-card project-card featured-project border-top-purple" data-category="tools">
-    <div class="project-header">
-        <div>
-            <span class="project-badge purple-badge">HERRAMIENTAS & IA</span>
-            <h3>ATM Tools</h3>
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> open-sentinel
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Open-source, self-hosted PC telemetry, multi-channel boot alerts, and remote forensic control console.</p>
         </div>
-        <a href="https://github.com/ATM-Software-Labs" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Visitar</a>
-    </div>
-    <p class="project-desc">Herramientas de software y scripts open source para DevOps y administracion de sistemas.</p>
-    <div class="project-info-cards grid-2">
-        <div class="info-card">
-            <h4>Tecnologia</h4>
-            <p>Python, Bash</p>
-        </div>
-        <div class="info-card">
-            <h4>Aplicacion</h4>
-            <p>DevOps Utilities</p>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            
+            <a href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
         </div>
     </div>
-</div>
-
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> atm-tools
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Client-Side tool suite oriented towards extreme accessibility. Zero backend, maximum privacy.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://tools.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/atm-tools" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> trujillo-guides
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Production engineering runbooks, zero-cost email architecture, and infrastructure guides</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/trujillo-guides" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> domain-root
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Root apex domain gateway and wildcard 404 diagnostic telemetry router</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/domain-root" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+    
+    <div class="glass-card project-card-mini" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="project-header-mini" style="margin-bottom: 1rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-book text-sky"></i> atm-labs-hub
+            </h3>
+            <p style="font-size: 0.9rem; color: #a1a1aa; line-height: 1.4;">Central ecosystem hub, live status gateway, and service directory</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+            <a href="https://labs.trujillomingorance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Visitar Web" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> Visitar</a>
+            <a href="https://github.com/ATM-Software-Labs/atm-labs-hub" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="Ver Código" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+    
 </div>
         </section>
 
-        
-<!-- Formación Section -->
+        <!-- Formación Section -->
         <section id="formacion" class="section-padding scroll-reveal">
             <div class="container">
                 <h2 class="section-title" data-i18n="edu_title">Formación</h2>
@@ -645,17 +550,27 @@
                         </div>
                     </div>
 
-                    <div class="glass-card border-left-purple edu-card">
-                        <div class="edu-content">
-                            <h3 data-i18n="edu_entra_title">Microsoft Entra ID (ID: F89C9FFB072C4C9A)</h3>
+                </div>
+
+                <h3 class="section-subtitle mt-8" style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: #fff;">Credenciales Oficiales</h3>
+                <div class="grid-1">
+                    <div class="glass-card border-left-purple edu-card" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div class="edu-content" style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                <i class="fab fa-microsoft text-blue" style="font-size: 1.5rem;"></i>
+                                <h3 data-i18n="edu_entra_title" style="margin: 0; font-size: 1.25rem;">Microsoft Entra ID (ID: F89C9FFB072C4C9A)</h3>
+                            </div>
                             <h4 data-i18n="edu_entra_level">Identities and Access Official Credential</h4>
                             <p class="edu-school">Microsoft Applied Skills</p>
                             <span class="edu-period">2026</span>
                         </div>
+                        <div>
+                            <a href="https://learn.microsoft.com/en-us/users/albertotrujillomingorance/credentials/F89C9FFB072C4C9A" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                <i class="fas fa-check-circle text-green"></i> Verificar
+                            </a>
+                        </div>
                     </div>
-
                 </div>
-
 
             </div>
         </section>
@@ -668,31 +583,23 @@
                         <h2 data-i18n="contact_lets_talk">Hablemos</h2>
                         <p data-i18n="contact_intro">¿Tienes un proyecto en mente o una oportunidad laboral? No dudes en contactarme.</p>
                         
-                        <ul class="contact-list">
-                            <li>
-                                <a href="#" data-i18n-href="mailto_link">
-                                    <i class="fas fa-envelope"></i> <span id="email-reveal-text">Copy Email</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-linkedin"></i> LinkedIn Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-github"></i> github.com/atrumin16
-                                </a>
-                            </li>
-                        </ul>
+                        
 
-                        <button type="button" id="copy-email" class="btn btn-outline btn-sm copy-email-btn" style="margin-top: 20px; border-color: rgba(255,255,255,0.4); color: white;">
-                            <i class="fas fa-copy"></i> <span data-i18n="copy_email">Copiar Email</span>
-                        </button>
+                        <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                            <button type="button" id="copy-email" class="btn btn-outline btn-sm copy-email-btn" style="border-color: rgba(255,255,255,0.4); color: white;">
+                                <i class="fas fa-envelope"></i> <span data-i18n="copy_email">Copiar Email</span>
+                            </button>
+                            <a href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: rgba(255,255,255,0.4); color: white;">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: rgba(255,255,255,0.4); color: white;">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="contact-form-wrapper">
-                        <form action="/api/contact" method="POST" class="contact-form" id="contact-form">
+                        <form action="https://ai.trujillomingorance.com/api/contact" method="POST" class="contact-form" id="contact-form">
                             <!-- Honeypot anti-spam field -->
                             <div style="display:none;" aria-hidden="true">
                                 <label for="website">Leave this field blank</label>

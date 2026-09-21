@@ -54,13 +54,14 @@ function commandHtml(cmd) {
         - Minsait / Indra (nov. 2025 — may. 2026): Técnico de soporte de sistemas · infraestructuras críticas Salut CTTI, Active Directory, SAP ERP, BMC Remedy<br>
         - Institut Indústria Sostenible (may. 2023 — nov. 2023): Técnico de mantenimiento informático · Clonezilla, redes, hardware`;
     case 'projects':
-      return `<div class="mb-2 text-sky">[ proyectos ]</div>
-        - Trujillo AI Studio — <a class="text-cyan underline" href="https://ai.trujillomingorance.com" target="_blank" rel="noopener noreferrer">ai.trujillomingorance.com</a><br>
-        - Rewrite AI — <a class="text-cyan underline" href="https://rewrite.trujillomingorance.com" target="_blank" rel="noopener noreferrer">rewrite.trujillomingorance.com</a><br>
-        - Trujillo Guides — <a class="text-cyan underline" href="https://guides.trujillomingorance.com" target="_blank" rel="noopener noreferrer">guides.trujillomingorance.com</a><br>
-        - FocusGuard SaaS — <a class="text-cyan underline" href="https://focusguard.trujillomingorance.com" target="_blank" rel="noopener noreferrer">focusguard.trujillomingorance.com</a><br>
-        - ATM Tools — <a class="text-cyan underline" href="https://tools.trujillomingorance.com" target="_blank" rel="noopener noreferrer">tools.trujillomingorance.com</a><br>
-        - Open-Sentinel — <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank" rel="noopener noreferrer">GitHub</a>`;
+      return `<div class="mb-2 text-sky">[ repositorios ]</div>
+        - trujillo-ai-studio - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/trujillo-ai-studio" target="_blank">GitHub</a><br>
+        - rewrite-ai - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/rewrite-ai" target="_blank">GitHub</a><br>
+        - open-sentinel - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/open-sentinel" target="_blank">GitHub</a><br>
+        - atm-tools - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/atm-tools" target="_blank">GitHub</a><br>
+        - trujillo-guides - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/trujillo-guides" target="_blank">GitHub</a><br>
+        - domain-root - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/domain-root" target="_blank">GitHub</a><br>
+        - atm-labs-hub - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/atm-labs-hub" target="_blank">GitHub</a>`;
     case 'certs':
       return `<div class="mb-2 text-sky">[ credenciales ]</div>
         - Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
@@ -230,6 +231,8 @@ export function initProjectFilters() {
     apply(btn.getAttribute('data-filter'));
   });
 }
+
+
 
 
 

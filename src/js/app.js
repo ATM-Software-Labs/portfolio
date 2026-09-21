@@ -527,7 +527,7 @@ function initContact() {
     }
     try {
       const data = Object.fromEntries(new FormData(form).entries());
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://ai.trujillomingorance.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
