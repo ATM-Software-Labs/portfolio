@@ -30,7 +30,7 @@ const translations = {
     id_loc: 'Barcelona / Remoto',
     id_edu: 'ASIR (Higher) + SMR (Mid)',
     id_disability: 'Certificado Discapacidad >33%',
-    stat1: 'IT & DevOps Experience',
+    stat1: 'IT & SecOps Experience',
     stat2: 'Formación dual sistemas',
     stat3: 'Cupo Discapacidad Oficial',
     stat4: 'Barcelona / Remoto',
@@ -39,7 +39,7 @@ const translations = {
     fact1_title: 'Discapacidad >33%',
     fact1_body: 'Elegible para bonificaciones y cuota de reserva de contratación (Ley 43/2006 / LGD).',
     fact2_title: 'Incorporación',
-    fact2_body: 'Inmediata a equipos de DevOps, cloud, sistemas o seguridad.',
+    fact2_body: 'Inmediata a equipos de SecOps, cloud, sistemas o seguridad.',
     fact3_title: 'Flexibilidad horaria',
     fact3_body: 'Partida, rotativa, guardias o jornada intensiva según el servicio.',
     fact4_title: 'Movilidad geográfica',
@@ -126,7 +126,7 @@ const translations = {
     id_loc: 'Barcelona / Remote',
     id_edu: 'ASIR (Higher) + SMR (Mid)',
     id_disability: 'Disability certificate >33%',
-    stat1: 'IT & DevOps Experience',
+    stat1: 'IT & SecOps Experience',
     stat2: 'Dual systems training',
     stat3: 'Official disability quota',
     stat4: 'Barcelona / Remote',
@@ -135,7 +135,7 @@ const translations = {
     fact1_title: 'Disability >33%',
     fact1_body: 'Eligible for hiring bonuses and the statutory disability quota (Ley 43/2006 / LGD).',
     fact2_title: 'Start date',
-    fact2_body: 'Immediate availability for DevOps, cloud, systems or security teams.',
+    fact2_body: 'Immediate availability for SecOps, cloud, systems or security teams.',
     fact3_title: 'Schedule flexibility',
     fact3_body: 'Split shifts, rotating shifts, on-call or intensive hours.',
     fact4_title: 'Geographic mobility',
@@ -578,5 +578,6 @@ ready(() => {
   try { initContact(); } catch (error) { console.error('[contact]', error); }
   try { initModals(); } catch (error) { console.error('[modals]', error); }
 });
+
 
 

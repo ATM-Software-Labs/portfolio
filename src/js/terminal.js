@@ -3,7 +3,7 @@
  * Sin anti-debug, sin listeners duplicados, sin reconstruir el DOM del grid.
  */
 const EMAIL = 'alberto@trujillomingorance.com';
-const PROMPT = 'alberto@devops-node:~$';
+const PROMPT = 'alberto@secops-node:~$';
 const MAX_HISTORY = 80;
 const FILTER_ALL = 'all';
 
@@ -50,7 +50,7 @@ function commandHtml(cmd) {
         - Automatización: Bash, PowerShell, Python, Ansible, Git / Pull Requests`;
     case 'exp':
       return `<div class="mb-2 text-sky">[ experiencia ]</div>
-        - Attestto (jul. 2026 — sept. 2026): Ingeniero junior de SecOps y sistemas · Cloud/IAM, Cloudflare, W3C DID/VC, vLEI, Fly.io<br>
+        - Attestto (jul. 2026 — actualidad): Ingeniero junior de SecOps y sistemas · Cloud/IAM, Cloudflare, W3C DID/VC, vLEI, Fly.io<br>
         - Minsait / Indra (nov. 2025 — may. 2026): Técnico de soporte de sistemas · infraestructuras críticas Salut CTTI, Active Directory, SAP ERP, BMC Remedy<br>
         - Institut Indústria Sostenible (may. 2023 — nov. 2023): Técnico de mantenimiento informático · Clonezilla, redes, hardware`;
     case 'projects':
@@ -230,5 +230,7 @@ export function initProjectFilters() {
     apply(btn.getAttribute('data-filter'));
   });
 }
+
+
 
 
