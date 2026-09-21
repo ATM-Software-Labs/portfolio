@@ -884,6 +884,54 @@ function initContact() {
 ready(() => {
   if (window.__portfolioAppReady) return;
   window.__portfolioAppReady = true;
+
+  const btnRequestCv = document.getElementById('btn-request-cv');
+  const cvModal = document.getElementById('cv-challenge-modal');
+  const cvClose = document.getElementById('cv-challenge-close');
+  const cvVerify = document.getElementById('cv-challenge-verify');
+  const cvInput = document.getElementById('cv-challenge-input');
+  const cvError = document.getElementById('cv-challenge-error');
+
+  if (btnRequestCv && cvModal) {
+      btnRequestCv.addEventListener('click', (e) => {
+          e.preventDefault();
+          cvModal.style.display = 'flex';
+          cvInput.value = '';
+          cvError.style.display = 'none';
+          setTimeout(() => cvInput.focus(), 100);
+      });
+
+      if (cvClose) cvClose.addEventListener('click', () => { cvModal.style.display = 'none'; });
+
+      cvModal.addEventListener('click', (e) => {
+          if (e.target === cvModal) cvModal.style.display = 'none';
+      });
+
+      const verifyChallenge = () => {
+          const val = cvInput.value.trim();
+          if (val === '22') {
+              cvError.style.display = 'none';
+              cvVerify.innerHTML = '<i class="fas fa-unlock"></i> Access Granted';
+              cvVerify.classList.replace('btn-green', 'btn-blue');
+              setTimeout(() => {
+                  window.open(atob("aHR0cHM6Ly9kcml2ZS5" + "nb29nbGUuY29tL2ZpbGUvZC8" + "xWmJoMUJONXdmTnJhVWF" + "1RTEzcy01c2JRX3JaNnoy" + "OXMvdmlldz91c3A9c2hhcmluZw=="), "_blank");
+                  cvModal.style.display = 'none';
+                  cvVerify.innerHTML = '<i class="fas fa-terminal"></i> Verify';
+                  cvVerify.classList.replace('btn-blue', 'btn-green');
+              }, 800);
+          } else {
+              cvError.style.display = 'block';
+              cvInput.value = '';
+              cvInput.focus();
+          }
+      };
+
+      if (cvVerify) cvVerify.addEventListener('click', verifyChallenge);
+      if (cvInput) cvInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') verifyChallenge();
+      });
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
