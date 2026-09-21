@@ -138,7 +138,7 @@
                 </div>
 
                 <!-- Interactive SysAdmin Terminal Simulator -->
-                <div class="terminal-window scroll-reveal">
+                <div id="terminal" class="terminal-window scroll-reveal">
                     <div class="terminal-header">
                         <div class="terminal-dots">
                             <span class="dot red"></span>
@@ -429,14 +429,14 @@
                 <h2 class="section-title" data-i18n="projects_title">Proyectos</h2>
 
                 <!-- Project Category Filters -->
-                <div class="filter-container">
+                <div id="project-filters" class="filter-container">
                     <button type="button" class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">Todos los Proyectos</button>
                     <button type="button" class="filter-btn" data-filter="devops" data-i18n="proj_filter_devops">Cloud & DevOps</button>
                     <button type="button" class="filter-btn" data-filter="security" data-i18n="proj_filter_security">Ciberseguridad & Web3</button>
                     <button type="button" class="filter-btn" data-filter="automation" data-i18n="proj_filter_automation">Automatización</button>
                 </div>
 
-                <div class="projects-container">
+                <div id="project-grid" class="projects-container"> <div id="project-empty" style="display:none; text-align:center; padding: 2rem;">No hay proyectos en esta categoría.</div>
                     
                     <!-- Project: Trujillo AI Studio & Discord Bot -->
                     <div class="glass-card project-card featured-project border-top-blue" data-category="devops automation security">
@@ -662,13 +662,13 @@
                             </li>
                         </ul>
 
-                        <button type="button" class="btn btn-outline btn-sm copy-email-btn" style="margin-top: 20px; border-color: rgba(255,255,255,0.4); color: white;">
+                        <button type="button" id="copy-email" class="btn btn-outline btn-sm copy-email-btn" style="margin-top: 20px; border-color: rgba(255,255,255,0.4); color: white;">
                             <i class="fas fa-copy"></i> <span data-i18n="copy_email">Copiar Email</span>
                         </button>
                     </div>
                     
                     <div class="contact-form-wrapper">
-                        <form action="/api/contact" method="POST" class="contact-form" id="contactForm">
+                        <form action="/api/contact" method="POST" class="contact-form" id="contact-form">
                             <!-- Honeypot anti-spam field -->
                             <div style="display:none;" aria-hidden="true">
                                 <label for="website">Leave this field blank</label>
@@ -777,3 +777,7 @@
 
     <!-- Toast Notification Container -->
     <div id="toast-container" class="toast-container"></div>
+
+
+
+
