@@ -1,6 +1,6 @@
-# Alberto Trujillo Mingorance
+# Your Name
 
-**Systems Administrator & SecOps Engineer** | [alberto.trujillomingorance.com](https://alberto.trujillomingorance.com)
+**Systems Administrator & SecOps Engineer** | [your-portfolio.com](https://your-portfolio.com)
 
 Minimalist, ultra-secure personal portfolio and interactive terminal. Built with a Zero-Trust approach.
 
@@ -14,4 +14,5 @@ Minimalist, ultra-secure personal portfolio and interactive terminal. Built with
 Vanilla JS, HTML/CSS, Tailwind CSS, Cloudflare Pages.
 
 ---
-*© ATM Software Labs. All rights reserved.*
+*© Your Organization. All rights reserved.*
+
