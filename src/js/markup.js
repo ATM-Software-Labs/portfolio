@@ -77,7 +77,7 @@ export const markup = `
                         </div>
 
                         <h1 class="hero-name scroll-reveal">Alberto Trujillo Mingorance</h1>
-                        <p class="hero-description scroll-reveal" style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--text-light);"><a href="/sobre-mi" style="color: var(--primary-color);">Alberto Trujillo Mingorance</a>, administrador de sistemas y ciberseguridad en Barcelona. Autor de <a href="https://ai.trujillomingorance.com" style="color: var(--primary-color);">Trujillo AI</a>.</p>
+                        <p class="hero-description scroll-reveal" style="font-size: 1.1rem; margin-top: 0.5rem; color: var(--text-light);"><a href="https://trujillomingorance.com/sobre-mi" style="color: var(--primary-color);">Alberto Trujillo Mingorance</a>, administrador de sistemas y ciberseguridad en Barcelona. Autor de <a href="https://ai.trujillomingorance.com" style="color: var(--primary-color);">Trujillo AI</a>.</p>
                         <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle">Administrador de sistemas y ciberseguridad</h2>
                         
                         <p class="hero-description scroll-reveal" data-i18n="hero_description">
