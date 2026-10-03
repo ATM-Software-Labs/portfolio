@@ -13,6 +13,6 @@
     "tailwindcss": "^4.3.3",
     "terser": "^5.51.2",
     "vite": "^6.3.5",
-    "wrangler": "^4.130.0"
+    "wrangler": "^4.147.0"
   }
 }
