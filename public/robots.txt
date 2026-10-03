@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-
-Sitemap: https://alberto.trujillomingorance.com/sitemap.xml
