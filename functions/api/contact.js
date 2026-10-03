@@ -1,6 +1,7 @@
 /**
  * POST /api/contact
  */
+import { takeMailSlot, verifyTurnstile } from '../lib/turnstile.js';
 
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
@@ -35,17 +36,20 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 
-function sanitizeString(str) {
-  if (typeof str !== 'string') return '';
-  return str
-    .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // Strip control characters
-    .replace(/[\r\n]/g, ' ')                      // Prevent CRLF injection
+function cleanText(value, keepNewlines) {
+  if (typeof value !== 'string') return '';
+  let text = value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+  text = keepNewlines ? text.replace(/\r\n/g, '\n').replace(/\r/g, '\n') : text.replace(/[\r\n]+/g, ' ');
+  return text.trim();
+}
+
+function escapeHtml(value) {
+  return value
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .trim();
+    .replace(/'/g, '&#x27;');
 }
 
 function getSecurityHeaders(allowedOrigin) {
@@ -89,7 +93,15 @@ export async function onRequestPost(context) {
 
   try {
     const body = await request.json();
-    
+
+    const human = await verifyTurnstile(request, body.turnstile, env.TURNSTILE_SECRET, 'contact');
+    if (!human) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Confirma la casilla de verificación.' }),
+        { status: 403, headers }
+      );
+    }
+
     // Honeypot check (Bots filling hidden fields)
     if (body.website || body.phone_confirm || body.fax) {
       // Return 200 silently to confuse bots
@@ -99,9 +111,9 @@ export async function onRequestPost(context) {
       );
     }
 
-    const name = sanitizeString(body.name);
-    const email = (body.email || '').trim().toLowerCase();
-    const message = sanitizeString(body.message);
+    const name = cleanText(body.name, false);
+    const email = cleanText(body.email || '', false).toLowerCase();
+    const message = cleanText(body.message, true);
 
     // Hard Boundaries Validation
     if (!name || !email || !message) {
@@ -125,10 +137,17 @@ export async function onRequestPost(context) {
       );
     }
 
-    const mailKey = env.MAIL_KEY || env.RESEND_API_KEY;
+    const allowed = await takeMailSlot(env.CONTENT, 'contact', 12);
+    if (!allowed) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Hoy ya no se pueden enviar más mensajes. Prueba mañana.' }),
+        { status: 429, headers }
+      );
+    }
+
+    const mailKey = env.RESEND_API_KEY || env.MAIL_KEY;
     const emailFrom = env.EMAIL_FROM || 'Alberto Trujillo <noreply@trujillomingorance.com>';
-    const emailTo = env.EMAIL_TO || 'alberto@trujillomingorance.com';
-    const mailEndpoint = env.MAIL_ENDPOINT || 'https://api.resend.com/emails';
+    const emailTo = 'alberto@trujillomingorance.com';
 
     if (!mailKey) {
       return new Response(
@@ -137,7 +156,11 @@ export async function onRequestPost(context) {
       );
     }
 
-    const mailResponse = await fetch(mailEndpoint, {
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
+
+    const mailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${mailKey}`,
@@ -147,26 +170,14 @@ export async function onRequestPost(context) {
         from: emailFrom,
         to: [emailTo],
         reply_to: email,
-        subject: `Contacto: ${name}`,
-        text: `${name} <${email}>\n\n${message}`,
+        subject: `Portfolio: ${name}`.slice(0, 180),
+        text: `Nombre: ${name}\nEmail: ${email}\n\n${message}`,
         html: `
-          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 20px auto; background-color: #0f172a; color: #f8fafc; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden;">
-            <div style="background-color: #1e293b; padding: 20px; border-bottom: 2px solid #3b82f6;">
-              <h2 style="color: #3b82f6; margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em;">🛡️ Formulario de Contacto Seguro</h2>
-              <p style="color: #94a3b8; margin: 4px 0 0 0; font-size: 12px;">Transmisión verificada desde alberto.trujillomingorance.com</p>
-            </div>
-            
-            <div style="padding: 24px;">
-              <p style="margin: 0 0 8px 0; color: #94a3b8; font-size: 12px; text-transform: uppercase; font-weight: bold;">Remitente</p>
-              <p style="margin: 0 0 16px 0; color: #f8fafc; font-size: 14px;"><strong>Nombre:</strong> ${name}<br><strong>Email:</strong> <a href="mailto:${email}" style="color: #60a5fa;">${email}</a></p>
-              
-              <p style="margin: 0 0 8px 0; color: #94a3b8; font-size: 12px; text-transform: uppercase; font-weight: bold;">Contenido del Mensaje</p>
-              <div style="background-color: #020617; border: 1px solid #1e293b; border-radius: 6px; padding: 16px; font-size: 14px; color: #e2e8f0; line-height: 1.6; white-space: pre-wrap;">${message}</div>
-            </div>
-            
-            <div style="background-color: #1e293b; padding: 12px 24px; font-size: 11px; color: #64748b; text-align: space-between;">
-              <span>IP Origen: ${clientIP}</span> | <span>Timestamp: ${new Date().toISOString()}</span>
-            </div>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 20px auto; color: #0f172a;">
+            <h2 style="margin: 0 0 8px; font-size: 18px;">Nuevo mensaje del portfolio</h2>
+            <p style="margin: 0 0 16px; color: #475569;">Responde a este correo para escribir a ${safeName}.</p>
+            <p style="margin: 0 0 8px;"><strong>Nombre:</strong> ${safeName}<br><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
+            <div style="margin-top: 16px; padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; line-height: 1.6;">${safeMessage}</div>
           </div>
         `,
       }),

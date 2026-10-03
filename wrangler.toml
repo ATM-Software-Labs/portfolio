@@ -1,3 +1,7 @@
 name = "alberto-portfolio"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-09-19"
+
+[[kv_namespaces]]
+binding = "CONTENT"
+id = "549c444e82a84ae986e58e5b4ec15fb1"

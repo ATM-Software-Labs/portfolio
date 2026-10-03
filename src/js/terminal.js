@@ -3,13 +3,14 @@
  * Sin anti-debug, sin listeners duplicados, sin reconstruir el DOM del grid.
  */
 const EMAIL = ['alberto', 'trujillomingorance.com'].join('@');
-const PROMPT = 'alberto@secops-node:~$';
+const PROMPT = 'alberto@atm-labs:~$';
 const MAX_HISTORY = 80;
 const FILTER_ALL = 'all';
 
 const COMMANDS = Object.freeze({
   help: 'Lista los comandos disponibles',
   whoami: 'Identidad y perfil profesional',
+  atm: 'Laboratorio actual: ATM Software Labs',
   skills: 'Stack técnico y competencias',
   exp: 'Experiencia profesional',
   projects: 'Proyectos en producción y laboratorio',
@@ -38,10 +39,14 @@ function commandHtml(cmd) {
         .join('');
       return `<div class="mb-2 text-sky">[ comandos ]</div><table>${rows}</table>`;
     }
+    case 'atm':
+      return `<div class="mb-2 text-sky">[ ATM Software Labs ]</div>
+        Laboratorio técnico independiente en Barcelona, en remoto, desde mayo de 2026.<br>
+        Plataformas en Cloudflare y el edge, filtrado DNS, Zero-Trust, monitorización con alertas, runbooks y automatización con PowerShell y Bash.`;
     case 'whoami':
       return `<div class="mb-2 text-sky">[ identidad ]</div>
         Nombre: Alberto Trujillo Mingorance<br>
-        Rol: Systems &amp; Cloud Administrator | Cybersecurity - Cloud/IAM<br>Estado: All systems operational. Disponibilidad inmediata para roles de SecOps y Cloud.`;
+        Rol: Administrador de sistemas y ciberseguridad<br>Actual: ATM Software Labs · Barcelona · remoto<br>Estado: Disponibilidad inmediata.`;
     case 'skills':
       return `<div class="mb-2 text-sky">[ stack ]</div>
         - Cloud/IAM: Microsoft Entra ID, Google Workspace, Cloudflare, Fly.io<br>
@@ -50,9 +55,10 @@ function commandHtml(cmd) {
         - Automatización: Bash, PowerShell, Python, Ansible, Git / Pull Requests`;
     case 'exp':
       return `<div class="mb-2 text-sky">[ experiencia ]</div>
-        - Attestto (jul. 2026 — actualidad): Ingeniero junior de SecOps y sistemas · Cloud/IAM, Cloudflare, W3C DID/VC, vLEI, Fly.io<br>
-        - Minsait / Indra (nov. 2025 — may. 2026): Técnico de soporte de sistemas · infraestructuras críticas Salut CTTI, Active Directory, SAP ERP, BMC Remedy<br>
-        - Institut Indústria Sostenible (may. 2023 — nov. 2023): Técnico de mantenimiento informático · Clonezilla, redes, hardware`;
+        - ATM Software Labs (may. 2026 — actualidad): Administrador de sistemas y ciberseguridad · Cloudflare, Zero-Trust, DNS, monitorización<br>
+        - Attestto (jul. 2026 — sept. 2026, jornada parcial): Seguridad cloud e identidad · Google Workspace, IAM, GitHub<br>
+        - Minsait (nov. 2025 — may. 2026, prácticas): Soporte TI · Metro Sud / CTTI, Directorio Activo, ticketing<br>
+        - Institut Indústria Sostenible de Barcelona (may. 2023 — nov. 2023, prácticas): Soporte de equipos · Clonezilla, hardware, cableado`;
     case 'projects':
       return `<div class="mb-2 text-sky">[ repositorios ]</div>
         - trujillo-ai-studio - <a class="text-cyan underline" href="https://github.com/ATM-Software-Labs/trujillo-ai-studio" target="_blank">GitHub</a><br>
@@ -66,11 +72,11 @@ function commandHtml(cmd) {
       return `<div class="mb-2 text-sky">[ credenciales ]</div>
         - Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
         - ID: F89C9FFB072C4C9A<br>
-        - ASIR (perfil ciberseguridad) + SMR · ITB`;
+        - ASIR 7,05 (sept. 2024 – jun. 2026) + SMR 7,35 (sept. 2022 – jun. 2024) · ITB`;
     case 'contact':
       return `<div class="mb-2 text-sky">[ contacto ]</div>
         Email: <a class="text-cyan underline" href="mailto:${EMAIL}">${EMAIL}</a><br>
-        LinkedIn: <a class="text-cyan underline" href="https://linkedin.com/in/alberto-trujillo-mingorance-288237266/" target="_blank" rel="noopener noreferrer">alberto-trujillo-mingorance</a><br>
+        LinkedIn: <a class="text-cyan underline" href="https://www.linkedin.com/in/albertotrujillomingorance/" target="_blank" rel="noopener noreferrer">albertotrujillomingorance</a><br>
         GitHub: <a class="text-cyan underline" href="https://github.com/atrumin16" target="_blank" rel="noopener noreferrer">atrumin16</a>`;
     default:
       return `Comando no reconocido: "${escapeHtml(cmd)}". Escribe <span class="text-cyan">help</span> para ver la lista.`;
@@ -206,19 +212,21 @@ export function initProjectFilters() {
   if (toolbar.dataset.bound === '1') return;
   toolbar.dataset.bound = '1';
 
-  const cards = grid.querySelectorAll('[data-category]');
   const buttons = toolbar.querySelectorAll('[data-filter]');
 
   const apply = (filter) => {
     const key = filter || FILTER_ALL;
+    const cards = grid.querySelectorAll('[data-category]');
     let visible = 0;
     cards.forEach((card) => {
-      const match = key === FILTER_ALL || card.getAttribute('data-category') === key;
+      const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+      const match = key === FILTER_ALL || categories.includes(key);
       card.classList.toggle('is-hidden', !match);
       if (match) visible += 1;
     });
     buttons.forEach((btn) => {
       const active = btn.getAttribute('data-filter') === key;
+      btn.classList.toggle('active', active);
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-pressed', String(active));
     });

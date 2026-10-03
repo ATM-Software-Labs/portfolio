@@ -1,0 +1,395 @@
+const copy = (es, en, ca) => ({ es, en, ca });
+
+function job(id, fields) {
+  const item = { id };
+  for (const lang of ['es', 'en', 'ca']) item[lang] = fields[lang];
+  return item;
+}
+
+export const defaultContent = {
+  hero: {
+    es: {
+      subtitle: 'Administrador de sistemas y ciberseguridad',
+      description: 'Titulado en ASIR (7,05) y SMR (7,35). Diseño y operación de arquitecturas seguras: plataformas en Cloudflare y el edge, redes con filtrado DNS y Zero-Trust, monitorización con alertas, y administración de identidades.',
+      location: 'Barcelona · Remoto',
+      availability: 'Incorporación inmediata',
+    },
+    en: {
+      subtitle: 'Systems and cybersecurity administrator',
+      description: 'ASIR (grade 7.05) and SMR (grade 7.35). I design and run secure architectures: Cloudflare and edge platforms, DNS filtering and Zero-Trust networks, monitoring with alerts, and identity administration.',
+      location: 'Barcelona · Remote',
+      availability: 'Available immediately',
+    },
+    ca: {
+      subtitle: 'Administrador de sistemes i ciberseguretat',
+      description: "Titulat en ASIR (7,05) i SMR (7,35). Disseny i operació d'arquitectures segures: plataformes a Cloudflare i l'edge, xarxes amb filtratge DNS i Zero-Trust, monitorització amb alertes i administració d'identitats.",
+      location: 'Barcelona · Remot',
+      availability: 'Incorporació immediata',
+    },
+  },
+  jobs: [
+    job('atm', copy(
+      {
+        role: 'Administrador de sistemas y ciberseguridad',
+        company: 'ATM Software Labs',
+        period: 'may. 2026 – actualidad · 5 meses',
+        location: 'Barcelona, Cataluña, España · En remoto',
+        context: 'Laboratorio técnico independiente: investigación aplicada, arquitecturas seguras y pruebas en entornos reales de sistemas y redes.',
+        bullets: [
+          'Despliegue de plataformas web sobre infraestructura edge y Cloudflare.',
+          'Redes seguras con filtrado DNS y modelo Zero-Trust.',
+          'Monitorización continua de sistemas y alertas automatizadas.',
+          'Runbooks y guías técnicas de despliegue reproducibles.',
+          'Seguridad de sistemas, copias de seguridad y automatización con PowerShell y Bash.',
+        ],
+        tags: ['Cloudflare', 'Zero-Trust', 'Filtrado DNS', 'PowerShell', 'Bash'],
+      },
+      {
+        role: 'Systems and cybersecurity administrator',
+        company: 'ATM Software Labs',
+        period: 'May 2026 – present · 5 months',
+        location: 'Barcelona, Catalonia, Spain · Remote',
+        context: 'Independent technical lab: applied research, secure architectures and tests on real systems and networks.',
+        bullets: [
+          'Deployment of web platforms on edge infrastructure and Cloudflare.',
+          'Secure networks with DNS filtering and a Zero-Trust model.',
+          'Continuous system monitoring and automated alerts.',
+          'Runbooks and reproducible technical deployment guides.',
+          'System security, backups and automation with PowerShell and Bash.',
+        ],
+        tags: ['Cloudflare', 'Zero-Trust', 'DNS filtering', 'PowerShell', 'Bash'],
+      },
+      {
+        role: 'Administrador de sistemes i ciberseguretat',
+        company: 'ATM Software Labs',
+        period: 'maig 2026 – actualitat · 5 mesos',
+        location: 'Barcelona, Catalunya, Espanya · En remot',
+        context: 'Laboratori tècnic independent: recerca aplicada, arquitectures segures i proves en entorns reals de sistemes i xarxes.',
+        bullets: [
+          'Desplegament de plataformes web sobre infraestructura edge i Cloudflare.',
+          'Xarxes segures amb filtratge DNS i model Zero-Trust.',
+          'Monitorització contínua de sistemes i alertes automatitzades.',
+          'Runbooks i guies tècniques de desplegament reproduïbles.',
+          'Seguretat de sistemes, còpies de seguretat i automatització amb PowerShell i Bash.',
+        ],
+        tags: ['Cloudflare', 'Zero-Trust', 'Filtratge DNS', 'PowerShell', 'Bash'],
+      },
+    )),
+    job('attestto', copy(
+      {
+        role: 'Administrador de sistemas y seguridad cloud',
+        company: 'Attestto · Jornada parcial',
+        period: 'jul. 2026 – sept. 2026 · 3 meses',
+        location: 'Delaware, Estados Unidos · En remoto',
+        context: 'Gestión, despliegue y protección de la infraestructura corporativa en la nube.',
+        bullets: [
+          'Administración de identidades y accesos: Google Workspace, Cloudflare, IAM y GitHub.',
+          'Directivas de mínimo privilegio y hardening de entornos.',
+          'Supervisión de la seguridad en repositorios de código y respuesta ante incidencias.',
+          'Mantenimiento de servicios de identidad digital (W3C DID/VC, vLEI y eIDAS) y documentación técnica.',
+        ],
+        tags: ['Google Workspace', 'Cloudflare', 'IAM', 'GitHub', 'Hardening'],
+      },
+      {
+        role: 'Cloud systems and security administrator',
+        company: 'Attestto · Part-time',
+        period: 'Jul 2026 – Sep 2026 · 3 months',
+        location: 'Delaware, United States · Remote',
+        context: 'Management, deployment and protection of corporate cloud infrastructure.',
+        bullets: [
+          'Identity and access administration: Google Workspace, Cloudflare, IAM and GitHub.',
+          'Least-privilege policies and environment hardening.',
+          'Code-repository security monitoring and incident response.',
+          'Operation of digital-identity services (W3C DID/VC, vLEI and eIDAS) and technical documentation.',
+        ],
+        tags: ['Google Workspace', 'Cloudflare', 'IAM', 'GitHub', 'Hardening'],
+      },
+      {
+        role: 'Administrador de sistemes i seguretat cloud',
+        company: 'Attestto · Jornada parcial',
+        period: 'jul. 2026 – set. 2026 · 3 mesos',
+        location: 'Delaware, Estats Units · En remot',
+        context: 'Gestió, desplegament i protecció de la infraestructura corporativa al núvol.',
+        bullets: [
+          "Administració d'identitats i accessos: Google Workspace, Cloudflare, IAM i GitHub.",
+          "Directives de mínim privilegi i hardening d'entorns.",
+          "Supervisió de la seguretat als repositoris de codi i resposta davant d'incidències.",
+          "Manteniment de serveis d'identitat digital (W3C DID/VC, vLEI i eIDAS) i documentació tècnica.",
+        ],
+        tags: ['Google Workspace', 'Cloudflare', 'IAM', 'GitHub', 'Hardening'],
+      },
+    )),
+    job('minsait', copy(
+      {
+        role: 'Técnico de soporte de TI',
+        company: 'Minsait · Contrato de prácticas',
+        period: 'nov. 2025 – may. 2026 · 7 meses',
+        location: 'Barcelona, Cataluña, España · Híbrido',
+        context: 'Soporte técnico remoto en el proyecto Metro Sud, bajo los estándares del CTTI.',
+        bullets: [
+          'Incidencias de software, hardware y conectividad en puestos de trabajo, con acceso remoto.',
+          'Cuentas y permisos de usuario en Directorio Activo.',
+          'Impresoras y periféricos conectados en red.',
+          'Registro, escalado y cierre de peticiones en ticketing, dentro de los SLA.',
+        ],
+        tags: ['Directorio Activo', 'Soporte remoto', 'Ticketing', 'SLA', 'CTTI'],
+      },
+      {
+        role: 'IT support technician',
+        company: 'Minsait · Internship',
+        period: 'Nov 2025 – May 2026 · 7 months',
+        location: 'Barcelona, Catalonia, Spain · Hybrid',
+        context: 'Remote technical support on the Metro Sud project, under CTTI standards.',
+        bullets: [
+          'Software, hardware and connectivity incidents on workstations, using remote access.',
+          'User accounts and permissions in Active Directory.',
+          'Networked printers and peripherals.',
+          'Logging, escalation and closure of tickets within SLA.',
+        ],
+        tags: ['Active Directory', 'Remote support', 'Ticketing', 'SLA', 'CTTI'],
+      },
+      {
+        role: 'Tècnic de suport de TI',
+        company: 'Minsait · Contracte de pràctiques',
+        period: 'nov. 2025 – maig 2026 · 7 mesos',
+        location: 'Barcelona, Catalunya, Espanya · Híbrid',
+        context: 'Suport tècnic remot al projecte Metro Sud, sota els estàndards del CTTI.',
+        bullets: [
+          'Incidències de programari, maquinari i connectivitat en llocs de treball, amb accés remot.',
+          "Comptes i permisos d'usuari al Directori Actiu.",
+          'Impressores i perifèrics connectats en xarxa.',
+          'Registre, escalat i tancament de peticions de ticketing, dins dels SLA.',
+        ],
+        tags: ['Directori Actiu', 'Suport remot', 'Ticketing', 'SLA', 'CTTI'],
+      },
+    )),
+    job('iis', copy(
+      {
+        role: 'Técnico de soporte de equipos informáticos',
+        company: 'Institut Indústria Sostenible de Barcelona · Contrato de prácticas',
+        period: 'may. 2023 – nov. 2023 · 7 meses',
+        location: 'Carrer de Cristóbal de Moura, 223, Barcelona · Presencial',
+        context: 'Mantenimiento y soporte presencial en el entorno educativo.',
+        bullets: [
+          'Despliegue masivo y clonación de imágenes con Clonezilla para aulas y puestos.',
+          'Diagnóstico, sustitución y reparación de hardware en ordenadores, impresoras y periféricos.',
+          'Cableado estructurado y red local.',
+          'Distribución centralizada de software, inventario y renovación del parque.',
+        ],
+        tags: ['Clonezilla', 'Hardware', 'Cableado', 'Inventario'],
+      },
+      {
+        role: 'Computer equipment support technician',
+        company: 'Institut Indústria Sostenible de Barcelona · Internship',
+        period: 'May 2023 – Nov 2023 · 7 months',
+        location: 'Carrer de Cristóbal de Moura, 223, Barcelona · On-site',
+        context: 'On-site maintenance and support in an education environment.',
+        bullets: [
+          'Mass imaging and cloning with Clonezilla for classrooms and workstations.',
+          'Diagnosis, replacement and repair of hardware on computers, printers and peripherals.',
+          'Structured cabling and the local network.',
+          'Centralized software distribution, inventory and hardware refresh.',
+        ],
+        tags: ['Clonezilla', 'Hardware', 'Cabling', 'Inventory'],
+      },
+      {
+        role: "Tècnic de suport d'equips informàtics",
+        company: 'Institut Indústria Sostenible de Barcelona · Contracte de pràctiques',
+        period: 'maig 2023 – nov. 2023 · 7 mesos',
+        location: 'Carrer de Cristóbal de Moura, 223, Barcelona · Presencial',
+        context: "Manteniment i suport presencial en l'entorn educatiu.",
+        bullets: [
+          "Desplegament massiu i clonació d'imatges amb Clonezilla per a aules i llocs de treball.",
+          'Diagnòstic, substitució i reparació de maquinari en ordinadors, impressores i perifèrics.',
+          'Cablejat estructurat i xarxa local.',
+          'Distribució centralitzada de programari, inventari i renovació del parc.',
+        ],
+        tags: ['Clonezilla', 'Maquinari', 'Cablejat', 'Inventari'],
+      },
+    )),
+  ],
+  education: [
+    {
+      id: 'asir',
+      link: '',
+      ...copy(
+        {
+          title: 'CFGS · Administración de Sistemas Informáticos en Red',
+          detail: 'Ciclo Formativo de Grado Superior',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'sept. 2024 – jun. 2026',
+          description: 'Nota 7,05. Administración, seguridad y alta disponibilidad de sistemas y redes.',
+          bullets: [
+            'Linux y Windows Server: servidores, clientes y servicios.',
+            'DNS, DHCP, servidores web y transferencia de archivos.',
+            'Seguridad perimetral, copias de seguridad y monitorización.',
+            'Virtualización y despliegue de infraestructura.',
+          ],
+        },
+        {
+          title: 'Higher vocational diploma · Computer systems and networks',
+          detail: 'Advanced vocational training',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'Sep 2024 – Jun 2026',
+          description: 'Grade 7.05. Administration, security and high availability of systems and networks.',
+          bullets: [
+            'Linux and Windows Server: servers, clients and services.',
+            'DNS, DHCP, web servers and file transfer.',
+            'Perimeter security, backups and monitoring.',
+            'Virtualization and infrastructure deployment.',
+          ],
+        },
+        {
+          title: 'CFGS · Administració de Sistemes Informàtics en Xarxa',
+          detail: 'Cicle Formatiu de Grau Superior',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'set. 2024 – juny 2026',
+          description: 'Nota 7,05. Administració, seguretat i alta disponibilitat de sistemes i xarxes.',
+          bullets: [
+            'Linux i Windows Server: servidors, clients i serveis.',
+            'DNS, DHCP, servidors web i transferència de fitxers.',
+            'Seguretat perimetral, còpies de seguretat i monitorització.',
+            "Virtualització i desplegament d'infraestructura.",
+          ],
+        },
+      ),
+    },
+    {
+      id: 'smr',
+      link: '',
+      ...copy(
+        {
+          title: 'CFGM · Sistemas microinformáticos y redes',
+          detail: 'Ciclo Formativo de Grado Medio',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'sept. 2022 – jun. 2024',
+          description: 'Nota 7,35. Instalación, soporte y mantenimiento de equipos y redes locales.',
+          bullets: [
+            'Montaje, diagnóstico y reparación de hardware y periféricos.',
+            'Cableado estructurado, routers, switches y direccionamiento IP.',
+            'Usuarios, permisos y recursos compartidos en Windows y Linux.',
+            'Soporte de primer nivel, malware y copias de seguridad locales.',
+          ],
+        },
+        {
+          title: 'Intermediate vocational diploma · Computer systems and networks',
+          detail: 'Intermediate vocational training',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'Sep 2022 – Jun 2024',
+          description: 'Grade 7.35. Installation, support and maintenance of computers and local networks.',
+          bullets: [
+            'Assembly, diagnosis and repair of hardware and peripherals.',
+            'Structured cabling, routers, switches and IP addressing.',
+            'Users, permissions and shared resources on Windows and Linux.',
+            'First-line support, malware removal and local backups.',
+          ],
+        },
+        {
+          title: 'CFGM · Sistemes microinformàtics i xarxes',
+          detail: 'Cicle Formatiu de Grau Mitjà',
+          school: 'Institut Tecnològic de Barcelona',
+          period: 'set. 2022 – juny 2024',
+          description: "Nota 7,35. Instal·lació, suport i manteniment d'equips i xarxes locals.",
+          bullets: [
+            'Muntatge, diagnòstic i reparació de maquinari i perifèrics.',
+            'Cablejat estructurat, routers, switches i adreçament IP.',
+            'Usuaris, permisos i recursos compartits a Windows i Linux.',
+            'Suport de primer nivell, malware i còpies de seguretat locals.',
+          ],
+        },
+      ),
+    },
+    {
+      id: 'entra',
+      link: 'https://learn.microsoft.com/en-us/users/albertotrujillomingorance/credentials/F89C9FFB072C4C9A',
+      ...copy(
+        {
+          title: 'Microsoft Entra ID',
+          detail: 'Identities and Access',
+          school: 'Microsoft Applied Skills',
+          period: '2026',
+          description: 'Credencial oficial de identidades y acceso.',
+          bullets: [],
+        },
+        {
+          title: 'Microsoft Entra ID',
+          detail: 'Identities and Access',
+          school: 'Microsoft Applied Skills',
+          period: '2026',
+          description: 'Official identities and access credential.',
+          bullets: [],
+        },
+        {
+          title: 'Microsoft Entra ID',
+          detail: 'Identities and Access',
+          school: 'Microsoft Applied Skills',
+          period: '2026',
+          description: "Credencial oficial d'identitats i accés.",
+          bullets: [],
+        },
+      ),
+    },
+  ],
+  projects: [
+    {
+      id: 'atm-tools',
+      url: 'https://tools.trujillomingorance.com',
+      code: 'https://github.com/ATM-Software-Labs/atm-tools',
+      ...copy(
+        { name: 'ATM Tools', summary: 'Suite de herramientas en el navegador, orientada a accesibilidad. Sin backend.' },
+        { name: 'ATM Tools', summary: 'Browser tool suite focused on accessibility. No backend.' },
+        { name: 'ATM Tools', summary: "Suite d'eines al navegador, orientada a l'accessibilitat. Sense backend." },
+      ),
+    },
+    {
+      id: 'open-sentinel',
+      url: '',
+      code: 'https://github.com/ATM-Software-Labs/open-sentinel-github',
+      ...copy(
+        { name: 'Open-Sentinel', summary: 'Telemetría de PC autoalojada, alertas de arranque y consola forense remota.' },
+        { name: 'Open-Sentinel', summary: 'Self-hosted PC telemetry, boot alerts and a remote forensic console.' },
+        { name: 'Open-Sentinel', summary: 'Telemetria de PC autoallotjada, alertes d\'arrencada i consola forense remota.' },
+      ),
+    },
+    {
+      id: 'rewrite-ai',
+      url: 'https://rewrite.trujillomingorance.com',
+      code: 'https://github.com/ATM-Software-Labs/rewrite-ai',
+      ...copy(
+        { name: 'Rewrite AI', summary: 'Reescritura de texto en el edge de Cloudflare.' },
+        { name: 'Rewrite AI', summary: 'Text rewriting on the Cloudflare edge.' },
+        { name: 'Rewrite AI', summary: "Reescriptura de text a l'edge de Cloudflare." },
+      ),
+    },
+    {
+      id: 'trujillo-ai',
+      url: 'https://ai.trujillomingorance.com',
+      code: 'https://github.com/ATM-Software-Labs/trujillo-ai-studio',
+      ...copy(
+        { name: 'Trujillo AI Studio', summary: 'Estudio de IA multimodal y bot de Discord sobre Cloudflare Workers.' },
+        { name: 'Trujillo AI Studio', summary: 'Multimodal AI studio and Discord bot on Cloudflare Workers.' },
+        { name: 'Trujillo AI Studio', summary: "Estudi d'IA multimodal i bot de Discord sobre Cloudflare Workers." },
+      ),
+    },
+    {
+      id: 'guides',
+      url: 'https://guides.trujillomingorance.com',
+      code: 'https://github.com/ATM-Software-Labs/trujillo-guides',
+      ...copy(
+        { name: 'Trujillo Guides', summary: 'Runbooks de ingeniería y guías de despliegue.' },
+        { name: 'Trujillo Guides', summary: 'Engineering runbooks and deployment guides.' },
+        { name: 'Trujillo Guides', summary: "Runbooks d'enginyeria i guies de desplegament." },
+      ),
+    },
+    {
+      id: 'focusguard',
+      url: 'https://focusguard.trujillomingorance.com',
+      code: 'https://github.com/ATM-Software-Labs/focusguard-saas',
+      ...copy(
+        { name: 'FocusGuard', summary: 'Filtrado DNS y Zero-Trust en el borde.' },
+        { name: 'FocusGuard', summary: 'DNS filtering and Zero-Trust at the edge.' },
+        { name: 'FocusGuard', summary: 'Filtratge DNS i Zero-Trust a la vora.' },
+      ),
+    },
+  ],
+};
