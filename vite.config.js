@@ -18,8 +18,6 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         admin: resolve(root, 'admin.html'),
-        sobremi: resolve(root, 'sobre-mi/index.html'),
-        enabout: resolve(root, 'en/about/index.html'),
       },
     },
     sourcemap: false,
