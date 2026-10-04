@@ -5,23 +5,30 @@ export function initCvDownload({ t }) {
   if (buttons.length === 0) return;
 
   const widgetHost = document.createElement('div');
-  widgetHost.style.display = 'none';
+  widgetHost.style.position = 'absolute';
+  widgetHost.style.top = '-9999px';
+  widgetHost.style.left = '-9999px';
   document.body.appendChild(widgetHost);
 
   let widgetId = null;
   let pendingResolve = null;
   let pendingReject = null;
+  let cachedToken = '';
 
   mountTurnstile(widgetHost, 'download_cv', {
     onToken: (token) => {
+      cachedToken = token;
       if (pendingResolve) {
         pendingResolve(token);
         pendingResolve = null;
         pendingReject = null;
       }
     },
-    onExpire: () => {},
+    onExpire: () => {
+      cachedToken = '';
+    },
     onError: () => {
+      cachedToken = '';
       if (pendingReject) {
         pendingReject(new Error(t('cv_error')));
         pendingResolve = null;
@@ -46,24 +53,26 @@ export function initCvDownload({ t }) {
       button.textContent = t('cv_working');
 
       try {
-        resetTurnstile(widgetId);
-        
-        const tokenPromise = new Promise((resolve, reject) => {
-          pendingResolve = resolve;
-          pendingReject = reject;
-          // Timeout in case the Turnstile widget fails silently
-          setTimeout(() => {
-            if (pendingReject) {
-              pendingReject(new Error(t('cv_error')));
-              pendingResolve = null;
-              pendingReject = null;
-            }
-          }, 30000);
-        });
-
-        executeTurnstile(widgetId);
+        let tokenPromise;
+        if (cachedToken) {
+          tokenPromise = Promise.resolve(cachedToken);
+        } else {
+          tokenPromise = new Promise((resolve, reject) => {
+            pendingResolve = resolve;
+            pendingReject = reject;
+            setTimeout(() => {
+              if (pendingReject) {
+                pendingReject(new Error(t('cv_error')));
+                pendingResolve = null;
+                pendingReject = null;
+              }
+            }, 30000);
+          });
+          executeTurnstile(widgetId);
+        }
 
         const token = await tokenPromise;
+        cachedToken = ''; // Consume the token
 
         const response = await fetch('/api/cv', {
           method: 'POST',
