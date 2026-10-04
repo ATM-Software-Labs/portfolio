@@ -82,20 +82,5 @@ export async function onRequestPost(context) {
   const ok = await verifyTurnstile(request, body.token, env.TURNSTILE_SECRET, 'download_cv');
   if (!ok) return json({ error: 'La verificación ha caducado. Vuelve a intentarlo.' }, 403, origin);
 
-  const profile = normalizeProfile(body.profile);
-  if (!profile.name) return json({ error: 'No hay datos de currículum en la página.' }, 400, origin);
-
-  const pdf = buildCvPdf(profile);
-  const filename = profile.lang === 'en' ? 'Alberto-Trujillo-Resume.pdf' : 'Alberto-Trujillo-CV.pdf';
-  return new Response(pdf, {
-    status: 200,
-    headers: {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="${filename}"`,
-      'Access-Control-Allow-Origin': origin,
-      'Access-Control-Expose-Headers': 'Content-Disposition',
-      'Cache-Control': 'no-store',
-      'X-Content-Type-Options': 'nosniff',
-    },
-  });
+  return json({ url: 'https://drive.google.com/file/d/1Ew6EZ41OLrXEimzHezCG4Q82dLgZfr42/view?usp=sharing' }, 200, origin);
 }

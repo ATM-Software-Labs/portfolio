@@ -72,7 +72,7 @@ function commandHtml(cmd) {
       return `<div class="mb-2 text-sky">[ credenciales ]</div>
         - Microsoft Applied Skills: Get started with identities and access using Microsoft Entra<br>
         - ID: F89C9FFB072C4C9A<br>
-        - ASIR 7,05 (sept. 2024 – jun. 2026) + SMR 7,35 (sept. 2022 – jun. 2024) · ITB`;
+        - ASIR (sept. 2024 – jun. 2026) + SMR (sept. 2022 – jun. 2024) · ITB`;
     case 'contact':
       return `<div class="mb-2 text-sky">[ contacto ]</div>
         Email: <a class="text-cyan underline" href="mailto:${EMAIL}">${EMAIL}</a><br>
@@ -239,6 +239,7 @@ export function initProjectFilters() {
     apply(btn.getAttribute('data-filter'));
   });
 }
+
 
 
 

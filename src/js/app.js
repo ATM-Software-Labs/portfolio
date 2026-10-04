@@ -6,6 +6,7 @@ import { initProjectFilters } from './terminal.js';
 import { applyContent, loadPublishedContent, publishedContent } from './content.js';
 import { markup } from './markup.js';
 import { executeTurnstile, mountTurnstile, resetTurnstile } from './turnstile-widget.js';
+import { initCvDownload } from './cv.js';
 
 const EMAIL = ['alberto', 'trujillomingorance.com'].join('@');
 const LANG_KEY = 'lang';
@@ -51,9 +52,9 @@ const translations = {
     "footer_legal_title": "Legal & Compliance",
     "exp_minsait_2": "Cuentas y permisos de usuario en Directorio Activo.",
     "exp_attestto_1": "Administración de identidades y accesos: Google Workspace, Cloudflare, IAM y GitHub.",
-    "edu_asir_desc": "Nota 7,05. Administración, seguridad y alta disponibilidad de sistemas y redes.",
+    "edu_asir_desc": "Administración, seguridad y alta disponibilidad de sistemas y redes.",
     "stat_exp_val": "+3 Años",
-    "hero_description": "Titulado en ASIR (7,05) y SMR (7,35). Diseño y operación de arquitecturas seguras: plataformas en Cloudflare y el edge, redes con filtrado DNS y Zero-Trust, monitorización con alertas, y administración de identidades.",
+    "hero_description": "Titulado en ASIR y SMR. Diseño y operación de arquitecturas seguras: plataformas en Cloudflare y el edge, redes con filtrado DNS y Zero-Trust, monitorización con alertas, y administración de identidades.",
     "stack_virt_3": "Virtualización completa con Proxmox VE y VirtualBox.",
     "exp_minsait_role": "Técnico de soporte de TI",
     "stack_cloud_title": "Cloud e IAM",
@@ -63,7 +64,7 @@ const translations = {
     "footer_nav_title": "Navegación",
     "footer_spec_5": "Análisis Cuantitativo de Riesgos",
     "exp_iis_period": "may. 2023 – nov. 2023 · 7 meses",
-    "edu_smr_desc": "Nota 7,35. Instalación, soporte y mantenimiento de equipos y redes locales.",
+    "edu_smr_desc": "Instalación, soporte y mantenimiento de equipos y redes locales.",
     "avail_join_text": "Disponibilidad Inmediata para nuevos retos.",
     "footer_brand_desc": "Administrador de sistemas y ciberseguridad. Infraestructura edge, redes Zero-Trust, hardening e identidad.",
     "hero_tag2": "Disponibilidad inmediata",
@@ -83,7 +84,7 @@ const translations = {
     "proj_filter_systems": "Sistemas y cloud",
     "nav_projects": "Proyectos",
     "stack_auto_3": "Gestión de configuración con Ansible.",
-    "hero_pill_edu": "ASIR 7,05 · SMR 7,35",
+    "hero_pill_edu": "ASIR · SMR",
     "exp_minsait_3": "Impresoras y periféricos conectados en red.",
     "stack_net_4": "Análisis de tráfico y detección de incidentes.",
     "terminal_title": "Consola Interactive SysAdmin",
@@ -210,9 +211,9 @@ const translations = {
     "footer_legal_title": "Legal & Compliance",
     "exp_minsait_2": "User accounts and permissions in Active Directory.",
     "exp_attestto_1": "Identity and access administration: Google Workspace, Cloudflare, IAM and GitHub.",
-    "edu_asir_desc": "Grade 7.05. Administration, security and high availability of systems and networks.",
+    "edu_asir_desc": "Administration, security and high availability of systems and networks.",
     "stat_exp_val": "+3 Años",
-    "hero_description": "ASIR (grade 7.05) and SMR (grade 7.35). I design and run secure architectures: Cloudflare and edge platforms, DNS filtering and Zero-Trust networks, monitoring with alerts, and identity administration.",
+    "hero_description": "ASIR and SMR. I design and run secure architectures: Cloudflare and edge platforms, DNS filtering and Zero-Trust networks, monitoring with alerts, and identity administration.",
     "stack_virt_3": "Full virtualization with Proxmox VE and VirtualBox.",
     "exp_minsait_role": "IT support technician",
     "stack_cloud_title": "Cloud & IAM",
@@ -222,7 +223,7 @@ const translations = {
     "footer_nav_title": "Navigation",
     "footer_spec_5": "Quantitative risk analysis",
     "exp_iis_period": "May 2023 – Nov 2023 · 7 months",
-    "edu_smr_desc": "Grade 7.35. Installation, support and maintenance of computers and local networks.",
+    "edu_smr_desc": "Installation, support and maintenance of computers and local networks.",
     "avail_join_text": "Available for new challenges immediately.",
     "footer_brand_desc": "Systems and cybersecurity administrator. Edge infrastructure, Zero-Trust networks, hardening and identity.",
     "hero_tag2": "Immediate availability",
@@ -242,7 +243,7 @@ const translations = {
     "proj_filter_systems": "Systems & cloud",
     "nav_projects": "Projects",
     "stack_auto_3": "Configuration management with Ansible.",
-    "hero_pill_edu": "ASIR 7.05 · SMR 7.35",
+    "hero_pill_edu": "ASIR · SMR",
     "exp_minsait_3": "Networked printers and peripherals.",
     "stack_net_4": "Traffic analysis and incident detection.",
     "terminal_title": "Sysadmin console",
@@ -369,9 +370,9 @@ const translations = {
     "footer_legal_title": "Legal & Compliance",
     "exp_minsait_2": "Comptes i permisos d'usuari al Directori Actiu.",
     "exp_attestto_1": "Administració d'identitats i accessos: Google Workspace, Cloudflare, IAM i GitHub.",
-    "edu_asir_desc": "Nota 7,05. Administració, seguretat i alta disponibilitat de sistemes i xarxes.",
+    "edu_asir_desc": "Administració, seguretat i alta disponibilitat de sistemes i xarxes.",
     "stat_exp_val": "+3 Años",
-    "hero_description": "Titulat en ASIR (7,05) i SMR (7,35). Disseny i operació d'arquitectures segures: plataformes a Cloudflare i l'edge, xarxes amb filtratge DNS i Zero-Trust, monitorització amb alertes i administració d'identitats.",
+    "hero_description": "Titulat en ASIR i SMR. Disseny i operació d'arquitectures segures: plataformes a Cloudflare i l'edge, xarxes amb filtratge DNS i Zero-Trust, monitorització amb alertes i administració d'identitats.",
     "stack_virt_3": "Virtualització completa amb Proxmox VE i VirtualBox.",
     "exp_minsait_role": "Tècnic de suport de TI",
     "stack_cloud_title": "Cloud i IAM",
@@ -381,7 +382,7 @@ const translations = {
     "footer_nav_title": "Navegació",
     "footer_spec_5": "Anàlisi quantitativa de riscos",
     "exp_iis_period": "maig 2023 – nov. 2023 · 7 mesos",
-    "edu_smr_desc": "Nota 7,35. Instal·lació, suport i manteniment d'equips i xarxes locals.",
+    "edu_smr_desc": "Instal·lació, suport i manteniment d'equips i xarxes locals.",
     "avail_join_text": "Disponibilidad Inmediata para nuevos retos.",
     "footer_brand_desc": "Administrador de sistemes i ciberseguretat. Infraestructura edge, xarxes Zero-Trust, hardening i identitat.",
     "hero_tag2": "Disponibilitat immediata",
@@ -401,7 +402,7 @@ const translations = {
     "proj_filter_systems": "Sistemes i cloud",
     "nav_projects": "Projectes",
     "stack_auto_3": "Gestió de configuració amb Ansible.",
-    "hero_pill_edu": "ASIR 7,05 · SMR 7,35",
+    "hero_pill_edu": "ASIR · SMR",
     "exp_minsait_3": "Impressores i perifèrics connectats en xarxa.",
     "stack_net_4": "Anàlisi de trànsit i detecció d'incidents.",
     "terminal_title": "Consola d'administració",
@@ -879,7 +880,9 @@ ready(() => {
   try { initProjectFilters(); } catch (error) { console.error('[filters]', error); }
   try { initContact(); } catch (error) { console.error('[contact]', error); }
   try { initModals(); } catch (error) { console.error('[modals]', error); }
+  try { initCvDownload({ t }); } catch (error) { console.error('[cv]', error); }
 });
+
 
 
 

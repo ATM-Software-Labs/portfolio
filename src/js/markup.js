@@ -27,7 +27,7 @@ export const markup = `
                     <li><a href="#contacto"><i class="fas fa-envelope nav-icon"></i><span data-i18n="nav_contact">Contacto</span></a></li>
                 </ul>
                 <div class="mobile-nav-footer">
-                    <a href="https://drive.google.com/file/d/1387NS8scWWrC4ZsOjqfbeecrPPXMwrHK/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary btn-sm mobile-cv-btn" style="width:100%; justify-content:center; gap:8px;">
+                    <a href="#" class="btn btn-primary btn-sm mobile-cv-btn js-request-cv" style="width:100%; justify-content:center; gap:8px;">
                         <i class="fas fa-file-alt" aria-hidden="true"></i>
                         <span data-i18n="btn_cv">Descargar CV</span>
                     </a>
@@ -81,11 +81,11 @@ export const markup = `
                         <h2 class="hero-subtitle scroll-reveal typing-effect" data-i18n="hero_subtitle">Administrador de sistemas y ciberseguridad</h2>
                         
                         <p class="hero-description scroll-reveal" data-i18n="hero_description">
-                            Titulado en ASIR (7,05) y SMR (7,35). Diseño y operación de arquitecturas seguras: plataformas en Cloudflare y el edge, redes con filtrado DNS y Zero-Trust, monitorización con alertas, y administración de identidades.
+                            Titulado en ASIR y SMR. Diseño y operación de arquitecturas seguras: plataformas en Cloudflare y el edge, redes con filtrado DNS y Zero-Trust, monitorización con alertas, y administración de identidades.
                         </p>
 
                         <div class="hero-ctas scroll-reveal">
-                            <a href="https://drive.google.com/file/d/1387NS8scWWrC4ZsOjqfbeecrPPXMwrHK/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary btn-green" id="btn-request-cv"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="btn_cv">Descargar CV</span></a>
+                            <a href="#" class="btn btn-primary btn-green js-request-cv" id="btn-request-cv"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="btn_cv">Descargar CV</span></a>
                             <a href="#contacto" class="btn btn-outline" data-i18n="hero_contact">Contactar</a>
                         </div>
                     </div>
@@ -423,7 +423,7 @@ export const markup = `
                             <h4 data-i18n="edu_asir_level">Ciclo Formativo de Grado Superior</h4>
                             <p class="edu-school">Institut Tecnològic de Barcelona</p>
                             <span class="edu-period">sept. 2024 – jun. 2026</span>
-                            <p class="edu-desc" data-i18n="edu_asir_desc">Nota 7,05. Administración, seguridad y alta disponibilidad de sistemas y redes.</p>
+                            <p class="edu-desc" data-i18n="edu_asir_desc">Administración, seguridad y alta disponibilidad de sistemas y redes.</p>
                             <ul class="job-tasks edu-tasks">
                                 <li data-i18n="edu_asir_1">Linux y Windows Server: servidores, clientes y servicios.</li>
                                 <li data-i18n="edu_asir_2">DNS, DHCP, servidores web y transferencia de archivos.</li>
@@ -440,7 +440,7 @@ export const markup = `
                             <h4 data-i18n="edu_smr_level">Ciclo Formativo de Grado Medio</h4>
                             <p class="edu-school">Institut Tecnològic de Barcelona</p>
                             <span class="edu-period">sept. 2022 – jun. 2024</span>
-                            <p class="edu-desc" data-i18n="edu_smr_desc">Nota 7,35. Instalación, soporte y mantenimiento de equipos y redes locales.</p>
+                            <p class="edu-desc" data-i18n="edu_smr_desc">Instalación, soporte y mantenimiento de equipos y redes locales.</p>
                             <ul class="job-tasks edu-tasks">
                                 <li data-i18n="edu_smr_1">Montaje, diagnóstico y reparación de hardware y periféricos.</li>
                                 <li data-i18n="edu_smr_2">Cableado estructurado, routers, switches y direccionamiento IP.</li>
@@ -606,3 +606,4 @@ export const markup = `
     <!-- Toast Notification Container -->
     <div id="toast-container" class="toast-container"></div>
 `;
+
