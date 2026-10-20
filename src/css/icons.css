@@ -1,0 +1,44 @@
+/* Font Awesome Free 6.4.0 subset (only the icons this site uses). License: Icons CC BY 4.0, Fonts SIL OFL 1.1, Code MIT. Regenerate with the same icon list if you add icons. */
+@font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:block;src:url(/assets/fonts/fa-solid-subset.woff2) format('woff2')}
+@font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:block;src:url(/assets/fonts/fa-brands-subset.woff2) format('woff2')}
+.fa,.fas,.fa-solid,.fab,.fa-brands{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa,.fas,.fa-solid{font-family:'Font Awesome 6 Free';font-weight:900}
+.fab,.fa-brands{font-family:'Font Awesome 6 Brands';font-weight:400}
+.fa-arrow-up::before{content:"\f062"}
+.fa-bars::before{content:"\f0c9"}
+.fa-book::before{content:"\f02d"}
+.fa-briefcase::before{content:"\f0b1"}
+.fa-building::before{content:"\f1ad"}
+.fa-calendar-check::before{content:"\f274"}
+.fa-check-circle::before{content:"\f058"}
+.fa-chevron-down::before{content:"\f078"}
+.fa-clock::before{content:"\f017"}
+.fa-cloud::before{content:"\f0c2"}
+.fa-code-branch::before{content:"\f126"}
+.fa-copy::before{content:"\f0c5"}
+.fa-display::before{content:"\e163"}
+.fa-docker::before{content:"\f395"}
+.fa-download::before{content:"\f019"}
+.fa-envelope::before{content:"\f0e0"}
+.fa-external-link-alt::before{content:"\f35d"}
+.fa-file-alt::before{content:"\f15c"}
+.fa-file-pdf::before{content:"\f1c1"}
+.fa-github::before{content:"\f09b"}
+.fa-graduation-cap::before{content:"\f19d"}
+.fa-layer-group::before{content:"\f5fd"}
+.fa-linkedin::before{content:"\f08c"}
+.fa-linux::before{content:"\f17c"}
+.fa-map-marker-alt::before{content:"\f3c5"}
+.fa-moon::before{content:"\f186"}
+.fa-network-wired::before{content:"\f6ff"}
+.fa-pen-nib::before{content:"\f5ad"}
+.fa-robot::before{content:"\f544"}
+.fa-route::before{content:"\f4d7"}
+.fa-shield-alt::before{content:"\f3ed"}
+.fa-sun::before{content:"\f185"}
+.fa-terminal::before{content:"\f120"}
+.fa-times::before{content:"\f00d"}
+.fa-tools::before{content:"\f7d9"}
+.fa-universal-access::before{content:"\f29a"}
+.fa-user-ninja::before{content:"\f504"}
+.fa-windows::before{content:"\f17a"}

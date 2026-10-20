@@ -1,105 +1,27 @@
-import { mountTurnstile, resetTurnstile, executeTurnstile } from './turnstile-widget.js';
+// "Descargar CV" opens the PDF on Google Drive directly (matches the 2026-10-05
+// production hot-fix "fix: Descargar CV opens Drive PDF directly", which was deployed
+// by direct upload and never committed; ported here so git deploys keep it).
+const CV_DOWNLOAD_URL = 'https://drive.google.com/uc?export=download&id=1Ew6EZ41OLrXEimzHezCG4Q82dLgZfr42';
+const CV_VIEW_URL = 'https://drive.google.com/file/d/1Ew6EZ41OLrXEimzHezCG4Q82dLgZfr42/view?usp=sharing';
 
-export function initCvDownload({ t }) {
+// eslint-disable-next-line no-unused-vars
+export function initCvDownload(_opts) {
   const buttons = document.querySelectorAll('.js-request-cv');
   if (buttons.length === 0) return;
 
-  const widgetHost = document.createElement('div');
-  widgetHost.style.position = 'absolute';
-  widgetHost.style.top = '-9999px';
-  widgetHost.style.left = '-9999px';
-  document.body.appendChild(widgetHost);
-
-  let widgetId = null;
-  let pendingResolve = null;
-  let pendingReject = null;
-  let cachedToken = '';
-
-  mountTurnstile(widgetHost, 'download_cv', {
-    onToken: (token) => {
-      cachedToken = token;
-      if (pendingResolve) {
-        pendingResolve(token);
-        pendingResolve = null;
-        pendingReject = null;
-      }
-    },
-    onExpire: () => {
-      cachedToken = '';
-    },
-    onError: () => {
-      cachedToken = '';
-      if (pendingReject) {
-        pendingReject(new Error(t('cv_error')));
-        pendingResolve = null;
-        pendingReject = null;
-      }
+  buttons.forEach((button) => {
+    if (button.tagName === 'A') {
+      button.setAttribute('href', CV_DOWNLOAD_URL);
+      button.setAttribute('target', '_blank');
+      button.setAttribute('rel', 'noopener noreferrer');
+      button.setAttribute('download', '');
     }
-  }).then(id => {
-    widgetId = id;
-  });
-
-  buttons.forEach(button => {
-    button.addEventListener('click', async (event) => {
+    button.addEventListener('click', (event) => {
+      if (button.tagName === 'A' && button.getAttribute('href')?.startsWith('http')) return;
       event.preventDefault();
-      if (widgetId == null) {
-        alert(t('cv_error'));
-        return;
-      }
-
-      const originalHtml = button.innerHTML;
-      button.style.pointerEvents = 'none';
-      button.style.opacity = '0.7';
-      button.textContent = t('cv_working');
-
-      try {
-        let tokenPromise;
-        if (cachedToken) {
-          tokenPromise = Promise.resolve(cachedToken);
-        } else {
-          tokenPromise = new Promise((resolve, reject) => {
-            pendingResolve = resolve;
-            pendingReject = reject;
-            setTimeout(() => {
-              if (pendingReject) {
-                pendingReject(new Error(t('cv_error')));
-                pendingResolve = null;
-                pendingReject = null;
-              }
-            }, 30000);
-          });
-          executeTurnstile(widgetId);
-        }
-
-        const token = await tokenPromise;
-        cachedToken = ''; // Consume the token
-
-        const response = await fetch('/api/cv', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token }),
-        });
-
-        if (!response.ok) {
-          const result = await response.json().catch(() => ({}));
-          throw new Error(result.error || t('cv_error'));
-        }
-
-        const data = await response.json();
-        if (data.url) {
-          window.open(data.url, '_blank');
-        } else {
-          throw new Error(t('cv_error'));
-        }
-
-      } catch (err) {
-        alert(err instanceof Error ? err.message : t('cv_error'));
-      } finally {
-        button.innerHTML = originalHtml;
-        button.style.pointerEvents = 'auto';
-        button.style.opacity = '1';
-        resetTurnstile(widgetId);
-      }
+      const win = window.open(CV_DOWNLOAD_URL, '_blank');
+      if (win) win.opener = null;
+      else window.location.href = CV_VIEW_URL;
     });
   });
 }

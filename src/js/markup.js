@@ -27,7 +27,7 @@ export const markup = `
                     <li><a href="#contacto"><i class="fas fa-envelope nav-icon"></i><span data-i18n="nav_contact">Contacto</span></a></li>
                 </ul>
                 <div class="mobile-nav-footer">
-                    <a href="#" class="btn btn-primary btn-sm mobile-cv-btn js-request-cv" style="width:100%; justify-content:center; gap:8px;">
+                    <a href="https://drive.google.com/uc?export=download&id=1Ew6EZ41OLrXEimzHezCG4Q82dLgZfr42" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm mobile-cv-btn js-request-cv" style="width:100%; justify-content:center; gap:8px;">
                         <i class="fas fa-file-alt" aria-hidden="true"></i>
                         <span data-i18n="btn_cv">Descargar CV</span>
                     </a>
@@ -85,7 +85,7 @@ export const markup = `
                         </p>
 
                         <div class="hero-ctas scroll-reveal">
-                            <a href="#" class="btn btn-primary btn-green js-request-cv" id="btn-request-cv"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="btn_cv">Descargar CV</span></a>
+                            <a href="https://drive.google.com/uc?export=download&id=1Ew6EZ41OLrXEimzHezCG4Q82dLgZfr42" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-green js-request-cv" id="btn-request-cv"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="btn_cv">Descargar CV</span></a>
                             <a href="#contacto" class="btn btn-outline" data-i18n="hero_contact">Contactar</a>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ export const markup = `
                     <div class="hero-profile-col scroll-reveal">
                         <div class="profile-summary-card">
                             <div class="profile-avatar-wrapper">
-                                <img src="/assets/images/Alberto.webp?v=p2" alt="Fotografía profesional de Alberto Trujillo Mingorance - SecOps & Systems Engineer" class="profile-avatar-img">
+                                <img src="/assets/images/Alberto-192.webp?v=p3" alt="Fotografía profesional de Alberto Trujillo Mingorance - SecOps & Systems Engineer" class="profile-avatar-img" width="96" height="96">
                                 <span class="profile-status-online" title="Disponible para contratación"></span>
                             </div>
                             <p class="profile-card-role" data-i18n="hero_role">Administrador de sistemas y ciberseguridad</p>
@@ -148,7 +148,7 @@ export const markup = `
                         <div class="timeline-marker indigo-marker"></div>
                         <div class="glass-card job-card border-left-indigo">
                             <div class="job-header">
-                                <img src="https://labs.trujillomingorance.com/avatar.png" alt="ATM Software Labs" class="job-logo job-logo-photo">
+                                <img src="/assets/images/atm-labs-88.webp?v=p3" alt="ATM Software Labs" class="job-logo job-logo-photo" width="44" height="44" loading="lazy" decoding="async">
                                 <div class="job-title-wrapper">
                                     <h3 data-i18n="exp_atm_role">Administrador de sistemas y ciberseguridad</h3>
                                     <h4 data-i18n="exp_atm_company">ATM Software Labs</h4>
@@ -181,7 +181,7 @@ export const markup = `
                         <div class="timeline-marker purple-marker"></div>
                         <div class="glass-card job-card border-left-purple">
                             <div class="job-header">
-                                <img src="/assets/images/attestto_logo.jpg?v=p2" alt="Logotipo de Attestto" class="job-logo">
+                                <img src="/assets/images/attestto_logo-88.webp?v=p3" alt="Logotipo de Attestto" class="job-logo" width="44" height="44" loading="lazy" decoding="async">
                                 <div class="job-title-wrapper">
                                     <h3 data-i18n="exp_attestto_role">Administrador de sistemas y seguridad cloud</h3>
                                     <h4 data-i18n="exp_attestto_company">Attestto · Jornada parcial</h4>
@@ -545,7 +545,7 @@ export const markup = `
 
                 <!-- Col 2: Navigation Links -->
                 <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer_nav_title">Navegación</h4>
+                    <h3 class="footer-col-title" data-i18n="footer_nav_title">Navegación</h3>
                     <ul class="footer-links">
                         <li><a href="#experiencia" data-i18n="nav_experience">Experiencia</a></li>
                         <li><a href="#stack" data-i18n="nav_stack">Stack Técnico</a></li>
@@ -557,7 +557,7 @@ export const markup = `
 
                 <!-- Col 3: Specializations & Credentials -->
                 <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer_specs_title">Especialidades & Certificación</h4>
+                    <h3 class="footer-col-title" data-i18n="footer_specs_title">Especialidades & Certificación</h3>
                     <ul class="footer-links">
                         <li><span class="footer-text-link" data-i18n="footer_spec_1">ASIR & SMR · ITB</span></li>
                         <li><span class="footer-text-link" data-i18n="footer_spec_2">Google Workspace & Cloud IAM</span></li>
@@ -569,7 +569,7 @@ export const markup = `
 
                 <!-- Col 4: Legal & Compliance (Enterprise Touch) -->
                 <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer_legal_title">Legal & Compliance</h4>
+                    <h3 class="footer-col-title" data-i18n="footer_legal_title">Legal & Compliance</h3>
                     <ul class="footer-links">
                         <li><button type="button" class="legal-trigger text-btn" data-modal="privacy" data-i18n="footer_privacy">Política de Privacidad</button></li>
                         <li><button type="button" class="legal-trigger text-btn" data-modal="terms" data-i18n="footer_terms">Términos y Condiciones</button></li>

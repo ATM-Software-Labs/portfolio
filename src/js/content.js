@@ -22,8 +22,8 @@ function textInto(selector, value) {
 
 function logo(company) {
   const name = company.toLowerCase();
-  if (name.includes('atm') || name.includes('software labs')) return 'https://labs.trujillomingorance.com/avatar.png';
-  if (name.includes('attestto')) return '/assets/images/attestto_logo.jpg';
+  if (name.includes('atm') || name.includes('software labs')) return '/assets/images/atm-labs-88.webp?v=p3';
+  if (name.includes('attestto')) return '/assets/images/attestto_logo-88.webp?v=p3';
   if (name.includes('minsait')) return '/assets/images/minsait_logo.jpeg';
   if (name.includes('sostenible') || name.includes('indústria') || name.includes('industria')) return '/assets/images/1742933903062.jpeg';
   if (name.includes('tecnol')) return '/assets/images/itecbcn_logo.jpeg';
