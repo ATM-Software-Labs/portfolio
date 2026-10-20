@@ -591,7 +591,7 @@ export const markup = `
                 </div>
             </div>
         </div>
-        <div class="atm-net"><div class="atm-net__in"><a class="atm-net__brand" href="https://trujillomingorance.com/">ATM Software Labs</a><nav aria-label="Sitios de ATM Software Labs"><ul class="atm-net__sites"><li><a href="https://labs.trujillomingorance.com/">ATM Labs</a></li><li><a href="https://invest.trujillomingorance.com/">INVEST</a></li><li><a href="https://charts.trujillomingorance.com/">Markets Briefing</a></li><li><a href="https://ai.trujillomingorance.com/">Trujillo AI</a></li><li><a href="https://guides.trujillomingorance.com/">Guías</a></li><li><a href="https://tools.trujillomingorance.com/">Tools</a></li><li><a href="https://rewrite.trujillomingorance.com/">Rewrite</a></li><li><a href="https://alberto.trujillomingorance.com/" aria-current="page">Alberto</a></li></ul></nav></div></div>
+        <div class="atm-net"><div class="atm-net__in"><a class="atm-net__brand" href="https://trujillomingorance.com/">ATM Software Labs</a><nav aria-label="Sitios de ATM Software Labs"><ul class="atm-net__sites"><li><a href="https://labs.trujillomingorance.com/">ATM Labs</a></li><li><a href="https://invest.trujillomingorance.com/">INVEST</a></li><li><a href="https://charts.trujillomingorance.com/">Markets Briefing</a></li><li><a href="https://ai.trujillomingorance.com/">Trujillo AI</a></li><li><a href="https://guides.trujillomingorance.com/">Guías</a></li><li><a href="https://tools.trujillomingorance.com/">Tools</a></li><li><a href="https://rewrite.trujillomingorance.com/">Rewrite</a></li></ul></nav></div></div>
     </footer>
 
     <!-- Enterprise Legal Compliance Modal -->
