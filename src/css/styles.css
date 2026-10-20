@@ -1926,6 +1926,16 @@ html[data-theme='dark'] .bg-gradient-blue {
   transform: translateY(0);
 }
 
+/* Above the fold: show the hero immediately (it is prerendered), no waiting for JS to reveal it. */
+#hero .scroll-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
+}
+
 .typing-effect {
   display: inline-block;
   border-right: 3px solid var(--accent-primary);
