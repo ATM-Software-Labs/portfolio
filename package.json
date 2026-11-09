@@ -9,10 +9,10 @@
     "deploy": "npm run build && wrangler pages deploy dist --project-name=alberto-portfolio --branch=main"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.4",
     "tailwindcss": "^4.3.3",
     "terser": "^5.51.2",
     "vite": "^6.3.5",
-    "wrangler": "^4.130.0"
+    "wrangler": "^4.158.0"
   }
 }
